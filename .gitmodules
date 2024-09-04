@@ -1,0 +1,473 @@
+[submodule "docs/nhncloud"]
+	path = docs/nhncloud
+	url = https://github.com/TOAST-DOCS/TOAST-Cloud.git
+	branch = master
+# Compute
+[submodule "docs/Compute/Instance"]
+	path = docs/Compute/Instance
+	url = https://github.com/TOAST-DOCS/Compute-Instance.git
+	branch = master
+[submodule "docs/Compute/GPU Instance"]
+	path = docs/Compute/GPU Instance
+	url = https://github.com/TOAST-DOCS/Compute-GPU.git
+	branch = master
+[submodule "docs/Compute/Image"]
+	path = docs/Compute/Image
+	url = https://github.com/TOAST-DOCS/Compute-Image.git
+	branch = master
+[submodule "docs/Compute/Auto Scale"]
+	path = docs/Compute/Auto Scale
+	url = https://github.com/TOAST-DOCS/Compute-Auto-Scale.git
+	branch = master
+[submodule "docs/Compute/Monitoring"]
+	path = docs/Compute/Monitoring
+	url = https://github.com/TOAST-DOCS/Compute-Monitoring.git
+	branch = master
+[submodule "docs/Compute/Compute"]
+	path = docs/Compute/Compute
+	url = https://github.com/TOAST-DOCS/Compute.git
+	branch = master
+# Network
+[submodule "docs/Network/VPC"]
+	path = docs/Network/VPC
+	url = https://github.com/TOAST-DOCS/Network-VPC.git
+	branch = master
+[submodule "docs/Network/Load Balancer"]
+	path = docs/Network/Load Balancer
+	url = https://github.com/TOAST-DOCS/Network-Load-Balancer.git
+	branch = master
+[submodule "docs/Network/DNS Plus"]
+	path = docs/Network/DNS Plus
+	url = https://github.com/TOAST-DOCS/Network-DNSPLUS.git
+	branch = master
+[submodule "docs/Network/Network"]
+	path = docs/Network/Network
+	url = https://github.com/TOAST-DOCS/Network.git
+	branch = master
+# Storage
+[submodule "docs/Storage/Block Storage"]
+	path = docs/Storage/Block Storage
+	url = https://github.com/TOAST-DOCS/Storage-Block-Storage.git
+	branch = master
+[submodule "docs/Storage/NAS (offline)"]
+	path = docs/Storage/NAS (offline)
+	url = https://github.com/TOAST-DOCS/Storage-NAS.git
+	branch = master
+[submodule "docs/Storage/Object Storage"]
+	path = docs/Storage/Object Storage
+	url = https://github.com/TOAST-DOCS/Storage-Object-Storage.git
+	branch = master
+[submodule "docs/Storage/Backup"]
+	path = docs/Storage/Backup
+	url = https://github.com/TOAST-DOCS/Storage-Backup.git
+	branch = master
+# Game
+[submodule "docs/Game/Gamebase"]
+	path = docs/Game/Gamebase
+	url = https://github.com/TOAST-DOCS/Gamebase.git
+	branch = master
+[submodule "docs/Game/Leaderboard"]
+	path = docs/Game/Leaderboard
+	url = https://github.com/TOAST-DOCS/Leaderboard.git
+	branch = master
+[submodule "docs/Game/Launching"]
+	path = docs/Game/Launching
+	url = https://github.com/TOAST-DOCS/Launching.git
+	branch = master
+[submodule "docs/Game/Smart Downloader"]
+	path = docs/Game/Smart Downloader
+	url = https://github.com/TOAST-DOCS/Smart-Downloader.git
+	branch = master
+# Notification
+[submodule "docs/Notification/Push"]
+	path = docs/Notification/Push
+	url = https://github.com/TOAST-DOCS/Push.git
+	branch = master
+[submodule "docs/Notification/SMS"]
+	path = docs/Notification/SMS
+	url = https://github.com/TOAST-DOCS/SMS.git
+	branch = master
+[submodule "docs/Notification/Email"]
+	path = docs/Notification/Email
+	url = https://github.com/TOAST-DOCS/E-mail.git
+	branch = master
+[submodule "docs/Notification/KakaoTalk Bizmessage"]
+	path = docs/Notification/KakaoTalk Bizmessage
+	url = https://github.com/TOAST-DOCS/Alimtalk.git
+	branch = master
+# Database
+[submodule "docs/Database/RDS for MySQL"]
+	path = docs/Database/RDS for MySQL
+	url = https://github.com/TOAST-DOCS/RDS.git
+	branch = master
+[submodule "docs/Database/EasyCache"]
+	path = docs/Database/EasyCache
+	url = https://github.com/TOAST-DOCS/EasyCache.git
+	branch = master
+[submodule "docs/Database/RDS for PostgreSQL"]
+	path = docs/Database/RDS for PostgreSQL
+	url = https://github.com/TOAST-DOCS/RDS-FOR-POSTGRESQL.git
+	branch = master
+# Monitoring
+[submodule "docs/Monitoring/System Monitoring"]
+	path = docs/Monitoring/System Monitoring
+	url = https://github.com/TOAST-DOCS/System-Monitoring
+	branch = master
+[submodule "docs/Monitoring/Service Monitoring"]
+	path = docs/Monitoring/Service Monitoring
+	url = https://github.com/TOAST-DOCS/Service-Monitoring.git
+	branch = master
+[submodule "docs/Monitoring/Cloud Monitoring"]
+	path = docs/Monitoring/Cloud Monitoring
+	url = https://github.com/TOAST-DOCS/Monitoring-Cloud-Monitoring.git
+	branch = master
+# Content Delivery
+[submodule "docs/Contents Delivery/CDN"]
+	path = docs/Contents Delivery/CDN
+	url = https://github.com/TOAST-DOCS/CDN.git
+	branch = master
+# Security
+[submodule "docs/Security/Security Monitoring"]
+	path = docs/Security/Security Monitoring
+	url = https://github.com/TOAST-DOCS/Security-Monitoring.git
+	branch = master
+[submodule "docs/Security/Mal-URL Detector"]
+	path = docs/Security/Mal-URL Detector
+	url = https://github.com/TOAST-DOCS/Mal-URL-Detector.git
+	branch = master
+[submodule "docs/Security/CAPTCHA"]
+	path = docs/Security/CAPTCHA
+	url = https://github.com/TOAST-DOCS/CAPTCHA.git
+	branch = master
+[submodule "docs/Security/DBSafer"]
+	path = docs/Security/DBSafer
+	url = https://github.com/TOAST-DOCS/DBSafer.git
+	branch = master
+[submodule "docs/Security/Web Firewall"]
+	path = docs/Security/Web Firewall
+	url = https://github.com/TOAST-DOCS/WEB-Firewall.git
+	branch = master
+[submodule "docs/Security/Vaccine"]
+	path = docs/Security/Vaccine
+	url = https://github.com/TOAST-DOCS/Vaccine.git
+	branch = master
+[submodule "docs/Security/Secure Key Manager"]
+	path = docs/Security/Secure Key Manager
+	url = https://github.com/TOAST-DOCS/kms.git
+	branch = master
+# Mobile Service
+[submodule "docs/Mobile Service/IAP"]
+	path = docs/Mobile Service/IAP
+	url = https://github.com/TOAST-DOCS/IAP.git
+	branch = master
+[submodule "docs/Mobile Service/Mobile Device Info"]
+	path = docs/Mobile Service/Mobile Device Info
+	url = https://github.com/TOAST-DOCS/Mobile-Device-Info.git
+	branch = master
+# Dev Tool
+# Analytics
+# Application Service
+[submodule "docs/Application Service/Maps"]
+	path = docs/Application Service/Maps
+	url = https://github.com/TOAST-DOCS/Maps.git
+	branch = master
+[submodule "docs/Application Service/ROLE"]
+	path = docs/Application Service/ROLE
+	url = https://github.com/TOAST-DOCS/ROLE.git
+	branch = master
+[submodule "docs/Application Service/API Gateway"]
+	path = docs/Application Service/API Gateway
+	url = https://github.com/TOAST-DOCS/API-Gateway.git
+	branch = master
+[submodule "docs/Application Service/RTCS"]
+	path = docs/Application Service/RTCS
+	url = https://github.com/TOAST-DOCS/RTCS.git
+	branch = master
+# Search
+[submodule "docs/Search/Cloud Search"]
+	path = docs/Search/Cloud Search
+	url = https://github.com/TOAST-DOCS/Cloud-Search.git
+	branch = master
+[submodule "docs/Search/Autocomplete"]
+	path = docs/Search/Autocomplete
+	url = https://github.com/TOAST-DOCS/autocomplete.git
+	branch = master
+[submodule "docs/Search/Corporation Search"]
+	path = docs/Search/Corporation Search
+	url = https://github.com/TOAST-DOCS/Corporations-Search.git
+	branch = master
+# Management	
+[submodule "docs/Management/Managed"]
+	path = docs/Management/Managed
+	url = https://github.com/TOAST-DOCS/Managed.git
+	branch = master
+[submodule "docs/Management/Certificate Manager"]
+	path = docs/Management/Certificate Manager
+	url = https://github.com/TOAST-DOCS/Certificate-Manager.git
+	branch = master
+# Workplace | ERP
+[submodule "docs/ERP/Communication Board"]
+	path = docs/ERP/Communication Board
+	url = https://github.com/TOAST-DOCS/ERP-Communication-Board.git
+	branch = master
+[submodule "docs/ERP/Workflow"]
+	path = docs/ERP/Workflow
+	url = https://github.com/TOAST-DOCS/ERP-Workflow.git
+	branch = master
+[submodule "docs/ERP/Human Resource"]
+	path = docs/ERP/Human Resource
+	url = https://github.com/TOAST-DOCS/ERP-Human-Resource.git
+	branch = master
+[submodule "docs/ERP/Finance"]
+	path = docs/ERP/Finance
+	url = https://github.com/TOAST-DOCS/ERP-Finance.git
+	branch = master
+# Workplace | Dooray!
+[submodule "docs/Dooray/Common"]
+	path = docs/Dooray/Common
+	url = https://github.com/TOAST-DOCS/Dooray.git
+	branch = master
+# Bill
+# Contact Center
+[submodule "docs/Contact Center"]
+	path = docs/Contact Center
+	url = https://github.com/TOAST-DOCS/Contact-Center.git
+	branch = master
+# CloudTrail
+# Open Source
+[submodule "docs/Open Source/Toast Haste"]
+	path = docs/Open Source/Toast Haste
+	url = https://github.com/TOAST-DOCS/HASTE.git
+	branch = master
+[submodule "docs/Infrastructure Common"]
+	path = docs/Infrastructure Common
+	url = https://github.com/TOAST-DOCS/Infrastructure-Common.git
+	branch = master
+[submodule "docs/Database/RDS for SQL Server"]
+	path = docs/Database/RDS for SQL Server
+	url = https://github.com/TOAST-DOCS/RDS-FOR-SQLSERVER.git
+	branch = master
+[submodule "docs/Network/Network ACL"]
+	path = docs/Network/Network ACL
+	url = https://github.com/TOAST-DOCS/Network-ACL.git
+	branch = master
+[submodule "docs/Security/Server Security Check"]
+	path = docs/Security/Server Security Check
+	url = https://github.com/TOAST-DOCS/Server-Security-Check.git
+	branch = master
+[submodule "docs/Storage/Data Transporter"]
+	path = docs/Storage/Data Transporter
+	url = https://github.com/TOAST-DOCS/Storage-Data-Transporter.git
+	branch = master
+[submodule "docs/Game/GameAnvil"]
+	path = docs/Game/GameAnvil
+	url = https://github.com/TOAST-DOCS/GameAnvil.git
+	branch = master
+[submodule "docs/AI Service/Face Recognition"]
+	path = docs/AI Service/Face Recognition
+	url = https://github.com/TOAST-DOCS/Face-Recognition.git
+	branch = master
+[submodule "docs/Security/Security Compliance"]
+	path = docs/Security/Security Compliance
+	url = https://github.com/TOAST-DOCS/NHN-Compliance.git
+	branch = master
+[submodule "docs/Application Service/ShortURL"]
+	path = docs/Application Service/ShortURL
+	url = https://github.com/TOAST-DOCS/ShortURL.git
+	branch = master
+[submodule "docs/Security/NHN AppGuard"]
+	path = docs/Security/NHN AppGuard
+	url = https://github.com/TOAST-DOCS/AppGuard.git
+	branch = master
+[submodule "docs/Dev Tools/Deploy"]
+	path = docs/Dev Tools/Deploy
+	url = https://github.com/TOAST-DOCS/Deploy.git
+	branch = master
+[submodule "docs/Dev Tools/Pipeline"]
+	path = docs/Dev Tools/Pipeline
+	url = https://github.com/TOAST-DOCS/pipeline.git
+	branch = master
+[submodule "docs/Compute/Instance Template"]
+	path = docs/Compute/Instance Template
+	url = https://github.com/TOAST-DOCS/Compute-Instance-Template.git
+	branch = master
+[submodule "docs/Network/Network Interface"]
+	path = docs/Network/Network Interface
+	url = https://github.com/TOAST-DOCS/Network-Interface.git
+	branch = master
+[submodule "docs/Network/Floating IP"]
+	path = docs/Network/Floating IP
+	url = https://github.com/TOAST-DOCS/Floating-IP.git
+	branch = master
+[submodule "docs/Network/Security Groups"]
+	path = docs/Network/Security Groups
+	url = https://github.com/TOAST-DOCS/Security-Groups.git
+	branch = master
+[submodule "docs/Bill/eTax"]
+	path = docs/Bill/eTax
+	url = https://github.com/TOAST-DOCS/TOAST-bill.git
+	branch = master
+[submodule "docs/AI Service/AI Fashion"]
+	path = docs/AI Service/AI Fashion
+	url = https://github.com/TOAST-DOCS/AI-Fashion.git
+	branch = master
+[submodule "docs/Compute/Image Builder"]
+	path = docs/Compute/Image Builder
+	url = https://github.com/TOAST-DOCS/Compute-Image-Builder.git
+	branch = master
+[submodule "docs/Container/Old Container Registry"]
+	path = docs/Container/Old Container Registry
+	url = https://github.com/TOAST-DOCS/Container-Container-Registry.git
+	branch = master
+[submodule "docs/AI Service/Vehicle Plate Recognizer"]
+	path = docs/AI Service/Vehicle Plate Recognizer
+	url = https://github.com/TOAST-DOCS/Vehicle-Plate-Recognizer.git
+	branch = master
+[submodule "docs/Database/RDS for MariaDB"]
+	path = docs/Database/RDS for MariaDB
+	url = https://github.com/TOAST-DOCS/RDS-FOR-MARIADB.git
+	branch = master
+[submodule "docs/AI Service/Text to Speech"]
+	path = docs/AI Service/Text to Speech
+	url = https://github.com/TOAST-DOCS/TTS.git
+	branch = master
+[submodule "docs/Game/GameStarter"]
+	path = docs/Game/GameStarter
+	url = https://github.com/TOAST-DOCS/GameStarter.git
+	branch = master
+[submodule "docs/Machine Learning/Deep Learning Instance"]
+	path = docs/Machine Learning/Deep Learning Instance
+	url = https://github.com/TOAST-DOCS/ML-Deep-Learning-Instance.git
+	branch = master
+[submodule "docs/AI Service/Speech to Text"]
+	path = docs/AI Service/Speech to Text
+	url = https://github.com/TOAST-DOCS/STT.git
+	branch = master
+[submodule "docs/Compute/Virtual Desktop"]
+	path = docs/Compute/Virtual Desktop
+	url = https://github.com/TOAST-DOCS/Compute-VirtualDesktop.git
+	branch = master
+[submodule "docs/Container/NCR"]
+	path = docs/Container/NCR
+	url = https://github.com/TOAST-DOCS/Container-Container-Registry-v2.git
+	branch = master
+[submodule "docs/Container/NKS"]
+	path = docs/Container/NKS
+	url = https://github.com/TOAST-DOCS/Container-Kubernetes.git
+	branch = master
+[submodule "docs/Network/NAT Gateway"]
+	path = docs/Network/NAT Gateway
+	url = https://github.com/TOAST-DOCS/NAT-Gateway.git
+	branch = master
+[submodule "docs/Network/Service Gateway"]
+	path = docs/Network/Service Gateway
+	url = https://github.com/TOAST-DOCS/Service-Gateway.git
+	branch = master
+[submodule "docs/Network/VPN Gateway(Site-to-Site VPN)"]
+	path = docs/Network/VPN Gateway(Site-to-Site VPN)
+	url = https://github.com/TOAST-DOCS/VPN-Gateway.git
+	branch = master
+[submodule "docs/Network/Colocation Gateway"]
+	path = docs/Network/Colocation Gateway
+	url = https://github.com/TOAST-DOCS/Colocation-Gateway.git
+	branch = master
+[submodule "docs/Network/Internet Gateway"]
+	path = docs/Network/Internet Gateway
+	url = https://github.com/TOAST-DOCS/Internet-Gateway.git
+	branch = master
+[submodule "docs/Network/Peering Gateway"]
+	path = docs/Network/Peering Gateway
+	url = https://github.com/TOAST-DOCS/Peering-Gateway.git
+	branch = master
+[submodule "docs/Storage/NAS"]
+	path = docs/Storage/NAS
+	url = https://github.com/TOAST-DOCS/Storage-Online-NAS.git
+	branch = master
+[submodule "docs/Network/Direct Connect"]
+	path = docs/Network/Direct Connect
+	url = https://github.com/TOAST-DOCS/DirectConnect.git
+	branch = master
+[submodule "docs/Contents Delivery/Image Manager"]
+	path = docs/Contents Delivery/Image Manager
+	url = https://github.com/TOAST-DOCS/Image.git
+	branch = master
+[submodule "docs/Data & Analytics/Log & Crash Search"]
+	path = docs/Data & Analytics/Log & Crash Search
+	url = https://github.com/TOAST-DOCS/Log-Crash-Search.git
+	branch = master
+[submodule "docs/Governance & Audit/Resource Watcher"]
+	path = docs/Governance & Audit/Resource Watcher
+	url = https://github.com/TOAST-DOCS/ResourceWatcher.git
+	branch = master
+[submodule "docs/Governance & Audit/CloudTrail"]
+	path = docs/Governance & Audit/CloudTrail
+	url = https://github.com/TOAST-DOCS/CloudTrail.git
+	branch = master
+[submodule "docs/Security/Webshell Threat Detector"]
+	path = docs/Security/Webshell Threat Detector
+	url = https://github.com/TOAST-DOCS/Webshell-Threat-Detector.git
+	branch = master
+[submodule "docs/Container/NCS"]
+	path = docs/Container/NCS
+	url = https://github.com/TOAST-DOCS/Container-Container-Service.git
+	branch = master
+[submodule "docs/Data & Analytics/DataQuery"]
+	path = docs/Data & Analytics/DataQuery
+	url = https://github.com/TOAST-DOCS/Data-Query.git
+	branch = master
+[submodule "docs/Data & Analytics/DataFlow"]
+	path = docs/Data & Analytics/DataFlow
+	url = https://github.com/TOAST-DOCS/Data-Flow.git
+	branch = master
+[submodule "docs/Machine Learning/AI EasyMaker"]
+	path = docs/Machine Learning/AI EasyMaker
+	url = https://github.com/TOAST-DOCS/EasyMaker.git
+	branch = master
+[submodule "docs/Application Service/File Crafter"]
+	path = docs/Application Service/File Crafter
+	url = https://github.com/TOAST-DOCS/File-Crafter.git
+	branch = master
+[submodule "docs/Search/Word Suggestion"]
+	path = docs/Search/Word Suggestion
+	url = https://github.com/TOAST-DOCS/Word-Suggestion.git
+	branch = master
+[submodule "docs/Network/Traffic Mirroring"]
+	path = docs/Network/Traffic Mirroring
+	url = https://github.com/TOAST-DOCS/Traffic-Mirroring.git
+	branch = master
+[submodule "docs/AI Service/OCR"]
+	path = docs/AI Service/OCR
+	url = https://github.com/TOAST-DOCS/OCR.git
+	branch = master
+[submodule "docs/Notification/RCS Bizmessage"]
+	path = docs/Notification/RCS Bizmessage
+	url = https://github.com/TOAST-DOCS/RCS-Bizmessage.git
+	branch = master
+[submodule "docs/Security/Security Advisor"]
+	path = docs/Security/Security Advisor
+	url = https://github.com/TOAST-DOCS/Security-Advisor.git
+	branch = master
+[submodule "docs/Security/NHN Bastion"]
+	path = docs/Security/NHN Bastion
+	url = https://github.com/TOAST-DOCS/NHNBastion.git
+	branch = master
+[submodule "docs/Network/Transit Hub"]
+	path = docs/Network/Transit Hub
+	url = https://github.com/TOAST-DOCS/Transit-Hub.git
+	branch = master
+[submodule "docs/Network/Private DNS"]
+	path = docs/Network/Private DNS
+	url = https://github.com/TOAST-DOCS/Private-DNS.git
+	branch = master
+[submodule "docs/Compute/Compute-Baremetal"]
+	path = docs/Compute/Compute-Baremetal
+	url = https://github.com/TOAST-DOCS/Compute-Baremetal.git
+	branch = master
+[submodule "docs/Security/Network-Firewall"]
+	path = docs/Security/Network-Firewall
+	url = https://github.com/TOAST-DOCS/Network-Firewall.git
+	branch = master
+[submodule "docs/AI Service/Pose Estimation"]
+	path = docs/AI Service/Pose Estimation
+	url = https://github.com/TOAST-DOCS/Pose-Estimation.git
+	branch = master
