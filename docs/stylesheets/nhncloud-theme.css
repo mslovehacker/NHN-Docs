@@ -126,3 +126,51 @@
     width: 14rem; /* 기본 12.1rem → 14rem */
   }
 }
+
+/* ============================================================
+ * 6. 사이드바 / RNB 구분선 (docs.nhncloud.com 스타일)
+ * ============================================================ */
+
+/* 좌측 사이드바와 본문 사이 세로 구분선 */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    border-right: 1px solid var(--nhn-border);
+  }
+  
+  .md-sidebar--secondary {
+    border-left: 1px solid var(--nhn-border);
+  }
+}
+
+/* 사이드바 배경을 아주 살짝 회색화 (docs.nhncloud.com 처럼) */
+.md-sidebar {
+  background-color: #FAFBFC;
+}
+
+[data-md-color-scheme="slate"] .md-sidebar {
+  background-color: rgba(255, 255, 255, 0.02); /* 다크모드는 거의 검정 + 살짝 밝게 */
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary,
+[data-md-color-scheme="slate"] .md-sidebar--secondary {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 본문 영역은 순백 유지 (다크모드는 dark 그대로) */
+.md-main {
+  background-color: #FFFFFF;
+}
+
+[data-md-color-scheme="slate"] .md-main {
+  background-color: var(--md-default-bg-color);
+}
+
+/* 사이드바 내부 좌측 패딩 살짝 확보 (글씨가 구분선에 너무 붙지 않도록) */
+.md-sidebar__scrollwrap {
+  padding-left: 0.5rem;
+}
+
+/* 푸터 위 가로 구분선 */
+.md-footer {
+  border-top: 1px solid var(--nhn-border);
+}
