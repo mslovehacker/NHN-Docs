@@ -35,8 +35,22 @@ theme:
     - toc.follow
 
   palette:
-    primary: custom
-    accent: custom
+    # Light 모드 (기본)
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: 다크 모드로 전환
+    # Dark 모드
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: 라이트 모드로 전환
 
   icon:
     repo: fontawesome/brands/github

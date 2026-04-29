@@ -55,3 +55,74 @@
   width: auto;
   vertical-align: middle;
 }
+
+/* ============================================================
+ * 3. 상단 탭 폰트 색상 (검은 배경에 흰 글씨) — 긴급 보정
+ * ============================================================ */
+
+/* 상단 탭 영역 (검은 배경) */
+.md-tabs {
+  background-color: var(--nhn-header-bg);
+  color: #FFFFFF;
+}
+
+/* 탭 링크 - 흰색 글씨 강제 */
+.md-tabs__link {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.85rem;
+  font-weight: 500;
+  opacity: 1;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  color: #FFFFFF;
+  opacity: 1;
+}
+
+/* ============================================================
+ * 4. 다크모드 (slate) 에서 NHN 색상 유지
+ * ============================================================ */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: var(--nhn-primary);
+  --md-accent-fg-color: var(--nhn-primary);
+  --md-primary-bg-color: var(--nhn-header-bg);
+}
+
+[data-md-color-scheme="slate"] .md-header,
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: var(--nhn-header-bg);
+}
+
+[data-md-color-scheme="slate"] .md-tabs__link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-md-color-scheme="slate"] .md-tabs__link:hover,
+[data-md-color-scheme="slate"] .md-tabs__link--active {
+  color: #FFFFFF;
+}
+
+/* ============================================================
+ * 5. 본문 폭 확장 (docs.nhncloud.com 처럼 넓게)
+ * ============================================================ */
+
+/* 와이드 화면에서 본문 + 사이드바 폭 모두 확장 */
+@media screen and (min-width: 76.25em) {
+  .md-grid {
+    max-width: 80rem; /* 기본 61rem → 80rem */
+  }
+}
+
+@media screen and (min-width: 100em) {
+  .md-grid {
+    max-width: 90rem; /* 매우 와이드 화면에서 더 넓게 */
+  }
+}
+
+/* 좌측 사이드바 폭 약간 확장 */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    width: 14rem; /* 기본 12.1rem → 14rem */
+  }
+}
