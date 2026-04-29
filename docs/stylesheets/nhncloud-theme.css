@@ -502,116 +502,68 @@ code, pre {
 }
 
 /* ============================================================
- * 14. 상단 Tabs 텍스트 가독성 + 본문 겹침 해결 (최종 정리)
- * ============================================================ */
+ * 14. Material for MkDocs 표준 + NHN 색상 통합 (최종)
+ * ============================================================
+ * Material for MkDocs 9.7.6 기본 디자인을 유지하면서
+ * NHN Cloud 색상 (검은 헤더 + 파란 액센트) 만 적용
+ *
+ * 폰트 아이콘 (toast-icon) 은 자산만 보존, 현재 미사용
+ * 추후 정식 NHN Cloud BI 수령 시 활성화 가능
+ */
 
-/* 탭 메뉴 영역 */
-.md-tabs {
-  background-color: var(--nhn-header-bg) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  z-index: 3;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* 헤더 영역 - NHN 검은색 */
+.md-header {
+  background-color: var(--nhn-header-bg);
 }
 
-/* 탭 링크 - 흰색 텍스트 강제 */
+/* 상단 탭 영역 - NHN 검은색 */
+.md-tabs {
+  background-color: var(--nhn-header-bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 3;
+}
+
+/* 탭 링크 - 흰색 텍스트, Material 표준 */
 .md-tabs__link {
-  color: rgba(255, 255, 255, 0.85) !important;
+  color: rgba(255, 255, 255, 0.85);
   font-size: 0.85rem;
   font-weight: 500;
-  opacity: 1 !important;
+  opacity: 1;
+  margin-top: 0;
   padding: 0 1rem;
+  height: 2.4rem;
+  line-height: 2.4rem;
 }
 
 .md-tabs__link:hover,
 .md-tabs__link--active {
-  color: #FFFFFF !important;
-  opacity: 1 !important;
+  color: #FFFFFF;
+  opacity: 1;
 }
 
-/* 본문이 sticky 탭 아래로 가려지지 않도록 충분한 여백 확보 */
+/* 활성 탭에 밑줄 (Material 표준) */
+.md-tabs__link--active {
+  border-bottom: 2px solid #FFFFFF;
+}
+
+/* 본문 영역 - 충분한 상단 여백 */
 .md-main__inner {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .md-content__inner {
-  padding-top: 1.5rem !important;
+  padding-top: 1.2rem;
 }
 
-/* 본문 첫 헤딩의 위쪽 여백 강화 */
 .md-content__inner > h1:first-of-type,
 .md-content__inner > h2:first-of-type {
-  margin-top: 1rem !important;
-  padding-top: 1rem !important;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
 }
 
-/* 헤더 로고 영역 (정식 NHN Cloud BI 적용 대기 중)
- * - mkdocs.yml 의 theme.logo 가 없으면 이 블록은 무시됨
- * - 추후 정식 BI SVG 수령 시 mkdocs.yml 에 logo: 등록만 하면 자동 동작
- */
+/* 헤더 로고 (정식 NHN BI 수령 시 자동 동작) */
 .md-header__button.md-logo img {
   height: 22px;
   width: auto;
   vertical-align: middle;
-}
-
-/* ============================================================
- * 15. NHN Cloud Toast Icon 폰트 시스템 적용 (sprite 대체)
- * ============================================================
- * 폰트 자산: stylesheets/toast-icon/fonts/ti-icon.{eot,ttf,woff,svg}
- * 폰트 CSS:  stylesheets/toast-icon/ti-icon-style.css (extra_css 로 자동 로드)
- *
- * mkdocs nav 의 카테고리 href 패턴에 따라 자동 매칭
- * - 빠른 시작 (quickstarts) → reference 아이콘
- * - 컴퓨팅 (compute)        → compute 아이콘
- * - 컨테이너 (container)    → Material Icons (폰트에 없음)
- * - 네트워크 (network)      → network 아이콘
- * - 스토리지 (storage)      → storage 아이콘
- */
-
-/* 상단 nav 탭의 카테고리 아이콘 (::before 의사 요소) */
-.md-tabs__link::before {
-  font-family: 'ti-icon' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  font-size: 16px;
-  margin-right: 6px;
-  vertical-align: middle;
-  display: inline-block;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.md-tabs__link:hover::before,
-.md-tabs__link--active::before {
-  color: #FFFFFF;
-}
-
-/* 카테고리별 정확한 유니코드 매핑 */
-.md-tabs__link[href*="quickstarts"]::before { content: "\e901"; } /* reference */
-.md-tabs__link[href*="compute"]::before     { content: "\e915"; } /* compute */
-.md-tabs__link[href*="network"]::before     { content: "\e943"; } /* network */
-.md-tabs__link[href*="storage"]::before     { content: "\e95a"; } /* storage */
-.md-tabs__link[href*="database"]::before    { content: "\e921"; } /* database */
-.md-tabs__link[href*="notification"]::before { content: "\e948"; } /* notification */
-.md-tabs__link[href*="game"]::before        { content: "\e935"; } /* game */
-.md-tabs__link[href*="security"]::before    { content: "\e955"; } /* security */
-.md-tabs__link[href*="analytics"]::before   { content: "\e906"; } /* analytics */
-
-/* 컨테이너 - 폰트에 없음, Material Icons 의 cube 사용 (Unicode 대신 별도 처리) */
-.md-tabs__link[href*="container"]::before {
-  font-family: 'Material Icons' !important;
-  content: "🔲"; /* 임시: Unicode 박스 */
-  /* 또는 SVG 인라인으로 처리 가능 */
-  font-size: 14px;
-}
-
-/* 홈 (href=".") 에는 아이콘 미표시 */
-.md-tabs__link[href="."]::before,
-.md-tabs__link[href="./"]::before {
-  display: none;
 }

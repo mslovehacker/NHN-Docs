@@ -157,5 +157,5 @@ extra:
   homepage: https://nhncloud.duckdns.org/
 
 extra_css:
-  - stylesheets/toast-icon/ti-icon-style.css
+  # - stylesheets/toast-icon/ti-icon-style.css  # 폰트 아이콘 (정식 NHN BI 수령 후 활성화)
   - stylesheets/nhncloud-theme.css
