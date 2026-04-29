@@ -347,6 +347,160 @@ nav:
         - API 가이드: network/traffic-mirroring/public-api.md
     - Network 통합:
         - 릴리스 노트: network/network/release-notes.md
+  - 스토리지:
+    - Block Storage:
+        - 개요: storage/block-storage/overview.md
+        - 콘솔 가이드: storage/block-storage/console-guide.md
+        - API 가이드: storage/block-storage/api-guide.md
+        - API 가이드: storage/block-storage/public-api.md
+        - Data Wiping Guide: storage/block-storage/data-wiping-guide.md
+        - 오류 코드: storage/block-storage/error-code.md
+        - 릴리스 노트: storage/block-storage/release-notes.md
+    - NAS:
+        - 개요: storage/nas/overview.md
+        - 콘솔 가이드: storage/nas/console-guide.md
+        - 릴리스 노트: storage/nas/release-notes.md
+    - Online NAS:
+        - 개요: storage/online-nas/overview.md
+        - 콘솔 가이드: storage/online-nas/console-guide.md
+        - API 가이드: storage/online-nas/api-guide.md
+        - Terraform Guide: storage/online-nas/terraform-guide.md
+        - 릴리스 노트: storage/online-nas/release-notes.md
+    - Object Storage:
+        - 개요: storage/object-storage/Overview.md
+        - 콘솔 가이드: storage/object-storage/console-guide.md
+        - API 가이드: storage/object-storage/api-guide.md
+        - Acl Guide Ngcc: storage/object-storage/acl-guide-ngcc.md
+        - Acl Guide: storage/object-storage/acl-guide.md
+        - API 가이드: storage/object-storage/api-guide-ngcc.md
+        - 콘솔 가이드: storage/object-storage/console-guide-ngcc.md
+        - 릴리스 노트: storage/object-storage/release-notes-ngcc.md
+        - S3 Api Guide Ngcc: storage/object-storage/s3-api-guide-ngcc.md
+        - S3 Api Guide: storage/object-storage/s3-api-guide.md
+        - Third Party Tools Guide Ngcc: storage/object-storage/third-party-tools-guide-ngcc.md
+        - Third Party Tools Guide: storage/object-storage/third-party-tools-guide.md
+        - Trouble Shooting Guide: storage/object-storage/trouble-shooting-guide.md
+        - 릴리스 노트: storage/object-storage/release-notes.md
+    - Backup:
+        - 개요: storage/backup/overview.md
+        - 콘솔 가이드: storage/backup/console-guide.md
+        - 릴리스 노트: storage/backup/release-notes.md
+    - Veritas Backup:
+        - 개요: storage/veritas-backup/overview.md
+        - 콘솔 가이드: storage/veritas-backup/console-guide.md
+        - 릴리스 노트: storage/veritas-backup/release-notes.md
+    - Data Transporter:
+        - 개요: storage/data-transporter/overview.md
+        - 릴리스 노트: storage/data-transporter/release-notes.md
+    - Storage Gateway:
+        - 개요: storage/storage-gateway/overview.md
+        - 콘솔 가이드: storage/storage-gateway/console-guide.md
+        - 릴리스 노트: storage/storage-gateway/release-notes.md
+    - File Crafter:
+        - 개요: storage/file-crafter/overview.md
+        - 콘솔 가이드: storage/file-crafter/console-guide.md
+        - API 가이드: storage/file-crafter/api-guide.md
+        - Callback Api Guide: storage/file-crafter/callback-api-guide.md
+        - 오류 코드: storage/file-crafter/error-code.md
+        - 릴리스 노트: storage/file-crafter/release-notes.md
+    - Easy Queue:
+        - 개요: storage/easy-queue/overview.md
+        - 콘솔 가이드: storage/easy-queue/console-guide.md
+        - API 가이드: storage/easy-queue/public-api.md
+        - API 오류 코드: storage/easy-queue/api-error-codes.md
+        - Kafka Client Guide: storage/easy-queue/kafka-client-guide.md
+        - 릴리스 노트: storage/easy-queue/release-notes.md
+    - Data Lake Storage:
+        - 개요: storage/data-lake-storage/overview.md
+        - Abort Multipart Upload: storage/data-lake-storage/abort-multipart-upload.md
+        - API 가이드: storage/data-lake-storage/api-guide-common.md
+        - Complete Multipart Upload: storage/data-lake-storage/complete-multipart-upload.md
+        - Console User Guide: storage/data-lake-storage/console-user-guide.md
+        - Create Bucket: storage/data-lake-storage/create-bucket.md
+        - Create Multipart Upload: storage/data-lake-storage/create-multipart-upload.md
+        - Delete Bucket: storage/data-lake-storage/delete-bucket.md
+        - Delete Object: storage/data-lake-storage/delete-object.md
+        - Get Object: storage/data-lake-storage/get-object.md
+        - Head Object: storage/data-lake-storage/head-object.md
+        - List Buckets: storage/data-lake-storage/list-buckets.md
+        - List Objects V2: storage/data-lake-storage/list-objects-v2.md
+        - List Parts: storage/data-lake-storage/list-parts.md
+        - Put Object: storage/data-lake-storage/put-object.md
+        - Upload Part: storage/data-lake-storage/upload-part.md
+        - 릴리스 노트: storage/data-lake-storage/release-notes.md
+  - 데이터베이스:
+    - RDS:
+        - 개요: database/rds/overview.md
+        - Analysis: database/rds/analysis.md
+        - API 가이드: database/rds/api-guide-v2.0.md
+        - API 가이드: database/rds/api-guide-v3.0.md
+        - API 가이드: database/rds/api-guide-v4.0.md
+        - Backup And Restore: database/rds/backup-and-restore.md
+        - Db Engine: database/rds/db-engine.md
+        - Db Instance: database/rds/db-instance.md
+        - Db Security Group: database/rds/db-security-group.md
+        - Notification: database/rds/notification.md
+        - Parameter Group: database/rds/parameter-group.md
+        - Server Dashboard: database/rds/server-dashboard.md
+        - 릴리스 노트: database/rds/release-notes.md
+    - RDS for MySQL:
+        - 개요: database/mysql/overview.md
+        - Mysql Instance Guide: database/mysql/mysql-instance-guide.md
+    - RDS for MariaDB:
+        - 개요: database/mariadb/overview.md
+        - Mariadb Instance Guide: database/mariadb/mariadb-instance-guide.md
+    - RDS for PostgreSQL:
+        - 개요: database/postgresql/overview.md
+        - Postgresql Instance Guide: database/postgresql/postgresql-instance-guide.md
+    - RDS for MS-SQL:
+        - 개요: database/mssql/overview.md
+        - Ms Sql Instance Guide: database/mssql/ms-sql-instance-guide.md
+    - RDS for MariaDB (구):
+        - 개요: database/rds-mariadb/overview.md
+        - Analysis: database/rds-mariadb/analysis.md
+        - API 가이드: database/rds-mariadb/api-guide-v2.0.md
+        - API 가이드: database/rds-mariadb/api-guide-v3.0.md
+        - API 가이드: database/rds-mariadb/api-guide-v4.0.md
+        - Backup And Restore: database/rds-mariadb/backup-and-restore.md
+        - Db Instance: database/rds-mariadb/db-instance.md
+        - Db Security Group: database/rds-mariadb/db-security-group.md
+        - Notification: database/rds-mariadb/notification.md
+        - Parameter Group: database/rds-mariadb/parameter-group.md
+        - Server Dashboard: database/rds-mariadb/server-dashboard.md
+        - 릴리스 노트: database/rds-mariadb/release-notes.md
+    - RDS for PostgreSQL (구):
+        - 개요: database/rds-postgresql/overview.md
+        - API 가이드: database/rds-postgresql/api-guide-v1.0.md
+        - Backup And Restore: database/rds-postgresql/backup-and-restore.md
+        - Db Engine: database/rds-postgresql/db-engine.md
+        - Db Extension: database/rds-postgresql/db-extension.md
+        - Db Instance: database/rds-postgresql/db-instance.md
+        - Db Security Group: database/rds-postgresql/db-security-group.md
+        - Event: database/rds-postgresql/event.md
+        - Notification: database/rds-postgresql/notification.md
+        - Parameter Group: database/rds-postgresql/parameter-group.md
+        - Server Dashboard: database/rds-postgresql/server-dashboard.md
+        - 릴리스 노트: database/rds-postgresql/release-notes.md
+    - RDS for SQL Server:
+        - 개요: database/rds-sqlserver/overview.md
+        - 콘솔 가이드: database/rds-sqlserver/console-guide.md
+        - Backup Restore: database/rds-sqlserver/backup-restore.md
+        - Database Connection: database/rds-sqlserver/database-connection.md
+        - Database Usage: database/rds-sqlserver/database-usage.md
+        - Db Instance: database/rds-sqlserver/db-instance.md
+        - Monitoring: database/rds-sqlserver/monitoring.md
+        - Notification Group: database/rds-sqlserver/notification-group.md
+        - Parameter Group: database/rds-sqlserver/parameter-group.md
+        - Reserved Process: database/rds-sqlserver/reserved-process.md
+        - 릴리스 노트: database/rds-sqlserver/release-notes.md
+    - Easy Cache:
+        - 개요: database/easy-cache/overview.md
+        - Developer Guide: database/easy-cache/developer-guide.md
+        - 릴리스 노트: database/easy-cache/release-notes.md
+    - DBSafer:
+        - 개요: database/dbsafer/Overview.md
+        - 콘솔 가이드: database/dbsafer/console-guide.md
+        - 릴리스 노트: database/dbsafer/release-notes.md
 
 extra:
   social:
