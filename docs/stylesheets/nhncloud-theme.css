@@ -1105,3 +1105,156 @@
 [data-md-color-scheme="slate"] .md-main {
   background-color: var(--md-default-bg-color);
 }
+
+/* ============================================================
+ * 14. 폰트 계층 + 토글 + 아이콘 + 여백 + breadcrumb
+ * ============================================================ */
+
+/* ============================
+ * P1-1: 폰트 계층 (1단계 크게, 하위 작게)
+ * ============================ */
+@media screen and (min-width: 76.25em) {
+  /* 1 단계 (컨테이너, 컴퓨팅) - 가장 크게 + 굵게 */
+  .md-sidebar--primary > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link {
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    padding: 0.6rem 0.5rem 0.6rem 1.75rem !important;
+    margin: 0.2rem 0;
+    color: var(--nhn-text-primary);
+  }
+  
+  /* 2 단계 (NKS) - 중간 */
+  .md-sidebar--primary .md-nav .md-nav__item > .md-nav__link {
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    padding: 0.4rem 0.5rem 0.4rem 1.5rem !important;
+  }
+  
+  /* 3 단계 (개요/사용 가이드) - 작게 */
+  .md-sidebar--primary .md-nav .md-nav .md-nav__item > .md-nav__link {
+    font-size: 0.78rem !important;
+    font-weight: 400 !important;
+    padding: 0.3rem 0.5rem 0.3rem 2.25rem !important;
+  }
+  
+  /* 4 단계 - 더 작게 */
+  .md-sidebar--primary .md-nav .md-nav .md-nav .md-nav__item > .md-nav__link {
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.5rem 0.25rem 3rem !important;
+  }
+}
+
+/* ============================
+ * P1-2: 1단계 카테고리 아이콘 (sprite 활용)
+ * ============================ */
+@media screen and (min-width: 76.25em) {
+  /* 1단계 항목의 라벨에 아이콘 표시 */
+  .md-sidebar--primary > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link {
+    position: relative;
+  }
+  
+  .md-sidebar--primary > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link::before {
+    content: "";
+    position: absolute;
+    left: 0.3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.1rem;
+    height: 1.1rem;
+    background-image: url("../assets/images/sp_document.png");
+    background-repeat: no-repeat;
+    background-size: 500px 500px;
+    background-position: -1000px -1000px;
+    opacity: 0.75;
+    flex-shrink: 0;
+  }
+  
+  /* href 패턴 매칭으로 카테고리별 아이콘 */
+  .md-sidebar--primary .md-nav__item:has(a.md-nav__link[href*="quickstarts"]) > .md-nav__link::before,
+  .md-sidebar--primary .md-nav__item:has(.md-nav__link[for*="quickstarts" i]) > .md-nav__link::before {
+    background-position: -220px -64px;
+  }
+  
+  .md-sidebar--primary .md-nav__item:has(a.md-nav__link[href*="compute"]) > .md-nav__link::before,
+  .md-sidebar--primary .md-nav__item:has(.md-nav__list a[href*="compute"]) > .md-nav__link::before {
+    background-position: 0 -20px;
+  }
+  
+  .md-sidebar--primary .md-nav__item:has(a.md-nav__link[href*="container"]) > .md-nav__link::before,
+  .md-sidebar--primary .md-nav__item:has(.md-nav__list a[href*="container"]) > .md-nav__link::before {
+    background-position: -44px -64px;
+  }
+}
+
+/* ============================
+ * P1-3: 상단 탭/헤더 양옆 여백
+ * ============================ */
+.md-tabs__inner,
+.md-header__inner {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-tabs__inner,
+  .md-header__inner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 100em) {
+  .md-tabs__inner,
+  .md-header__inner {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* ============================
+ * P2: navigation.path breadcrumb 스타일
+ * ============================ */
+.md-content__inner .md-nav__path {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--nhn-primary);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--nhn-border);
+}
+
+.md-content__inner .md-nav__path-item {
+  display: inline;
+  color: var(--nhn-text-primary);
+}
+
+.md-content__inner .md-nav__path-item--current {
+  color: var(--nhn-primary);
+  font-weight: 600;
+}
+
+/* breadcrumb 의 ' > ' 구분자 */
+.md-content__inner .md-nav__path-item:not(:last-child)::after {
+  content: " > ";
+  margin: 0 0.4rem;
+  color: var(--nhn-text-primary);
+  opacity: 0.5;
+}
+
+/* ============================
+ * 다크모드 대응
+ * ============================ */
+[data-md-color-scheme="slate"] .md-content__inner .md-nav__path {
+  color: var(--nhn-primary-light);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-md-color-scheme="slate"] .md-content__inner .md-nav__path-item {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link::before {
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+}
