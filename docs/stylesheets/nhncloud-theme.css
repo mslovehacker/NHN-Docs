@@ -500,3 +500,67 @@ code, pre {
 .md-footer__inner {
   padding-bottom: 2rem;
 }
+
+/* ============================================================
+ * 14. NHN Cloud 카테고리 Sprite 아이콘
+ * ============================================================
+ * 정식 NHN Cloud sprite 이미지 (sp_document.png, 500x500) 활용
+ * 각 아이콘 20x20 픽셀, 22 픽셀 간격
+ * mkdocs-material 의 navigation.tabs 영역에 표시
+ */
+
+/* 상단 네비게이션 탭 (카테고리)에 아이콘 표시 */
+.md-tabs__link::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  margin-bottom: -4px;
+  background-image: url('../assets/images/sp_document.png');
+  background-repeat: no-repeat;
+  background-position: 100px 100px; /* 기본: 안 보이는 위치 */
+  filter: brightness(0) invert(1); /* 흰색으로 변환 (검은 헤더 배경에 맞춤) */
+  opacity: 0.85;
+  vertical-align: middle;
+}
+
+.md-tabs__link:hover::before,
+.md-tabs__link--active::before {
+  opacity: 1;
+}
+
+/* 카테고리별 아이콘 위치 매핑 (CSS 추출 결과 기반) */
+.md-tabs__link[href*="quickstarts"]::before  { background-position: -220px -64px; }
+.md-tabs__link[href*="compute"]::before      { background-position: 0 -20px; }
+.md-tabs__link[href*="container"]::before    { background-position: -44px -64px; }
+.md-tabs__link[href*="network"]::before      { background-position: -22px -20px; }
+.md-tabs__link[href*="storage"]::before      { background-position: -44px -20px; }
+.md-tabs__link[href*="database"]::before     { background-position: -66px -20px; }
+.md-tabs__link[href*="game"]::before         { background-position: -88px -20px; }
+.md-tabs__link[href*="notification"]::before { background-position: -154px -20px; }
+.md-tabs__link[href*="content"]::before      { background-position: -132px -20px; }
+.md-tabs__link[href*="ai-service"]::before   { background-position: -88px -64px; }
+
+/* 좌측 사이드바의 1단계 카테고리에도 동일 아이콘 (선택) */
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  margin-bottom: -2px;
+  background-image: url('../assets/images/sp_document.png');
+  background-repeat: no-repeat;
+  background-position: 100px 100px;
+  background-size: 80% 80%; /* 약간 축소 */
+  opacity: 0.7;
+  vertical-align: middle;
+}
+
+/* mkdocs-material 헤더 로고 크기 조정 (apple-touch-icon 이 180x180 이라 큼) */
+.md-header__button.md-logo img {
+  height: 28px;
+  width: auto;
+  border-radius: 4px;
+}
