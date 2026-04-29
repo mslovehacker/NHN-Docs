@@ -563,3 +563,56 @@ code, pre {
   width: auto;
   border-radius: 4px;
 }
+
+/* ============================================================
+ * 15. 상단 Tabs 텍스트 가독성 + 본문 겹침 해결 (긴급 보정)
+ * ============================================================ */
+
+/* 탭 메뉴 자체 (검은 배경) */
+.md-tabs {
+  background-color: var(--nhn-header-bg) !important;
+  color: #FFFFFF !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* 탭 링크 텍스트 - 흰색으로 강제 */
+.md-tabs__link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 0.85rem;
+  font-weight: 500;
+  opacity: 1 !important;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  color: #FFFFFF !important;
+  opacity: 1 !important;
+}
+
+/* 탭 영역 자체에 z-index + sticky 동작 보정 */
+.md-tabs--active {
+  background-color: var(--nhn-header-bg) !important;
+}
+
+/* 본문 영역이 sticky tabs 에 가려지지 않도록 padding 보정 */
+.md-main {
+  padding-top: 0;
+}
+
+.md-content {
+  padding-top: 1rem;
+}
+
+/* 본문 첫 H1 의 상단 여백 강화 (탭 메뉴와 겹침 방지) */
+.md-content__inner > h1:first-child,
+.md-content__inner > h2:first-child {
+  margin-top: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+/* sprite 아이콘 위치 미세 조정 */
+.md-tabs__link::before {
+  margin-right: 8px;
+  margin-bottom: -3px;
+  vertical-align: middle;
+}
