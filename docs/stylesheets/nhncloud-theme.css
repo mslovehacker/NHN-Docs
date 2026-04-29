@@ -1428,3 +1428,151 @@
 [data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__link:hover .md-nav__icon {
   color: var(--nhn-primary-light);
 }
+
+/* ============================================================
+ * 15. 헤더 가독성 강화 (검색/아이콘) + 정밀 여백
+ * ============================================================ */
+
+/* ============================
+ * 1. 헤더 우측 영역 아이콘 모두 흰색 강제
+ * ============================ */
+
+/* 헤더의 모든 아이콘 (검색, 언어, 다크모드 토글, GitHub) - 흰색 */
+.md-header .md-icon,
+.md-header svg,
+.md-header__button {
+  color: rgba(255, 255, 255, 0.85) !important;
+  fill: rgba(255, 255, 255, 0.85);
+}
+
+.md-header .md-icon:hover,
+.md-header__button:hover {
+  color: #FFFFFF !important;
+  fill: #FFFFFF;
+}
+
+/* 검색 돋보기 아이콘 */
+.md-search__icon[for="__search"],
+.md-search__icon svg {
+  color: rgba(255, 255, 255, 0.85) !important;
+  fill: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* 검색 input - 활성화 전에는 검은 배경에 흰 텍스트 */
+.md-search__input {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #FFFFFF !important;
+  border-radius: 4px;
+  padding-left: 2.5rem !important;
+}
+
+/* 검색 placeholder ("검색") - 회색이지만 명확히 보이게 */
+.md-search__input::placeholder {
+  color: rgba(255, 255, 255, 0.65) !important;
+  opacity: 1;
+}
+
+.md-search__input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+/* 검색창 활성화 시 (포커스) - 흰 배경으로 전환 */
+.md-search__input:focus,
+.md-search__input:hover {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  color: var(--nhn-text-primary) !important;
+}
+
+.md-search__input:focus::placeholder {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 검색창 활성화 시 돋보기 아이콘 검정으로 */
+.md-search__input:focus ~ .md-search__icon,
+.md-search__input:hover ~ .md-search__icon {
+  color: var(--nhn-text-primary) !important;
+  fill: var(--nhn-text-primary) !important;
+}
+
+/* 언어 선택 아이콘 (文A) */
+.md-header__option label,
+.md-header__option .md-icon {
+  color: rgba(255, 255, 255, 0.85) !important;
+  fill: rgba(255, 255, 255, 0.85);
+}
+
+.md-header__option label:hover {
+  color: #FFFFFF !important;
+}
+
+/* 다크모드 / 라이트모드 토글 아이콘 */
+.md-header__button[data-md-component="palette"] {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.md-header__button[data-md-component="palette"] svg {
+  fill: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* GitHub 아이콘 / 텍스트 */
+.md-header__source,
+.md-source,
+.md-source__icon,
+.md-source__repository,
+.md-source__facts {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.md-source__icon svg {
+  fill: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* ============================
+ * 2. 상단 헤더 / 탭 정밀 여백 (본문 max-width 와 일치)
+ * ============================ */
+
+/* 모바일 (기본) */
+.md-header__inner,
+.md-tabs__inner {
+  padding: 0 1rem !important;
+  max-width: none !important;
+}
+
+/* 태블릿 (60em+) */
+@media screen and (min-width: 60em) {
+  .md-header__inner,
+  .md-tabs__inner {
+    padding: 0 2rem !important;
+  }
+}
+
+/* 데스크탑 (76.25em+) - 본문 max-width 80rem 과 동일 */
+@media screen and (min-width: 76.25em) {
+  .md-header__inner,
+  .md-tabs__inner {
+    padding: 0 calc((100% - 80rem) / 2 + 1.5rem) !important;
+    max-width: 100% !important;
+  }
+}
+
+/* 와이드 (100em+) - 본문 max-width 90rem 과 동일 */
+@media screen and (min-width: 100em) {
+  .md-header__inner,
+  .md-tabs__inner {
+    padding: 0 calc((100% - 90rem) / 2 + 2rem) !important;
+  }
+}
+
+/* ============================
+ * 3. 상단 탭 텍스트 가독성 재확인
+ * ============================ */
+.md-tabs__link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500;
+  opacity: 1 !important;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  color: #FFFFFF !important;
+}
