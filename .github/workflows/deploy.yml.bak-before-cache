@@ -33,32 +33,13 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: Cache mkdocs build artifacts
-        uses: actions/cache@v4
-        with:
-          path: |
-            .cache
-            site
-          key: mkdocs-${{ runner.os }}-${{ hashFiles('mkdocs.yml', 'requirements.txt') }}-${{ hashFiles('docs/**/*.md', 'docs/**/*.css', 'overrides/**/*.html') }}
-          restore-keys: |
-            mkdocs-${{ runner.os }}-${{ hashFiles('mkdocs.yml', 'requirements.txt') }}-
-            mkdocs-${{ runner.os }}-
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Build static site
-        run: |
-          # 캐시가 복원되었으면 --dirty 모드, 아니면 전체 빌드
-          if [ -d "site" ] && [ -f "site/index.html" ]; then
-            echo "Cache hit - dirty build"
-            mkdocs build --dirty --verbose
-          else
-            echo "No cache - full build"
-            mkdocs build --verbose
-          fi
+        run: mkdocs build --verbose
 
       - name: Verify build output
         run: |
