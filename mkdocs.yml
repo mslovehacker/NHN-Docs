@@ -141,7 +141,94 @@ nav:
   - 빠른 시작:
       - 개요: quickstarts/overview.md
   - 컴퓨팅:
-      - 인스턴스: compute/instance.md
+    - 인스턴스:
+        - 개요: compute/instance/overview.md
+        - 콘솔 가이드: compute/instance/console-guide.md
+        - API 가이드: compute/instance/public-api.md
+        - Component Guide: compute/instance/component-guide.md
+        - Kernel Guide: compute/instance/kernel-guide.md
+        - Terraform Guide: compute/instance/terraform-guide.md
+        - 문제 해결 가이드: compute/instance/troubleshooting-guide.md
+    - 이미지:
+        - 개요: compute/image/overview.md
+        - 콘솔 가이드: compute/image/console-guide.md
+        - API 가이드: compute/image/public-api.md
+    - 이미지 (구버전):
+        - 개요: compute/image-legacy/Overview.md
+        - 콘솔 가이드: compute/image-legacy/console-guide.md
+        - API 가이드: compute/image-legacy/api-guide.md
+        - API 가이드: compute/image-legacy/api-guide-v2.0.md
+        - Error Code: compute/image-legacy/error-code.md
+        - 릴리스 노트: compute/image-legacy/release-notes.md
+    - Image Builder:
+        - 개요: compute/image-builder/overview.md
+        - 콘솔 가이드: compute/image-builder/console-guide.md
+        - Component Guide: compute/image-builder/component-guide.md
+    - 인스턴스 템플릿:
+        - 개요: compute/instance-template/overview.md
+        - 콘솔 가이드: compute/instance-template/console-guide.md
+    - Auto Scale:
+        - 개요: compute/auto-scale/overview.md
+        - 콘솔 가이드: compute/auto-scale/console-guide.md
+        - API 가이드: compute/auto-scale/api-guide.md
+        - Error Code: compute/auto-scale/error-code.md
+    - GPU 인스턴스:
+        - 개요: compute/gpu/overview.md
+        - 콘솔 가이드: compute/gpu/console-guide.md
+        - 콘솔 가이드: compute/gpu/console-guide-gov_old.md
+    - 베어메탈:
+        - 개요: compute/baremetal/overview.md
+        - 콘솔 가이드: compute/baremetal/console-guide.md
+    - Virtual Desktop:
+        - 개요: compute/virtualdesktop/overview.md
+        - 콘솔 가이드: compute/virtualdesktop/console-guide.md
+        - 릴리스 노트: compute/virtualdesktop/release-notes.md
+    - NAT Instance:
+        - 개요: compute/nat-instance/overview.md
+        - 콘솔 가이드: compute/nat-instance/console-guide.md
+    - Cloud Functions:
+        - 개요: compute/cloud-functions/overview.md
+        - 콘솔 가이드: compute/cloud-functions/console-guide.md
+        - API 가이드: compute/cloud-functions/api-guide-v1-0.md
+        - Code Template Dotnet Guide: compute/cloud-functions/code-template-dotnet-guide.md
+        - Code Template Go Guide: compute/cloud-functions/code-template-go-guide.md
+        - Code Template Java Guide: compute/cloud-functions/code-template-java-guide.md
+        - Code Template Node Guide: compute/cloud-functions/code-template-node-guide.md
+        - Code Template Python Guide: compute/cloud-functions/code-template-python-guide.md
+        - Code Template Ruby Guide: compute/cloud-functions/code-template-ruby-guide.md
+        - Trigger Guide: compute/cloud-functions/trigger-guide.md
+        - 릴리스 노트: compute/cloud-functions/release-notes.md
+    - Compute 모니터링:
+        - 개요: compute/monitoring/Overview.md
+        - 콘솔 가이드: compute/monitoring/console-guide.md
+    - Compute 모니터링 v2:
+        - 개요: compute/monitoring-v2/overview.md
+        - 콘솔 가이드: compute/monitoring-v2/console-guide.md
+    - 시스템 모니터링:
+        - 개요: compute/system-monitoring/overview.md
+        - 콘솔 가이드: compute/system-monitoring/console-guide.md
+        - Open Metrics Api Guide: compute/system-monitoring/open-metrics-api-guide.md
+        - Open Metrics Console Guide: compute/system-monitoring/open-metrics-console-guide.md
+        - Open Metrics Overview: compute/system-monitoring/open-metrics-overview.md
+        - 릴리스 노트: compute/system-monitoring/release-notes.md
+    - ML Deep Learning Instance:
+        - 개요: compute/ml-deep-learning-instance/overview.md
+        - 사용 가이드: compute/ml-deep-learning-instance/user-guide.md
+    - CUBRID Instance:
+        - 개요: compute/cubrid-instance-guide/overview.md
+        - Cubrid Instance Guide: compute/cubrid-instance-guide/cubrid-instance-guide.md
+    - Tibero Instance:
+        - 개요: compute/tibero-instance-guide/overview.md
+        - Tibero Instance Guide: compute/tibero-instance-guide/tibero-instance-guide.md
+    - JEUS Instance:
+        - 개요: compute/jeus-instance/overview.md
+        - Jeus Instance Guide: compute/jeus-instance/jeus-instance-guide.md
+    - WebtoB Instance:
+        - 개요: compute/webtob-instance/overview.md
+        - Webtob Instance Guide: compute/webtob-instance/webtob-instance-guide.md
+    - Compute 통합:
+        - Identity Api: compute/compute/identity-api.md
+        - 릴리스 노트: compute/compute/release-notes.md
   - 컨테이너:
     - NHN Kubernetes Service (NKS):
         - 개요: container/nks/overview.md
