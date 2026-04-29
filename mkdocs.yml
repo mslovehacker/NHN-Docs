@@ -76,6 +76,15 @@ plugins:
             개요: Overview
             컴퓨팅: Compute
             인스턴스: Instance
+            컨테이너: Container
+            NKS: NKS
+            사용 가이드: User Guide
+            API 가이드: API Guide
+            백업 가이드: Backup Guide
+            Istio 가이드: Istio Guide
+            버전 가이드: Version Guide
+            문제 해결 가이드: Troubleshooting Guide
+            릴리스 노트: Release Notes
         - locale: ja
           name: 日本語
           build: true
@@ -85,6 +94,15 @@ plugins:
             개요: 概要
             컴퓨팅: コンピュート
             인스턴스: インスタンス
+            컨테이너: コンテナ
+            NKS: NKS
+            사용 가이드: ユーザーガイド
+            API 가이드: APIガイド
+            백업 가이드: バックアップガイド
+            Istio 가이드: Istioガイド
+            버전 가이드: バージョンガイド
+            문제 해결 가이드: トラブルシューティングガイド
+            릴리스 노트: リリースノート
 
 markdown_extensions:
   - abbr
@@ -121,6 +139,16 @@ nav:
       - 개요: quickstarts/overview.md
   - 컴퓨팅:
       - 인스턴스: compute/instance.md
+  - 컨테이너:
+      - NKS:
+          - 개요: container/nks/overview.md
+          - 사용 가이드: container/nks/user-guide.md
+          - API 가이드: container/nks/public-api.md
+          - 백업 가이드: container/nks/backup-guide.md
+          - Istio 가이드: container/nks/istio-guide.md
+          - 버전 가이드: container/nks/version-guide.md
+          - 문제 해결 가이드: container/nks/troubleshooting-guide.md
+          - 릴리스 노트: container/nks/release-notes.md
 
 extra:
   social:
