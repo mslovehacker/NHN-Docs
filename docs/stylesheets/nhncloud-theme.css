@@ -1029,3 +1029,79 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================================
+ * 13. 본문↔푸터 사이 세로선 노출 영구 해결
+ * ============================================================
+ * 방법: .md-container::before 의 bottom 위치를 푸터 위로 끌어올림
+ * + .md-footer 에 큰 그림자(box-shadow)로 위쪽 영역 자연스럽게 가림
+ */
+
+@media screen and (min-width: 76.25em) {
+  /* 컨테이너의 ::before 세로선 - 본문 끝까지만 (푸터 영역 진입 안 함) */
+  .md-container::before {
+    bottom: auto;
+    height: auto;
+    /* 본문 영역 (.md-main) 의 높이만큼만 */
+  }
+  
+  /* 본문 자체에 세로선 그리기 (정확한 영역만) */
+  .md-main {
+    position: relative;
+    background-color: #FFFFFF;
+  }
+  
+  /* 본문에 좌측 세로선 (본문 시작 ~ 끝) */
+  .md-main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 12.1rem;
+    width: 1px;
+    background-color: var(--nhn-border);
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* 본문에 우측 세로선 */
+  .md-main::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 12.1rem;
+    width: 1px;
+    background-color: var(--nhn-border);
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* 기존 .md-container::before 비활성화 (중복 방지) */
+  .md-container::before {
+    display: none !important;
+  }
+}
+
+/* 푸터를 본문 위로 끌어올려 세로선 가림 */
+.md-footer {
+  position: relative;
+  z-index: 5;
+  margin-top: 0;
+}
+
+/* nhn-footer 도 동일 처리 */
+.nhn-footer {
+  position: relative;
+  z-index: 5;
+}
+
+/* 다크모드에서도 동일 */
+[data-md-color-scheme="slate"] .md-main::before,
+[data-md-color-scheme="slate"] .md-main::after {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-md-color-scheme="slate"] .md-main {
+  background-color: var(--md-default-bg-color);
+}
