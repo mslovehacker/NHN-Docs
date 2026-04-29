@@ -20,3 +20,5 @@ Thumbs.db
 *.pem
 *.key
 .env
+.simplified-bak
+.with-gnb-bak
