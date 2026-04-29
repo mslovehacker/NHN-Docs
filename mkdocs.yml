@@ -1,0 +1,127 @@
+site_name: NHN Cloud 사용자 가이드
+site_description: NHN Cloud 서비스 공식 사용자 가이드
+site_url: https://nhncloud.duckdns.org/
+site_author: NHN Cloud Technical Training
+
+repo_url: https://github.com/mslovehacker/NHN-Docs
+repo_name: mslovehacker/NHN-Docs
+edit_uri: edit/poc-mkdocs-material/docs/
+
+copyright: Copyright &copy; NHN Cloud Corp. All rights reserved.
+
+theme:
+  name: material
+  language: ko
+
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.action.edit
+    - content.action.view
+    - content.tabs.link
+    - toc.follow
+
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 다크 모드로 전환
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 라이트 모드로 전환
+
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+
+plugins:
+  - search:
+      lang:
+        - ko
+        - en
+        - ja
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: ko
+          name: 한국어
+          default: true
+          build: true
+        - locale: en
+          name: English
+          build: true
+          nav_translations:
+            홈: Home
+            빠른 시작: Quickstart
+            개요: Overview
+            컴퓨팅: Compute
+            인스턴스: Instance
+        - locale: ja
+          name: 日本語
+          build: true
+          nav_translations:
+            홈: ホーム
+            빠른 시작: クイックスタート
+            개요: 概要
+            컴퓨팅: コンピュート
+            인스턴스: インスタンス
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      permalink_title: 이 섹션으로 직접 이동
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+nav:
+  - 홈: index.md
+  - 빠른 시작:
+      - 개요: quickstarts/overview.md
+  - 컴퓨팅:
+      - 인스턴스: compute/instance.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/mslovehacker/NHN-Docs
+      name: NHN Cloud Docs GitHub

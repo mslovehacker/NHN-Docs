@@ -1,0 +1,104 @@
+name: Build and Deploy NHN Cloud Docs
+
+on:
+  push:
+    branches:
+      - poc-mkdocs-material
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-docs-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    name: Build with mkdocs and deploy via SSH
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          submodules: false
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build static site
+        run: mkdocs build --strict --verbose
+
+      - name: Verify build output
+        run: |
+          if [ ! -f ./site/index.html ]; then
+            echo "Default (ko) build output missing"
+            exit 1
+          fi
+          if [ ! -d ./site/en ]; then
+            echo "English build output missing"
+            exit 1
+          fi
+          if [ ! -d ./site/ja ]; then
+            echo "Japanese build output missing"
+            exit 1
+          fi
+          FILE_COUNT=$(find ./site -type f | wc -l)
+          if [ "$FILE_COUNT" -lt 30 ]; then
+            echo "Suspiciously few files in build output: $FILE_COUNT"
+            exit 1
+          fi
+          echo "Build verified: $FILE_COUNT files generated"
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-${{ github.sha }}
+          path: ./site
+          retention-days: 14
+
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -p ${{ secrets.SERVER_PORT }} -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Backup current site on server
+        run: |
+          ssh -i ~/.ssh/id_ed25519 -p ${{ secrets.SERVER_PORT }} \
+              ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} \
+              "sudo rsync -a --delete /var/www/docs/ /var/www/docs.backup/ 2>/dev/null || true"
+
+      - name: Deploy via rsync (with sudo)
+        run: |
+          rsync -avz --delete \
+            --rsync-path="sudo rsync" \
+            -e "ssh -i ~/.ssh/id_ed25519 -p ${{ secrets.SERVER_PORT }}" \
+            ./site/ \
+            ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/docs/
+
+      - name: Reload nginx
+        run: |
+          ssh -i ~/.ssh/id_ed25519 -p ${{ secrets.SERVER_PORT }} \
+              ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} \
+              "sudo systemctl reload nginx"
+
+      - name: Verify deployment
+        run: |
+          sleep 3
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            https://${{ secrets.SERVER_HOST }}/ || echo "000")
+          if [ "$HTTP_STATUS" != "200" ]; then
+            echo "Deployment verification failed: HTTP $HTTP_STATUS"
+            exit 1
+          fi
+          echo "Deployment verified: HTTP $HTTP_STATUS"
