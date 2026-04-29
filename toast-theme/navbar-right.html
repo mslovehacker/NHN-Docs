@@ -1,0 +1,22 @@
+<link href="{{ base_url }}/css/navbar-right.css" rel="stylesheet">
+
+<div class="page__rnb">
+		<div id="list__rnb" class="list-group page__rnb-list">
+			<h6 class="rnb__top">
+				<a href="#" class="p-0">{{ config.extra.i18n.rnb.contents }}</a>
+			</h6>
+			<ul class="lst_rnb_item">
+				{% for toc_item in toc %}
+					<li class="rnb_item">
+						<a class="list-group-item list-group-item-action main" href="{{ toc_item.url }}">{{ toc_item.title }}</a>
+					</li>
+					{% for toc_item in toc_item.children %}
+						<li class="rnb_item">
+							<a class="list-group-item list-group-item-action" href="{{ toc_item.url }}">{{ toc_item.title }}</a>
+						</li>
+					{% endfor %}
+				{% endfor %}
+			</ul>
+		</div>
+	<a href="#" class="btn_top">TOP</a>
+</div>

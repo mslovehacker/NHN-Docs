@@ -1,0 +1,140 @@
+@font-face {
+  font-family: 'ti-common';
+  src:  url('fonts/ti-common.eot?cwpnu7');
+  src:  url('fonts/ti-common.eot?cwpnu7#iefix') format('embedded-opentype'),
+    url('fonts/ti-common.ttf?cwpnu7') format('truetype'),
+    url('fonts/ti-common.woff?cwpnu7') format('woff'),
+    url('fonts/ti-common.svg?cwpnu7#ti-common') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="ti-common-"], [class*=" ti-common-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ti-common' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ti-common-hamburger:before {
+  content: "\e900";
+}
+.ti-common-checkbox_indeterminate:before {
+  content: "\e901";
+}
+.ti-common-bell:before {
+  content: "\e902";
+}
+.ti-common-calculator:before {
+  content: "\e903";
+}
+.ti-common-cancel:before {
+  content: "\e904";
+}
+.ti-common-check:before {
+  content: "\e905";
+}
+.ti-common-check2:before {
+  content: "\e906";
+}
+.ti-common-close:before {
+  content: "\e907";
+}
+.ti-common-collase:before {
+  content: "\e908";
+}
+.ti-common-down_caret:before {
+  content: "\e909";
+}
+.ti-common-down_triangle:before {
+  content: "\e90a";
+}
+.ti-common-ellipsis:before {
+  content: "\e90b";
+}
+.ti-common-exclamation:before {
+  content: "\e90c";
+}
+.ti-common-expand:before {
+  content: "\e90d";
+}
+.ti-common-folder:before {
+  content: "\e90e";
+}
+.ti-common-graph:before {
+  content: "\e90f";
+}
+.ti-common-left_caret:before {
+  content: "\e910";
+}
+.ti-common-left_triangle:before {
+  content: "\e911";
+}
+.ti-common-member:before {
+  content: "\e912";
+}
+.ti-common-organization:before {
+  content: "\e913";
+}
+.ti-common-person:before {
+  content: "\e914";
+}
+.ti-common-person2:before {
+  content: "\e915";
+}
+.ti-common-picture:before {
+  content: "\e916";
+}
+.ti-common-plus:before {
+  content: "\e917";
+}
+.ti-common-print:before {
+  content: "\e918";
+}
+.ti-common-reload:before {
+  content: "\e919";
+}
+.ti-common-right_caret:before {
+  content: "\e91a";
+}
+.ti-common-right_triangle:before {
+  content: "\e91b";
+}
+.ti-common-round:before {
+  content: "\e91c";
+}
+.ti-common-schedule:before {
+  content: "\e91d";
+}
+.ti-common-search:before {
+  content: "\e91e";
+}
+.ti-common-setting:before {
+  content: "\e91f";
+}
+.ti-common-shortcut:before {
+  content: "\e920";
+}
+.ti-common-up_caret:before {
+  content: "\e921";
+}
+.ti-common-up_triangle:before {
+  content: "\e922";
+}
+.ti-common-dashboard:before {
+  content: "\e923";
+}
+.ti-common-new_folder:before {
+  content: "\e924";
+}
+.ti-common-charge:before {
+  content: "\e925";
+}
