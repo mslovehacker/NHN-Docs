@@ -1920,3 +1920,148 @@ html body .md-search__icon[for="__search"] {
 [data-md-color-scheme="slate"] .md-path__item:not(:last-child)::after {
     color: rgba(255, 255, 255, 0.4);
 }
+
+/* ============================================================
+ * 23. 본문 액션 버튼 - 공유 + PDF 인쇄
+ * ============================================================ */
+
+/* 공유/인쇄 버튼 hover 효과 강화 */
+.md-content__button.nhn-action-share,
+.md-content__button.nhn-action-print {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0.4rem;
+    margin: 0;
+    color: var(--md-default-fg-color--light);
+    transition: color 0.2s ease, background-color 0.2s ease;
+    border-radius: 4px;
+}
+
+.md-content__button.nhn-action-share:hover,
+.md-content__button.nhn-action-print:hover {
+    color: var(--nhn-blue, #1B64DA);
+    background-color: rgba(27, 100, 218, 0.08);
+}
+
+[data-md-color-scheme="slate"] .md-content__button.nhn-action-share:hover,
+[data-md-color-scheme="slate"] .md-content__button.nhn-action-print:hover {
+    color: #4A90F0;
+    background-color: rgba(74, 144, 240, 0.15);
+}
+
+/* ============================================================
+ * 24. 토스트 알림 (공유 완료/링크 복사)
+ * ============================================================ */
+
+.nhn-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: rgba(33, 33, 33, 0.95);
+    color: #ffffff;
+    padding: 0.7rem 1.4rem;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    max-width: 90%;
+    text-align: center;
+}
+
+.nhn-toast--show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nhn-toast--success {
+    background: rgba(33, 33, 33, 0.95);
+    border-left: 3px solid #4caf50;
+}
+
+.nhn-toast--error {
+    background: rgba(33, 33, 33, 0.95);
+    border-left: 3px solid #f44336;
+}
+
+/* ============================================================
+ * 25. 인쇄용 스타일 - PDF 인쇄 시 사이드바/헤더/푸터 숨김
+ * ============================================================ */
+
+@media print {
+    /* 헤더/사이드바/푸터/검색/액션 버튼 숨김 */
+    .md-header,
+    .md-tabs,
+    .md-sidebar,
+    .md-footer,
+    .nhn-footer,
+    .md-content__button,
+    .md-search,
+    .md-source,
+    .nhn-toast {
+        display: none !important;
+    }
+    
+    /* 본문 영역만 전체 폭으로 확장 */
+    .md-main,
+    .md-main__inner,
+    .md-content,
+    .md-content__inner,
+    article {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 1rem !important;
+        width: 100% !important;
+    }
+    
+    /* 본문 색상 초기화 (인쇄용) */
+    body,
+    .md-typeset,
+    .md-content__inner {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 10pt !important;
+    }
+    
+    /* 헤딩 폰트 크기 인쇄용 */
+    .md-typeset h1 { font-size: 18pt !important; }
+    .md-typeset h2 { font-size: 14pt !important; }
+    .md-typeset h3 { font-size: 12pt !important; }
+    
+    /* 링크 URL 인쇄 시 표시 */
+    .md-typeset a[href]:not(.md-source-file)::after {
+        content: " (" attr(href) ")";
+        font-size: 8pt;
+        color: #666;
+        word-break: break-all;
+    }
+    
+    /* 내부 anchor 링크는 URL 표시 안 함 */
+    .md-typeset a[href^="#"]::after,
+    .md-typeset a[href^="javascript:"]::after {
+        content: "" !important;
+    }
+    
+    /* 코드 블록 줄바꿈 */
+    .md-typeset pre,
+    .md-typeset code {
+        white-space: pre-wrap !important;
+        word-wrap: break-word !important;
+        page-break-inside: avoid;
+    }
+    
+    /* 표 페이지 분할 방지 */
+    .md-typeset table {
+        page-break-inside: avoid;
+    }
+    
+    /* 페이지 여백 */
+    @page {
+        margin: 1.5cm;
+    }
+}
