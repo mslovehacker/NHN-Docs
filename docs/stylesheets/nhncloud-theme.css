@@ -398,39 +398,12 @@
 
 @media screen and (min-width: 76.25em) {
   /* 하위 메뉴가 있는 항목 - 화살표 영역 확보 */
-  .md-sidebar--primary .md-nav__item--nested > .md-nav__link {
-    position: relative;
-    padding-right: 2rem;
-  }
   
   /* 펼침 화살표 (∨) - 우측 표시 */
-  .md-sidebar--primary .md-nav__item--nested > .md-nav__link::after {
-    content: "";
-    position: absolute;
-    right: 0.75rem;
-    top: 50%;
-    transform: translateY(-50%) rotate(-90deg);
-    width: 0.6rem;
-    height: 0.6rem;
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23666'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-    background-size: contain;
-    background-repeat: no-repeat;
-    transition: transform 0.2s ease;
-    opacity: 0.6;
-  }
   
   /* 펼쳐진 상태 - 화살표 회전 (∨ → ∧) */
-  .md-sidebar--primary .md-nav__item--nested > .md-nav__toggle:checked ~ .md-nav__link::after,
-  .md-sidebar--primary .md-nav__item--active > .md-nav__link::after {
-    transform: translateY(-50%) rotate(0deg);
-    opacity: 1;
-  }
   
   /* 펼친 항목의 화살표는 NHN 파란색 */
-  .md-sidebar--primary .md-nav__item--nested > .md-nav__link:hover::after {
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23125de6'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-    opacity: 1;
-  }
   
   /* 하위 메뉴의 시각적 들여쓰기 강화 (왼쪽 세로선) */
   .md-sidebar--primary .md-nav .md-nav {
@@ -441,9 +414,7 @@
 }
 
 /* 다크모드 화살표 */
-[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__item--nested > .md-nav__link::after {
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23bbb'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-}
+[data-md-color-scheme="slate"]
 
 [data-md-color-scheme="slate"] .md-sidebar--primary .md-nav .md-nav {
   border-left-color: rgba(255, 255, 255, 0.1);
@@ -1410,4 +1381,50 @@
 [data-md-color-scheme="slate"] .md-sidebar--primary > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link::before {
   filter: brightness(0) invert(1);
   opacity: 0.85;
+}
+
+/* ============================================================
+ * 14-B. 중복 화살표 제거 (8번 섹션의 ::after 화살표 비활성화)
+ * ============================================================
+ * mkdocs-material 의 기본 .md-nav__icon 만 사용
+ * 우리가 추가했던 ::after SVG 화살표는 명시적으로 비활성화
+ */
+
+@media screen and (min-width: 76.25em) {
+  /* 기존 8번 섹션의 ::after 화살표 모두 비활성화 */
+  .md-sidebar--primary .md-nav__item--nested > .md-nav__link::after,
+  .md-sidebar--primary .md-nav__link::after {
+    content: none !important;
+    display: none !important;
+  }
+  
+  /* mkdocs-material 의 기본 화살표 (.md-nav__icon) 만 사용 */
+  .md-sidebar--primary .md-nav__icon {
+    display: inline-block !important;
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    margin-left: auto;
+    color: var(--nhn-text-primary);
+    opacity: 0.6;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+  
+  .md-sidebar--primary .md-nav__link:hover .md-nav__icon {
+    opacity: 1;
+    color: var(--nhn-primary);
+  }
+  
+  /* 펼친 상태 - 화살표 회전 */
+  .md-sidebar--primary .md-nav__toggle:checked ~ .md-nav__link .md-nav__icon {
+    transform: rotate(90deg);
+  }
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__icon {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__link:hover .md-nav__icon {
+  color: var(--nhn-primary-light);
 }
