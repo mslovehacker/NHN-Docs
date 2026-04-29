@@ -750,3 +750,124 @@
     padding-left: 1.2rem;
   }
 }
+
+/* ============================================================
+ * 11. 세로선 노출 해결 + 활성 항목 표시
+ * ============================================================ */
+
+/* ============================
+ * 1. 세로선 노출 문제 해결
+ * ============================ */
+
+/* 컨테이너의 ::before (세로선) z-index 를 낮게 */
+.md-container::before {
+  z-index: 0; /* 가장 아래 */
+}
+
+/* 본문 영역에 흰 배경 추가 (세로선 위에 본문이 올라가도록) */
+.md-main {
+  position: relative;
+  z-index: 1;
+  background-color: var(--md-default-bg-color);
+}
+
+/* 푸터를 세로선 위로 올려 자연스럽게 가림 */
+.md-footer {
+  position: relative;
+  z-index: 2;
+}
+
+/* 푸터 위 작은 빈 공간 처리 */
+.md-main + .md-footer {
+  margin-top: -1px; /* 1px 간격 제거 */
+}
+
+/* ============================
+ * 2. 좌측 LNB 활성 항목 표시 (현재 페이지)
+ * ============================ */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary .md-nav__link--active {
+    color: var(--nhn-primary);
+    font-weight: 600;
+    background-color: rgba(18, 93, 230, 0.06);
+    border-radius: 3px;
+    position: relative;
+  }
+  
+  /* 활성 항목 좌측 NHN 색상 세로 막대 표시 */
+  .md-sidebar--primary .md-nav__link--active::before {
+    content: "";
+    position: absolute;
+    left: -0.25rem;
+    top: 0.2rem;
+    bottom: 0.2rem;
+    width: 3px;
+    background-color: var(--nhn-primary);
+    border-radius: 2px;
+  }
+  
+  /* aria-current 속성으로도 활성 표시 (mkdocs-material 9.x) */
+  .md-sidebar--primary [aria-current="page"] {
+    color: var(--nhn-primary) !important;
+    font-weight: 600;
+    background-color: rgba(18, 93, 230, 0.06);
+  }
+  
+  /* 활성 항목의 부모 (펼친 카테고리) 도 약간 강조 */
+  .md-sidebar--primary .md-nav__item--active > .md-nav__link {
+    color: var(--nhn-primary);
+    font-weight: 600;
+  }
+}
+
+/* ============================
+ * 3. 우측 RNB 활성 항목 표시 (현재 보고 있는 섹션)
+ * ============================ */
+@media screen and (min-width: 76.25em) {
+  /* 현재 활성 섹션 */
+  .md-sidebar--secondary .md-nav__link--active {
+    color: var(--nhn-primary) !important;
+    font-weight: 600;
+    background-color: rgba(18, 93, 230, 0.06);
+    border-radius: 3px;
+    padding-left: 0.5rem;
+    margin-left: -0.5rem;
+  }
+  
+  /* 이미 지나간 섹션 (--passed) - 약간 흐리게 */
+  .md-sidebar--secondary .md-nav__link--passed {
+    color: var(--nhn-text-primary);
+    opacity: 0.7;
+  }
+  
+  /* 아직 안 지나간 섹션 - 기본 색상 유지 */
+  .md-sidebar--secondary .md-nav__link {
+    transition: color 0.2s ease, background-color 0.2s ease;
+  }
+}
+
+/* ============================
+ * 4. 다크모드 활성 항목 표시
+ * ============================ */
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__link--active {
+  color: var(--nhn-primary-light) !important;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__link--active::before {
+  background-color: var(--nhn-primary-light);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary [aria-current="page"] {
+  color: var(--nhn-primary-light) !important;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__link--active {
+  color: var(--nhn-primary-light) !important;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__link--passed {
+  color: rgba(255, 255, 255, 0.6);
+}
