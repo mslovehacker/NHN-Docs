@@ -1,3 +1,4 @@
+# Workflow re-registered after manual deletion
 name: Build and Deploy NHN Cloud Docs
 
 on:
