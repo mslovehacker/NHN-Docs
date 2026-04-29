@@ -11,7 +11,9 @@ copyright: Copyright &copy; NHN Cloud Corp. All rights reserved.
 
 theme:
   name: material
+  custom_dir: overrides
   language: ko
+  font: false
 
   features:
     - navigation.tabs
@@ -125,3 +127,17 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/mslovehacker/NHN-Docs
       name: NHN Cloud Docs GitHub
+  alternate:
+    - name: 한국어
+      link: /
+      lang: ko
+    - name: English
+      link: /en/
+      lang: en
+    - name: 日本語
+      link: /ja/
+      lang: ja
+  homepage: https://nhncloud.duckdns.org/
+
+extra_css:
+  - stylesheets/nhncloud-theme.css
