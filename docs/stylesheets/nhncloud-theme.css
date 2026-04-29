@@ -388,3 +388,63 @@
 [data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__link--active {
   color: var(--nhn-primary-light);
 }
+
+/* ============================================================
+ * 8. 좌측 LNB 펼침 화살표 강화 (Material for MkDocs 표준)
+ * ============================================================
+ * 하위 메뉴가 있는 항목에는 우측에 ∨ 화살표 표시
+ * 클릭 시 회전 (펼침/접힘 시각 피드백)
+ */
+
+@media screen and (min-width: 76.25em) {
+  /* 하위 메뉴가 있는 항목 - 화살표 영역 확보 */
+  .md-sidebar--primary .md-nav__item--nested > .md-nav__link {
+    position: relative;
+    padding-right: 2rem;
+  }
+  
+  /* 펼침 화살표 (∨) - 우측 표시 */
+  .md-sidebar--primary .md-nav__item--nested > .md-nav__link::after {
+    content: "";
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    width: 0.6rem;
+    height: 0.6rem;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23666'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.2s ease;
+    opacity: 0.6;
+  }
+  
+  /* 펼쳐진 상태 - 화살표 회전 (∨ → ∧) */
+  .md-sidebar--primary .md-nav__item--nested > .md-nav__toggle:checked ~ .md-nav__link::after,
+  .md-sidebar--primary .md-nav__item--active > .md-nav__link::after {
+    transform: translateY(-50%) rotate(0deg);
+    opacity: 1;
+  }
+  
+  /* 펼친 항목의 화살표는 NHN 파란색 */
+  .md-sidebar--primary .md-nav__item--nested > .md-nav__link:hover::after {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23125de6'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    opacity: 1;
+  }
+  
+  /* 하위 메뉴의 시각적 들여쓰기 강화 (왼쪽 세로선) */
+  .md-sidebar--primary .md-nav .md-nav {
+    border-left: 1px solid var(--nhn-border);
+    margin-left: 0.75rem;
+    padding-left: 0;
+  }
+}
+
+/* 다크모드 화살표 */
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__item--nested > .md-nav__link::after {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23bbb'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav .md-nav {
+  border-left-color: rgba(255, 255, 255, 0.1);
+}
