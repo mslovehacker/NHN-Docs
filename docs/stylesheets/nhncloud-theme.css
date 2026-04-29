@@ -544,3 +544,99 @@
 [data-md-color-scheme="slate"] .md-content__inner h6 {
   color: rgba(255, 255, 255, 0.9);
 }
+
+/* ============================================================
+ * 9. 본문 헤딩 NHN Cloud 스타일 (docs.nhncloud.com 패턴)
+ * ============================================================
+ * docs.nhncloud.com 의 .page__content-wrapper h2 패턴 적용
+ * - H2: NHN 파란색 + 하단 회색 선
+ * - H1: 일반 검정 + 하단 굵은 선 (페이지 타이틀)
+ */
+
+/* H1 - 페이지 메인 타이틀 (예: "개요", "사용 가이드") */
+.md-content__inner h1 {
+  color: var(--nhn-text-primary);
+  font-weight: 600;
+  font-size: 2rem;
+  border-bottom: 2px solid var(--nhn-primary);
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* H2 - 섹션 헤더 (예: "Kubernetes", "클러스터") */
+.md-content__inner h2 {
+  color: var(--nhn-primary);
+  font-weight: 600;
+  font-size: 1.4rem;
+  border-bottom: 1px solid var(--nhn-border);
+  padding-bottom: 0.4rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* H3 - 서브 섹션 (예: "구성", "컨트롤 플레인") */
+.md-content__inner h3 {
+  color: var(--nhn-text-primary);
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* H4, H5, H6 - 더 깊은 계층 */
+.md-content__inner h4 {
+  color: var(--nhn-text-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.md-content__inner h5,
+.md-content__inner h6 {
+  color: var(--nhn-text-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+/* anchor link 의 paragraph 표시 (¶) - 호버 시만 보이도록 */
+.md-content__inner h1 .headerlink,
+.md-content__inner h2 .headerlink,
+.md-content__inner h3 .headerlink,
+.md-content__inner h4 .headerlink,
+.md-content__inner h5 .headerlink,
+.md-content__inner h6 .headerlink {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  margin-left: 0.5rem;
+  font-size: 0.7em;
+}
+
+.md-content__inner h1:hover .headerlink,
+.md-content__inner h2:hover .headerlink,
+.md-content__inner h3:hover .headerlink,
+.md-content__inner h4:hover .headerlink,
+.md-content__inner h5:hover .headerlink,
+.md-content__inner h6:hover .headerlink {
+  opacity: 0.5;
+}
+
+/* 다크모드 - H 들의 색상 보정 */
+[data-md-color-scheme="slate"] .md-content__inner h1 {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+[data-md-color-scheme="slate"] .md-content__inner h2 {
+  color: var(--nhn-primary-light);
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-md-color-scheme="slate"] .md-content__inner h3,
+[data-md-color-scheme="slate"] .md-content__inner h4,
+[data-md-color-scheme="slate"] .md-content__inner h5,
+[data-md-color-scheme="slate"] .md-content__inner h6 {
+  color: rgba(255, 255, 255, 0.9);
+}
