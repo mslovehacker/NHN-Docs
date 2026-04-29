@@ -616,3 +616,75 @@ code, pre {
   margin-bottom: -3px;
   vertical-align: middle;
 }
+
+/* ============================================================
+ * 16. Tab/sprite/본문 겹침 정밀 보정 (2차)
+ * ============================================================ */
+
+/* sprite 셀렉터 정밀화 - 슬래시 유무 무관하게 매칭 */
+.md-tabs__link[href*="quickstarts"]::before {
+  background-position: -220px -64px !important;
+}
+.md-tabs__link[href*="compute"]::before {
+  background-position: 0 -20px !important;
+}
+.md-tabs__link[href*="container"]::before {
+  background-position: -44px -64px !important;
+}
+.md-tabs__link[href*="network"]::before {
+  background-position: -22px -20px !important;
+}
+.md-tabs__link[href*="storage"]::before {
+  background-position: -44px -20px !important;
+}
+.md-tabs__link[href*="database"]::before {
+  background-position: -66px -20px !important;
+}
+
+/* 홈 (href=".") 에는 아이콘 표시하지 않음 */
+.md-tabs__link[href="."]::before,
+.md-tabs__link[href="./"]::before {
+  display: none;
+}
+
+/* 아이콘과 텍스트 수직 정렬 보정 */
+.md-tabs__item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.md-tabs__link {
+  display: inline-flex !important;
+  align-items: center;
+  height: 100%;
+  padding: 0 0.8rem;
+}
+
+.md-tabs__link::before {
+  margin-bottom: 0 !important;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* 본문 겹침 강화 (1차 보정 부족) */
+.md-content__inner {
+  padding-top: 2rem !important;
+}
+
+.md-content__inner > h1:first-child,
+.md-content__inner > h2:first-child {
+  margin-top: 0.5rem !important;
+  padding-top: 1rem !important;
+}
+
+/* sticky tabs 영역의 z-index 와 그림자 확실하게 */
+.md-tabs--active,
+.md-tabs {
+  z-index: 3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 메인 컨텐츠 영역 상단 여백 확보 */
+.md-main__inner {
+  margin-top: 1.5rem;
+}
