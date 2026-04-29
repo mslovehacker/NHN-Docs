@@ -544,11 +544,12 @@ code, pre {
   padding-top: 1rem !important;
 }
 
-/* 정식 NHN Cloud Document 로고 (282x18 가로형 SVG) */
+/* 헤더 로고 영역 (정식 NHN Cloud BI 적용 대기 중)
+ * - mkdocs.yml 의 theme.logo 가 없으면 이 블록은 무시됨
+ * - 추후 정식 BI SVG 수령 시 mkdocs.yml 에 logo: 등록만 하면 자동 동작
+ */
 .md-header__button.md-logo img {
   height: 22px;
   width: auto;
-  border-radius: 0;
   vertical-align: middle;
-  /* SVG 가 흰색이므로 검은 헤더에서 자동으로 잘 보임 */
 }
