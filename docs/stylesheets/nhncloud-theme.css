@@ -871,3 +871,161 @@
 [data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__link--passed {
   color: rgba(255, 255, 255, 0.6);
 }
+
+/* ============================================================
+ * 12. NHN Cloud 정식 푸터 스타일 (toast-theme 기반)
+ * ============================================================ */
+
+.nhn-footer {
+  background-color: #262626;
+  color: #C0C0C0;
+  padding: 50px 0 57px 0;
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 300;
+  font-size: 0.85rem;
+  line-height: 1.714286;
+  z-index: 2;
+  position: relative;
+}
+
+.nhn-footer__inner {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* 사이트맵 4 컬럼 그리드 */
+.nhn-footer__sitemap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.nhn-footer__column h4.nhn-footer__title {
+  color: #FFFFFF;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+  padding: 0;
+  border: none;
+}
+
+.nhn-footer__column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nhn-footer__column ul li {
+  margin: 0.5rem 0;
+}
+
+.nhn-footer__column ul li a {
+  color: #C0C0C0;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 300;
+  transition: color 0.2s ease;
+}
+
+.nhn-footer__column ul li a:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+/* 구분선 */
+.nhn-footer__divider {
+  border-top: 1px solid #3C3C3C;
+  margin: 2rem 0;
+}
+
+/* 회사 정보 + 약관 영역 */
+.nhn-footer__info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.nhn-footer__company p {
+  margin: 0.3rem 0;
+  font-size: 0.78rem;
+  color: #999;
+}
+
+.nhn-footer__company-name {
+  font-weight: 500 !important;
+  color: #FFFFFF !important;
+  font-size: 0.85rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.nhn-footer__company a {
+  color: #C0C0C0;
+  text-decoration: none;
+}
+
+.nhn-footer__company a:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+/* 약관 / 정책 링크 */
+.nhn-footer__legal {
+  font-size: 0.8rem;
+}
+
+.nhn-footer__legal a {
+  color: #C0C0C0;
+  text-decoration: none;
+  margin: 0 0.4rem;
+}
+
+.nhn-footer__legal a:first-child {
+  margin-left: 0;
+}
+
+.nhn-footer__legal a:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.nhn-footer__legal-sep {
+  color: #555;
+  margin: 0;
+}
+
+/* Copyright */
+.nhn-footer__copyright {
+  border-top: 1px solid #3C3C3C;
+  padding-top: 1.5rem;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: #888;
+  text-align: left;
+}
+
+.nhn-footer__copyright p {
+  margin: 0;
+}
+
+/* 모바일 반응형 */
+@media screen and (max-width: 60em) {
+  .nhn-footer__sitemap {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .nhn-footer__info {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 30em) {
+  .nhn-footer__sitemap {
+    grid-template-columns: 1fr;
+  }
+}
