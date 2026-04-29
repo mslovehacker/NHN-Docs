@@ -1576,3 +1576,72 @@
 .md-tabs__link--active {
   color: #FFFFFF !important;
 }
+
+/* ============================================================
+ * 16. 검색창 hover/focus 시 텍스트 가독성 보정
+ * ============================================================
+ * 직전 15번 섹션에서 hover 시 배경만 흰색으로 전환되었으나
+ * 텍스트 색상이 함께 전환 안 되어 흰 배경에 흰 글씨로 안 보이는 문제 해결
+ */
+
+/* hover / focus 시 검색창 - 텍스트도 검정으로 강제 전환 */
+.md-search__input:hover,
+.md-search__input:focus,
+.md-search__input:active {
+  background-color: #FFFFFF;
+  color: var(--nhn-text-primary);
+}
+
+/* hover / focus 상태의 placeholder - 회색 (가독성 유지) */
+.md-search__input:hover::placeholder,
+.md-search__input:focus::placeholder,
+.md-search__input:active::placeholder {
+  color: rgba(0, 0, 0, 0.55);
+  opacity: 1;
+}
+
+.md-search__input:hover::-webkit-input-placeholder,
+.md-search__input:focus::-webkit-input-placeholder,
+.md-search__input:active::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+/* hover / focus 시 돋보기 아이콘도 검정으로 */
+.md-search__input:hover ~ .md-search__icon,
+.md-search__input:focus ~ .md-search__icon,
+.md-search__input:active ~ .md-search__icon,
+.md-search__form:hover .md-search__icon,
+.md-search__form:focus-within .md-search__icon {
+  color: var(--nhn-text-primary);
+  fill: var(--nhn-text-primary);
+}
+
+.md-search__input:hover ~ .md-search__icon svg,
+.md-search__input:focus ~ .md-search__icon svg,
+.md-search__form:hover .md-search__icon svg,
+.md-search__form:focus-within .md-search__icon svg {
+  fill: var(--nhn-text-primary);
+}
+
+/* 검색 form 영역 전체 hover 시 (mkdocs-material 9.x 구조 대응) */
+.md-search__form:hover,
+.md-search__form:focus-within {
+  background-color: #FFFFFF;
+}
+
+.md-search__form:hover .md-search__input,
+.md-search__form:focus-within .md-search__input {
+  background-color: #FFFFFF;
+  color: var(--nhn-text-primary);
+}
+
+/* 검색 결과 드롭다운 (입력 시 나타나는 영역) - 가독성 확보 */
+.md-search__output {
+  background-color: #FFFFFF;
+  color: var(--nhn-text-primary);
+}
+
+[data-md-color-scheme="slate"] .md-search__output {
+  background-color: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+}
