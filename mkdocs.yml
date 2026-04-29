@@ -255,6 +255,98 @@ nav:
         - 사용 가이드: container/ncs/user-guide.md
         - API 가이드: container/ncs/public-api.md
         - 릴리스 노트: container/ncs/release-notes.md
+  - 네트워크:
+    - VPC:
+        - 개요: network/vpc/overview.md
+        - 콘솔 가이드: network/vpc/console-guide.md
+        - API 가이드: network/vpc/api-guide.md
+        - API 가이드: network/vpc/public-api.md
+        - API 가이드: network/vpc/public-api-compat.md
+    - Network Interface:
+        - 개요: network/network-interface/overview.md
+        - 콘솔 가이드: network/network-interface/console-guide.md
+    - Floating IP:
+        - 개요: network/floating-ip/overview.md
+        - 콘솔 가이드: network/floating-ip/console-guide.md
+        - API 가이드: network/floating-ip/api-guide.md
+        - API 가이드: network/floating-ip/public-api.md
+        - 오류 코드: network/floating-ip/error-code.md
+    - Load Balancer:
+        - 개요: network/load-balancer/overview.md
+        - 콘솔 가이드: network/load-balancer/console-guide.md
+        - API 가이드: network/load-balancer/public-api.md
+    - Load Balancer DSR:
+        - 개요: network/load-balancer-dsr/overview.md
+        - 콘솔 가이드: network/load-balancer-dsr/console-guide.md
+    - Firewall:
+        - 개요: network/firewall/overview.md
+        - 콘솔 가이드: network/firewall/console-guide.md
+        - 릴리스 노트: network/firewall/release-notes.md
+    - ACL:
+        - 개요: network/acl/overview.md
+        - 콘솔 가이드: network/acl/console-guide.md
+        - API 가이드: network/acl/public-api.md
+    - Internet Gateway:
+        - 개요: network/internet-gateway/overview.md
+        - 콘솔 가이드: network/internet-gateway/console-guide.md
+        - API 가이드: network/internet-gateway/public-api.md
+    - NAT Gateway:
+        - 개요: network/nat-gateway/overview.md
+        - 콘솔 가이드: network/nat-gateway/console-guide.md
+        - API 가이드: network/nat-gateway/public-api.md
+    - VPN Gateway:
+        - 개요: network/vpn-gateway/overview.md
+        - 콘솔 가이드: network/vpn-gateway/console-guide.md
+    - IPSec VPN:
+        - 개요: network/ipsec-vpn/overview.md
+        - 콘솔 가이드: network/ipsec-vpn/console-guide.md
+    - Service Gateway:
+        - 개요: network/service-gateway/overview.md
+        - 콘솔 가이드: network/service-gateway/console-guide.md
+        - API 가이드: network/service-gateway/public-api.md
+        - Service Endpoint: network/service-gateway/service-endpoint.md
+    - Colocation Gateway:
+        - 개요: network/colocation-gateway/overview.md
+        - 콘솔 가이드: network/colocation-gateway/console-guide.md
+        - API 가이드: network/colocation-gateway/public-api.md
+    - Peering Gateway:
+        - 개요: network/peering-gateway/overview.md
+        - 콘솔 가이드: network/peering-gateway/console-guide.md
+    - Transit Hub:
+        - 개요: network/transit-hub/overview.md
+        - 콘솔 가이드: network/transit-hub/console-guide.md
+        - API 가이드: network/transit-hub/public-api.md
+    - Direct Connect:
+        - 개요: network/directconnect/overview.md
+        - 콘솔 가이드: network/directconnect/console-guide.md
+        - 릴리스 노트: network/directconnect/release-notes.md
+    - CDN:
+        - 개요: network/cdn/Overview.md
+        - 콘솔 가이드: network/cdn/console-guide.md
+        - API 가이드: network/cdn/api-guide-v1.5.md
+        - API 가이드: network/cdn/api-guide-v2.0.md
+        - 오류 코드: network/cdn/error-code.md
+        - 릴리스 노트: network/cdn/release-notes.md
+    - DNS Plus:
+        - 개요: network/dnsplus/Overview.md
+        - 콘솔 가이드: network/dnsplus/console-guide.md
+        - API 가이드: network/dnsplus/api-guide.md
+        - API 가이드: network/dnsplus/api-guide-v2.md
+        - 릴리스 노트: network/dnsplus/release-notes.md
+    - Private DNS:
+        - 개요: network/private-dns/overview.md
+        - 콘솔 가이드: network/private-dns/console-guide.md
+        - API 가이드: network/private-dns/public-api.md
+    - Flow Log:
+        - 개요: network/flow-log/overview.md
+        - 콘솔 가이드: network/flow-log/console-guide.md
+        - API 가이드: network/flow-log/public-api.md
+    - Traffic Mirroring:
+        - 개요: network/traffic-mirroring/overview.md
+        - 콘솔 가이드: network/traffic-mirroring/console-guide.md
+        - API 가이드: network/traffic-mirroring/public-api.md
+    - Network 통합:
+        - 릴리스 노트: network/network/release-notes.md
 
 extra:
   social:
