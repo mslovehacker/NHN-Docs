@@ -4679,3 +4679,10 @@ NKS cluster encrypts secret resources before storing them in the data store (etc
 > Forcing a rewrite of all secret resources triggers a re-encryption of the data using the latest key version.
 > Once all secret resources have been re-encrypted using the command below, you can safely delete the rotated key versions.
 > `kubectl get secrets --all-namespaces -o json | kubectl replace -f -`
+
+<!-- Auto-generated anchors for footnote links -->
+<a id="footnote_cluster_upgrade_rule_2" name="footnote_cluster_upgrade_rule_2"></a>
+<a id="footnote_cluster_upgrade_rule_3" name="footnote_cluster_upgrade_rule_3"></a>
+<a id="footnote_cluster_upgrade_rule_4" name="footnote_cluster_upgrade_rule_4"></a>
+<a id="footnote_cluster_upgrade_rule_5" name="footnote_cluster_upgrade_rule_5"></a>
+<a id="calico_cni_types" name="calico_cni_types"></a>

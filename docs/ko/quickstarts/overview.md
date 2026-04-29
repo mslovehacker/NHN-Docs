@@ -19,4 +19,4 @@ NHN Cloud 서비스를 5분 안에 시작하는 방법을 안내합니다.
 
 ## 다음 단계
 
-- [Instance 가이드](../compute/instance.md) — 첫 가상 서버를 생성해 보세요.
+- [Instance 가이드](../compute/instance/overview.md) — 첫 가상 서버를 생성해 보세요.

@@ -19,4 +19,4 @@ This guide walks you through getting started with NHN Cloud services in five min
 
 ## Next Step
 
-- [Instance Guide](../compute/instance.md) — Create your first virtual server.
+- [Instance Guide](../compute/instance/overview.md) — Create your first virtual server.

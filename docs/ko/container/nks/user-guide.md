@@ -4671,3 +4671,10 @@ NKS 클러스터는 secret 리소스를 데이터 저장소(etcd)에 저장할 �
 > 모든 secret 리소스 데이터를 읽어 새로운 키로 다시 쓰도록 강제하면 최신 버전의 키로 데이터를 재암호화합니다.
 > 아래 명령으로 모든 secret 리소스 데이터를 재암호화한 후 회전된 키 버전을 안전하게 삭제할 수 있습니다.
 > `kubectl get secrets --all-namespaces -o json | kubectl replace -f -`
+
+<!-- Auto-generated anchors for footnote links -->
+<a id="footnote_cluster_upgrade_rule_2" name="footnote_cluster_upgrade_rule_2"></a>
+<a id="footnote_cluster_upgrade_rule_3" name="footnote_cluster_upgrade_rule_3"></a>
+<a id="footnote_cluster_upgrade_rule_4" name="footnote_cluster_upgrade_rule_4"></a>
+<a id="footnote_cluster_upgrade_rule_5" name="footnote_cluster_upgrade_rule_5"></a>
+<a id="calico_cni_types" name="calico_cni_types"></a>

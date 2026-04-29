@@ -4936,3 +4936,10 @@ NKSクラスターは、secretリソースをデータストア(etcd)に保存�
 > 全てのsecretリソースデータを読み取り、新しい鍵で書き直すよう強制すると、最新バージョンの鍵でデータを再暗号化します。
 > 以下のコマンドで全てのsecretリソースデータを再暗号化した後、ローテーションされた鍵のバージョンを安全に削除できます。
 > `kubectl get secrets --all-namespaces -o json | kubectl replace -f -`
+
+<!-- Auto-generated anchors for footnote links -->
+<a id="footnote_cluster_upgrade_rule_2" name="footnote_cluster_upgrade_rule_2"></a>
+<a id="footnote_cluster_upgrade_rule_3" name="footnote_cluster_upgrade_rule_3"></a>
+<a id="footnote_cluster_upgrade_rule_4" name="footnote_cluster_upgrade_rule_4"></a>
+<a id="footnote_cluster_upgrade_rule_5" name="footnote_cluster_upgrade_rule_5"></a>
+<a id="calico_cni_types" name="calico_cni_types"></a>
