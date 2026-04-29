@@ -8,7 +8,7 @@ NHN Cloud를 처음 사용하시는 분은 [빠른 시작 가이드](quickstarts
 
 ## 주요 서비스 카테고리
 
-- **컴퓨팅(Compute)**: 가상 서버 인스턴스, NHN Kubernetes Service, Container Service
+- **컴퓨팅(Compute)**: 가상 서버 인스턴스, NHN Kubernetes Service, Container Service : 수정 테스트
 - **스토리지(Storage)**: Object Storage, Block Storage, NAS
 - **네트워크(Network)**: VPC, Load Balancer, CDN, DNS Plus
 - **데이터베이스(Database)**: RDS, Redis, Memcached, NoSQL
