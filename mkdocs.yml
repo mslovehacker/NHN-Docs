@@ -157,4 +157,5 @@ extra:
   homepage: https://nhncloud.duckdns.org/
 
 extra_css:
+  - stylesheets/toast-icon/ti-icon-style.css
   - stylesheets/nhncloud-theme.css

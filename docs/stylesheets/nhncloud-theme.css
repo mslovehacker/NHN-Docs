@@ -553,3 +553,65 @@ code, pre {
   width: auto;
   vertical-align: middle;
 }
+
+/* ============================================================
+ * 15. NHN Cloud Toast Icon 폰트 시스템 적용 (sprite 대체)
+ * ============================================================
+ * 폰트 자산: stylesheets/toast-icon/fonts/ti-icon.{eot,ttf,woff,svg}
+ * 폰트 CSS:  stylesheets/toast-icon/ti-icon-style.css (extra_css 로 자동 로드)
+ *
+ * mkdocs nav 의 카테고리 href 패턴에 따라 자동 매칭
+ * - 빠른 시작 (quickstarts) → reference 아이콘
+ * - 컴퓨팅 (compute)        → compute 아이콘
+ * - 컨테이너 (container)    → Material Icons (폰트에 없음)
+ * - 네트워크 (network)      → network 아이콘
+ * - 스토리지 (storage)      → storage 아이콘
+ */
+
+/* 상단 nav 탭의 카테고리 아이콘 (::before 의사 요소) */
+.md-tabs__link::before {
+  font-family: 'ti-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 16px;
+  margin-right: 6px;
+  vertical-align: middle;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.md-tabs__link:hover::before,
+.md-tabs__link--active::before {
+  color: #FFFFFF;
+}
+
+/* 카테고리별 정확한 유니코드 매핑 */
+.md-tabs__link[href*="quickstarts"]::before { content: "\e901"; } /* reference */
+.md-tabs__link[href*="compute"]::before     { content: "\e915"; } /* compute */
+.md-tabs__link[href*="network"]::before     { content: "\e943"; } /* network */
+.md-tabs__link[href*="storage"]::before     { content: "\e95a"; } /* storage */
+.md-tabs__link[href*="database"]::before    { content: "\e921"; } /* database */
+.md-tabs__link[href*="notification"]::before { content: "\e948"; } /* notification */
+.md-tabs__link[href*="game"]::before        { content: "\e935"; } /* game */
+.md-tabs__link[href*="security"]::before    { content: "\e955"; } /* security */
+.md-tabs__link[href*="analytics"]::before   { content: "\e906"; } /* analytics */
+
+/* 컨테이너 - 폰트에 없음, Material Icons 의 cube 사용 (Unicode 대신 별도 처리) */
+.md-tabs__link[href*="container"]::before {
+  font-family: 'Material Icons' !important;
+  content: "🔲"; /* 임시: Unicode 박스 */
+  /* 또는 SVG 인라인으로 처리 가능 */
+  font-size: 14px;
+}
+
+/* 홈 (href=".") 에는 아이콘 미표시 */
+.md-tabs__link[href="."]::before,
+.md-tabs__link[href="./"]::before {
+  display: none;
+}
