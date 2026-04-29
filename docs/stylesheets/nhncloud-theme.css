@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
 /*
  * NHN Cloud Theme for mkdocs-material
  * Level 3 migration: 색상 + 폰트 + 로고 + 헤더/푸터 형태
@@ -11,24 +14,24 @@
  * ============================================================ */
 :root {
   /* NHN Cloud 브랜드 컬러 */
-  --nhn-primary: #0064FA;          /* 메인 파랑 */
-  --nhn-primary-dark: #0050C8;     /* hover 상태 */
-  --nhn-primary-light: #E5F0FF;    /* 배경 강조 */
-  --nhn-header-bg: #1B2233;        /* 상단 GNB 배경 */
+  --nhn-primary: #125de6;          /* 메인 파랑 */
+  --nhn-primary-dark: #004ec6;     /* hover 상태 */
+  --nhn-primary-light: #e9f1ff;    /* 배경 강조 */
+  --nhn-header-bg: #000000;        /* 상단 GNB 배경 */
   --nhn-header-text: #FFFFFF;      /* 상단 GNB 글자 */
-  --nhn-footer-bg: #2C3447;        /* 푸터 배경 */
-  --nhn-footer-text: #C4CAD6;      /* 푸터 글자 */
-  --nhn-text-primary: #1B2233;     /* 본문 진한 색 */
-  --nhn-text-body: #3F4858;        /* 본문 기본 색 */
-  --nhn-text-muted: #6B7384;       /* 본문 흐린 색 */
-  --nhn-border: #E5E8EB;           /* 구분선 */
+  --nhn-footer-bg: #1a1a1a;        /* 푸터 배경 */
+  --nhn-footer-text: #a8a8a8;      /* 푸터 글자 */
+  --nhn-text-primary: #313338;     /* 본문 진한 색 */
+  --nhn-text-body: #313338;        /* 본문 기본 색 */
+  --nhn-text-muted: #666666;       /* 본문 흐린 색 */
+  --nhn-border: #CED0DA;           /* 구분선 */
 
   /* mkdocs-material 변수 override */
   --md-primary-fg-color: var(--nhn-primary);
   --md-primary-fg-color--light: var(--nhn-primary-light);
   --md-primary-fg-color--dark: var(--nhn-primary-dark);
   --md-accent-fg-color: var(--nhn-primary);
-  --md-accent-fg-color--transparent: rgba(0, 100, 250, 0.1);
+  --md-accent-fg-color--transparent: rgba(18, 93, 230, 0.1);
 
   /* 헤더는 NHN Cloud 다크 네이비로 */
   --md-primary-bg-color: var(--nhn-header-bg);
@@ -44,10 +47,14 @@
  * 2. 폰트 패밀리
  * ============================================================ */
 :root {
-  --md-text-font: "Pretendard", "Noto Sans KR", -apple-system,
+  --md-text-font: "Noto Sans KR", -apple-system,
                   BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --md-code-font: "D2Coding", "JetBrains Mono", "Source Code Pro",
                   Consolas, monospace;
+}
+
+[lang="ja"] body, [lang="ja"] input {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
 }
 
 body, input {
@@ -161,8 +168,8 @@ code, pre {
 
 /* 인라인 코드 */
 .md-typeset code {
-  background-color: #F5F7FA;
-  color: #D63384;
+  background-color: #F1F3F6;
+  color: #c7254e;
   padding: 0.1em 0.4em;
   border-radius: 3px;
   font-size: 0.85em;
@@ -230,7 +237,7 @@ code, pre {
 }
 
 .md-typeset table:not([class]) th {
-  background-color: #F5F7FA;
+  background-color: #F1F3F6;
   color: var(--nhn-text-primary);
   font-weight: 600;
   border-bottom: 2px solid var(--nhn-border);
@@ -261,7 +268,7 @@ code, pre {
  * 10. 검색창 결과
  * ============================================================ */
 .md-search-result__meta {
-  background-color: #F5F7FA;
+  background-color: #F1F3F6;
   color: var(--nhn-text-muted);
 }
 
