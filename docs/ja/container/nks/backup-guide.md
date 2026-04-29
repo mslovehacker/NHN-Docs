@@ -1,5 +1,3 @@
-## Container > NHN Kubernetes Service(NKS) > バックアップガイド
-
 ## 概要
 
 NHN Kubernetes Service(NKS)クラスタのバックアップが必要な場合、Veleroプラグインを使用してObject Storageにバックアップできます。

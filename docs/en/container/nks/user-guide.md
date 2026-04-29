@@ -1,5 +1,3 @@
-## Container > NHN Kubernetes Service (NKS) > User Guide
-
 <a id="cluster-headings"></a>
 ## Cluster
 Cluster refers to a group of instances that comprise user's Kubernetes.

@@ -1,5 +1,3 @@
-## Container > NHN Kubernetes Service(NKS) > Version Guide
-
 <a id="cluster-version-management"></a>
 ## Manage Cluster Version
 

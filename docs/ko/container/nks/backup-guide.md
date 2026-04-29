@@ -1,5 +1,3 @@
-## Container > NHN Kubernetes Service(NKS) > 백업 가이드
-
 ## 개요
 
 NHN Kubernetes Service(NKS) 클러스터의 백업이 필요한 경우 Velero 플러그인을 사용하여 Object Storage에 백업할 수 있습니다.

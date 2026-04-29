@@ -1,5 +1,3 @@
-## Container > NHN Kubernetes Service (NKS) > API v2 Guide
-
 This guide describes the API for configuring Kubernetes clusters.
 To use the API, you need an API endpoint, token, etc. Refer to [API Preparations](/Compute/Compute/en/identity-api/) to prepare the necessary information to use the API.
 

@@ -1,5 +1,3 @@
-## Container > NHN Kubernetes Service(NKS) > バージョンガイド
-
 <a id="cluster-version-management"></a>
 ## クラスタバージョン管理
 

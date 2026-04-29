@@ -1,5 +1,3 @@
-## Container > NHN Kubernetes Service (NKS) > Backup Guide
-
 ## Overview
 
 If you need a backup of your NHN Kubernetes Service (NKS) cluster, you can use the Velero plugin to back it up to Object Storage.

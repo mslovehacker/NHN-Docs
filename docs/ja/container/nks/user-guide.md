@@ -1,5 +1,3 @@
-## Container > NHN Kubernetes Service(NKS) > 使用ガイド
-
 <a id="cluster-create"></a>
 ### クラスター作成
 NHN Kubernetes Service(NKS)を使用するには、まずクラスターを作成する必要があります。

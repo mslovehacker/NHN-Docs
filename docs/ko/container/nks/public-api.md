@@ -1,5 +1,3 @@
-## Container > NHN Kubernetes Service(NKS) > API v2 가이드
-
 Kubernetes 클러스터를 구성하기 위한 API를 기술합니다.
 API를 사용하려면 API 엔드포인트와 토큰 등이 필요합니다. [API 사용 준비](/Compute/Compute/ko/identity-api/)를 참고하여 API 사용에 필요한 정보를 준비합니다.
 

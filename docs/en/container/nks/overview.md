@@ -1,6 +1,3 @@
-## Container > NHN Kubernetes Service (NKS) > Overview
-This document briefly describes what Kubernetes is, and outlines NHN Kubernetes Service (NKS) provided by NHN Cloud. 
-
 ## Kubernetes
 Kubernetes is an open-source platform which manages containerized workload and services. Kubernetes provides the following features: 
 

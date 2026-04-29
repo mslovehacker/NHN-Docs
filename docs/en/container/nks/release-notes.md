@@ -1,5 +1,3 @@
-## Container > NHN Kubernetes Service (NKS) > Release Notes
-
 ### March 10, 2026
 
 #### Platform Version Updates

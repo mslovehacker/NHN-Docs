@@ -1,5 +1,3 @@
-## Container > NHN Kubernetes Service(NKS) > 外部サービス連動ガイド > Istio
-
 ### 概要
 この文書はユーザーがNKS(NHN Kubernetes Service(NKS)クラスタにIstioを構成してテストできる例について説明したガイド文書です。NKSでは、インターネットに接続されていないクラスタでもIstioを構成できるように、ガイドとNCRレジストリを通じたIstioイメージを提供しています。ユーザーはこのガイド文書を通じてNKSが提供するイメージを使用してIstioを構成したり、Istio公式ガイド文書を参考にして直接Istioを構成できます。
 

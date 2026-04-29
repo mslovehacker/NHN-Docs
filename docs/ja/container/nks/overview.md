@@ -1,6 +1,3 @@
-## Container > NHN Kubernetes Service(NKS) > 概要
-ここではKubernetesとは何か、そしてNHN Cloudで提供するNHN Kubernetes Service(NKS)について説明します。
-
 ## Kubernetes
 Kubernetesは、コンテナ化されたワークロードとサービスを管理できるオープンソースのプラットフォームです。Kubernetesは次のような機能を提供します。
 

@@ -1,5 +1,3 @@
-## Container > NHN Kubernetes Service(NKS) > トラブルシューティング
-
 NHN Kubernetes Service(NKS)を使用する際に発生する可能性のあるさまざまな問題の解決方法を説明します。
 
 ### > ワーカーノードのコンテナログファイルサイズが大きくなり、ディスクスペースが減ります。

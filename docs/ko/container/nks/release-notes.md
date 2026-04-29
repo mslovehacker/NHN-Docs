@@ -1,5 +1,3 @@
-## Container > NHN Kubernetes Service(NKS) > 릴리스 노트
-
 ### 2026. 03. 17.
 
 #### 플랫폼 버전 업데이트

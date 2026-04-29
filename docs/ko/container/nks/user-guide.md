@@ -1,5 +1,3 @@
-## Container > NHN Kubernetes Service(NKS) > 사용 가이드
-
 <a id="cluster-headings"></a>
 ## 클러스터
 클러스터는 사용자의 Kubernetes를 구성하는 인스턴스들의 그룹입니다.

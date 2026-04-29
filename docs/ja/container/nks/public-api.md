@@ -1,5 +1,3 @@
-## Container > NHN Kubernetes Service(NKS) > API v2ガイド
-
 Kubernetesクラスタを構成するためのAPIを記述します。
 APIを使用するにはAPIエンドポイントとトークンなどが必要です。 [API使用準備](/Compute/Compute/ja/identity-api/)を参照してAPIの使用に必要な情報を準備します。
 
