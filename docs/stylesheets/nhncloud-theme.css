@@ -502,85 +502,24 @@ code, pre {
 }
 
 /* ============================================================
- * 14. NHN Cloud 카테고리 Sprite 아이콘 (좌표 정밀 조정)
- * ============================================================
- * 정식 NHN Cloud sprite (sp_document.png, 500x500, 20x20 아이콘)
- * docs.nhncloud.com 의 navbar-top.css 좌표 그대로 사용
- */
-
-/* 상단 nav 탭 카테고리 아이콘 */
-.md-tabs__link::before {
-  content: "";
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-right: 6px;
-  vertical-align: middle;
-  background-image: url('../assets/images/sp_document.png');
-  background-repeat: no-repeat;
-  background-position: 100px 100px; /* 기본 안 보이는 위치 */
-  filter: brightness(0) invert(1); /* 검은 헤더에 흰색으로 */
-  opacity: 0.85;
-  flex-shrink: 0;
-}
-
-.md-tabs__link:hover::before,
-.md-tabs__link--active::before {
-  opacity: 1;
-}
-
-/* 카테고리별 정확한 좌표 매핑 (docs.nhncloud.com CSS 기반) */
-.md-tabs__link[href$="quickstarts/overview/"]::before,
-.md-tabs__link[href$="quickstarts/"]::before {
-  background-position: -220px -64px;
-}
-
-.md-tabs__link[href*="/compute/"]::before,
-.md-tabs__link[href$="compute/instance/"]::before {
-  background-position: 0 -20px;
-}
-
-.md-tabs__link[href*="/container/"]::before,
-.md-tabs__link[href$="container/nks/overview/"]::before {
-  background-position: -44px -64px;
-}
-
-.md-tabs__link[href*="/network/"]::before {
-  background-position: -22px -20px;
-}
-
-.md-tabs__link[href*="/storage/"]::before {
-  background-position: -44px -20px;
-}
-
-.md-tabs__link[href*="/database/"]::before {
-  background-position: -66px -20px;
-}
-
-/* 헤더 로고 크기 (apple-touch-icon 180x180 너무 큼) */
-.md-header__button.md-logo img {
-  height: 28px;
-  width: auto;
-  border-radius: 4px;
-}
-
-/* ============================================================
- * 15. 상단 Tabs 텍스트 가독성 + 본문 겹침 해결 (긴급 보정)
+ * 14. 상단 Tabs 텍스트 가독성 + 본문 겹침 해결 (최종 정리)
  * ============================================================ */
 
-/* 탭 메뉴 자체 (검은 배경) */
+/* 탭 메뉴 영역 */
 .md-tabs {
   background-color: var(--nhn-header-bg) !important;
-  color: #FFFFFF !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* 탭 링크 텍스트 - 흰색으로 강제 */
+/* 탭 링크 - 흰색 텍스트 강제 */
 .md-tabs__link {
   color: rgba(255, 255, 255, 0.85) !important;
   font-size: 0.85rem;
   font-weight: 500;
   opacity: 1 !important;
+  padding: 0 1rem;
 }
 
 .md-tabs__link:hover,
@@ -589,102 +528,25 @@ code, pre {
   opacity: 1 !important;
 }
 
-/* 탭 영역 자체에 z-index + sticky 동작 보정 */
-.md-tabs--active {
-  background-color: var(--nhn-header-bg) !important;
+/* 본문이 sticky 탭 아래로 가려지지 않도록 충분한 여백 확보 */
+.md-main__inner {
+  margin-top: 2rem;
 }
 
-/* 본문 영역이 sticky tabs 에 가려지지 않도록 padding 보정 */
-.md-main {
-  padding-top: 0;
-}
-
-.md-content {
-  padding-top: 1rem;
-}
-
-/* 본문 첫 H1 의 상단 여백 강화 (탭 메뉴와 겹침 방지) */
-.md-content__inner > h1:first-child,
-.md-content__inner > h2:first-child {
-  margin-top: 1.5rem;
-  padding-top: 0.5rem;
-}
-
-/* sprite 아이콘 위치 미세 조정 */
-.md-tabs__link::before {
-  margin-right: 8px;
-  margin-bottom: -3px;
-  vertical-align: middle;
-}
-
-/* ============================================================
- * 16. Tab/sprite/본문 겹침 정밀 보정 (2차)
- * ============================================================ */
-
-/* sprite 셀렉터 정밀화 - 슬래시 유무 무관하게 매칭 */
-.md-tabs__link[href*="quickstarts"]::before {
-  background-position: -220px -64px !important;
-}
-.md-tabs__link[href*="compute"]::before {
-  background-position: 0 -20px !important;
-}
-.md-tabs__link[href*="container"]::before {
-  background-position: -44px -64px !important;
-}
-.md-tabs__link[href*="network"]::before {
-  background-position: -22px -20px !important;
-}
-.md-tabs__link[href*="storage"]::before {
-  background-position: -44px -20px !important;
-}
-.md-tabs__link[href*="database"]::before {
-  background-position: -66px -20px !important;
-}
-
-/* 홈 (href=".") 에는 아이콘 표시하지 않음 */
-.md-tabs__link[href="."]::before,
-.md-tabs__link[href="./"]::before {
-  display: none;
-}
-
-/* 아이콘과 텍스트 수직 정렬 보정 */
-.md-tabs__item {
-  display: inline-flex;
-  align-items: center;
-}
-
-.md-tabs__link {
-  display: inline-flex !important;
-  align-items: center;
-  height: 100%;
-  padding: 0 0.8rem;
-}
-
-.md-tabs__link::before {
-  margin-bottom: 0 !important;
-  vertical-align: middle;
-  flex-shrink: 0;
-}
-
-/* 본문 겹침 강화 (1차 보정 부족) */
 .md-content__inner {
-  padding-top: 2rem !important;
+  padding-top: 1.5rem !important;
 }
 
-.md-content__inner > h1:first-child,
-.md-content__inner > h2:first-child {
-  margin-top: 0.5rem !important;
+/* 본문 첫 헤딩의 위쪽 여백 강화 */
+.md-content__inner > h1:first-of-type,
+.md-content__inner > h2:first-of-type {
+  margin-top: 1rem !important;
   padding-top: 1rem !important;
 }
 
-/* sticky tabs 영역의 z-index 와 그림자 확실하게 */
-.md-tabs--active,
-.md-tabs {
-  z-index: 3;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* 메인 컨텐츠 영역 상단 여백 확보 */
-.md-main__inner {
-  margin-top: 1.5rem;
+/* 헤더 로고 크기 (apple-touch-icon 180x180 너무 큼) */
+.md-header__button.md-logo img {
+  height: 28px;
+  width: auto;
+  border-radius: 4px;
 }
