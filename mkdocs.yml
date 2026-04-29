@@ -15,7 +15,7 @@ theme:
   language: ko
   font: false
   favicon: assets/images/favicon-32x32.png
-  logo: assets/images/apple-touch-icon.png
+  logo: assets/images/logo_nhn_cloud_document.svg
 
   features:
     - navigation.tabs

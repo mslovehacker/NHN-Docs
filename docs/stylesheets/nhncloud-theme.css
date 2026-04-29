@@ -544,9 +544,11 @@ code, pre {
   padding-top: 1rem !important;
 }
 
-/* 헤더 로고 크기 (apple-touch-icon 180x180 너무 큼) */
+/* 정식 NHN Cloud Document 로고 (282x18 가로형 SVG) */
 .md-header__button.md-logo img {
-  height: 28px;
+  height: 22px;
   width: auto;
-  border-radius: 4px;
+  border-radius: 0;
+  vertical-align: middle;
+  /* SVG 가 흰색이므로 검은 헤더에서 자동으로 잘 보임 */
 }
