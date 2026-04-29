@@ -1,0 +1,569 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
+/*
+ * NHN Cloud Theme for mkdocs-material
+ * Level 3 migration: 색상 + 폰트 + 로고 + 헤더/푸터 형태
+ *
+ * 참조: docs.nhncloud.com (Bootstrap 4 + 자체 CSS 5종 기반)
+ * 적용 대상: mkdocs-material 9.x
+ */
+
+/* ============================================================
+ * 1. 색상 토큰 (mkdocs-material primary/accent override)
+ * ============================================================ */
+:root {
+  /* NHN Cloud 브랜드 컬러 */
+  --nhn-primary: #125de6;          /* 메인 파랑 */
+  --nhn-primary-dark: #004ec6;     /* hover 상태 */
+  --nhn-primary-light: #e9f1ff;    /* 배경 강조 */
+  --nhn-header-bg: #000000;        /* 상단 GNB 배경 */
+  --nhn-header-text: #FFFFFF;      /* 상단 GNB 글자 */
+  --nhn-footer-bg: #1a1a1a;        /* 푸터 배경 */
+  --nhn-footer-text: #a8a8a8;      /* 푸터 글자 */
+  --nhn-text-primary: #313338;     /* 본문 진한 색 */
+  --nhn-text-body: #313338;        /* 본문 기본 색 */
+  --nhn-text-muted: #666666;       /* 본문 흐린 색 */
+  --nhn-border: #CED0DA;           /* 구분선 */
+
+  /* mkdocs-material 변수 override */
+  --md-primary-fg-color: var(--nhn-primary);
+  --md-primary-fg-color--light: var(--nhn-primary-light);
+  --md-primary-fg-color--dark: var(--nhn-primary-dark);
+  --md-accent-fg-color: var(--nhn-primary);
+  --md-accent-fg-color--transparent: rgba(18, 93, 230, 0.1);
+
+  /* 헤더는 NHN Cloud 다크 네이비로 */
+  --md-primary-bg-color: var(--nhn-header-bg);
+  --md-primary-bg-color--light: rgba(255, 255, 255, 0.7);
+
+  /* 본문 색상 */
+  --md-default-fg-color: var(--nhn-text-body);
+  --md-default-fg-color--light: var(--nhn-text-muted);
+  --md-default-fg-color--lighter: var(--nhn-border);
+}
+
+/* ============================================================
+ * 2. 폰트 패밀리
+ * ============================================================ */
+:root {
+  --md-text-font: "Noto Sans KR", -apple-system,
+                  BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --md-code-font: "D2Coding", "JetBrains Mono", "Source Code Pro",
+                  Consolas, monospace;
+}
+
+[lang="ja"] body, [lang="ja"] input {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+body, input {
+  font-family: var(--md-text-font);
+  font-feature-settings: "ss01", "ss02";
+  letter-spacing: -0.01em;
+}
+
+code, pre {
+  font-family: var(--md-code-font);
+}
+
+/* ============================================================
+ * 3. 헤더 (mkdocs-material 상단바 NHN Cloud 스타일)
+ * ============================================================ */
+.md-header {
+  background-color: var(--nhn-header-bg);
+  color: var(--nhn-header-text);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  height: 56px;
+}
+
+.md-header__title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.md-header__button.md-logo {
+  padding: 0.5rem;
+}
+
+.md-header[data-md-state="shadow"] {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* 상단 검색 바 */
+.md-search__form {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+
+.md-search__form:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ============================================================
+ * 4. 네비게이션 탭 (메인 카테고리)
+ * ============================================================ */
+.md-tabs {
+  background-color: var(--nhn-header-bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.md-tabs__link {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  opacity: 1;
+  color: #FFFFFF;
+}
+
+/* ============================================================
+ * 5. 본문 타이포그래피
+ * ============================================================ */
+.md-typeset {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--nhn-text-body);
+}
+
+.md-typeset h1 {
+  color: var(--nhn-text-primary);
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  border-bottom: 2px solid var(--nhn-primary);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.md-typeset h2 {
+  color: var(--nhn-text-primary);
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: -0.015em;
+  margin-top: 2rem;
+}
+
+.md-typeset h3 {
+  color: var(--nhn-text-primary);
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+/* 링크 */
+.md-typeset a {
+  color: var(--nhn-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.md-typeset a:hover {
+  border-bottom-color: var(--nhn-primary);
+}
+
+/* 인라인 코드 */
+.md-typeset code {
+  background-color: #F1F3F6;
+  color: #c7254e;
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+  font-size: 0.85em;
+}
+
+/* 코드 블록 */
+.md-typeset pre {
+  border-radius: 6px;
+}
+
+/* ============================================================
+ * 6. 사이드바 (좌측 네비게이션)
+ * ============================================================ */
+.md-nav {
+  font-size: 0.8rem;
+}
+
+.md-nav__title {
+  font-weight: 600;
+  color: var(--nhn-text-primary);
+}
+
+.md-nav__link {
+  color: var(--nhn-text-body);
+  margin: 0.2rem 0;
+}
+
+.md-nav__link:hover {
+  color: var(--nhn-primary);
+}
+
+.md-nav__link--active {
+  color: var(--nhn-primary);
+  font-weight: 600;
+}
+
+/* ============================================================
+ * 7. Admonition (참고/주의 박스 — NHN Cloud 스타일)
+ * ============================================================ */
+.md-typeset .admonition {
+  border-radius: 6px;
+  border-left-width: 4px;
+  font-size: 0.8rem;
+}
+
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-left-color: var(--nhn-primary);
+}
+
+.md-typeset .note > .admonition-title,
+.md-typeset .note > summary {
+  background-color: var(--nhn-primary-light);
+  color: var(--nhn-primary-dark);
+}
+
+/* ============================================================
+ * 8. 테이블 (NHN Cloud 가이드의 표 스타일)
+ * ============================================================ */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--nhn-border);
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 0.8rem;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: #F1F3F6;
+  color: var(--nhn-text-primary);
+  font-weight: 600;
+  border-bottom: 2px solid var(--nhn-border);
+}
+
+.md-typeset table:not([class]) td {
+  border-color: var(--nhn-border);
+}
+
+/* ============================================================
+ * 9. 푸터 (NHN Cloud 스타일)
+ * ============================================================ */
+.md-footer {
+  background-color: var(--nhn-footer-bg);
+  color: var(--nhn-footer-text);
+}
+
+.md-footer-meta {
+  background-color: var(--nhn-footer-bg);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.md-footer-meta__inner {
+  font-size: 0.75rem;
+}
+
+/* ============================================================
+ * 10. 검색창 결과
+ * ============================================================ */
+.md-search-result__meta {
+  background-color: #F1F3F6;
+  color: var(--nhn-text-muted);
+}
+
+/* ============================================================
+ * 11. 한글 가독성 미세 조정
+ * ============================================================ */
+.md-typeset {
+  word-break: keep-all;        /* 한글 줄바꿈 자연스럽게 */
+  overflow-wrap: break-word;
+}
+
+.md-typeset li {
+  margin-bottom: 0.3rem;
+}
+
+/* ============================================================
+ * 12. NHN Cloud GNB (상단 검은 네비게이션 바)
+ * ============================================================ */
+.nhn-gnb {
+  background-color: var(--nhn-header-bg);
+  color: var(--nhn-header-text);
+  height: 40px;
+  font-size: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nhn-gnb__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nhn-gnb__brand a {
+  color: #FFFFFF;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: -0.01em;
+}
+
+.nhn-gnb__menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.nhn-gnb__menu li {
+  margin: 0;
+}
+
+.nhn-gnb__menu a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.15s;
+  font-weight: 400;
+}
+
+.nhn-gnb__menu a:hover {
+  color: #FFFFFF;
+}
+
+.nhn-gnb__action {
+  margin-left: auto;
+}
+
+.nhn-gnb__console {
+  background-color: var(--nhn-primary);
+  color: #FFFFFF !important;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.75rem;
+  transition: background-color 0.15s;
+}
+
+.nhn-gnb__console:hover {
+  background-color: var(--nhn-primary-dark);
+}
+
+/* GNB가 있을 때 mkdocs-material 헤더 위치 조정 */
+.md-header {
+  top: 40px;
+}
+
+@media screen and (max-width: 76.1875em) {
+  .nhn-gnb__menu {
+    display: none;
+  }
+  .nhn-gnb__inner {
+    gap: 1rem;
+  }
+}
+
+/* ============================================================
+ * 13. NHN Cloud Footer (하단 정보 푸터)
+ * ============================================================ */
+.nhn-footer {
+  background-color: var(--nhn-footer-bg);
+  color: var(--nhn-footer-text);
+  padding: 3rem 0 0;
+  margin-top: 3rem;
+  font-size: 0.8rem;
+}
+
+.nhn-footer__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+}
+
+.nhn-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nhn-footer__logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+}
+
+.nhn-footer__company {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+}
+
+.nhn-footer__address {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.nhn-footer__menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.nhn-footer__menu-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.nhn-footer__menu-title {
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0 0 0.8rem 0;
+  letter-spacing: -0.01em;
+}
+
+.nhn-footer__menu-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nhn-footer__menu-group a {
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  font-size: 0.75rem;
+  transition: color 0.15s;
+}
+
+.nhn-footer__menu-group a:hover {
+  color: #FFFFFF;
+}
+
+/* 푸터 메타 (Copyright) */
+.nhn-footer__meta {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1rem 0;
+}
+
+.nhn-footer__meta-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.nhn-footer__copyright {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.nhn-footer__poweredby {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.65rem;
+}
+
+/* 모바일 반응형 */
+@media screen and (max-width: 76.1875em) {
+  .nhn-footer__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .nhn-footer__menu {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .nhn-footer__meta-inner {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
+/* mkdocs-material 기본 footer 스타일 보정 */
+.md-footer__inner {
+  padding-bottom: 2rem;
+}
+
+/* ============================================================
+ * 14. Material for MkDocs 표준 + NHN 색상 통합 (최종)
+ * ============================================================
+ * Material for MkDocs 9.7.6 기본 디자인을 유지하면서
+ * NHN Cloud 색상 (검은 헤더 + 파란 액센트) 만 적용
+ *
+ * 폰트 아이콘 (toast-icon) 은 자산만 보존, 현재 미사용
+ * 추후 정식 NHN Cloud BI 수령 시 활성화 가능
+ */
+
+/* 헤더 영역 - NHN 검은색 */
+.md-header {
+  background-color: var(--nhn-header-bg);
+}
+
+/* 상단 탭 영역 - NHN 검은색 */
+.md-tabs {
+  background-color: var(--nhn-header-bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 3;
+}
+
+/* 탭 링크 - 흰색 텍스트, Material 표준 */
+.md-tabs__link {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.85rem;
+  font-weight: 500;
+  opacity: 1;
+  margin-top: 0;
+  padding: 0 1rem;
+  height: 2.4rem;
+  line-height: 2.4rem;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  color: #FFFFFF;
+  opacity: 1;
+}
+
+/* 활성 탭에 밑줄 (Material 표준) */
+.md-tabs__link--active {
+  border-bottom: 2px solid #FFFFFF;
+}
+
+/* 본문 영역 - 충분한 상단 여백 */
+.md-main__inner {
+  margin-top: 1.5rem;
+}
+
+.md-content__inner {
+  padding-top: 1.2rem;
+}
+
+.md-content__inner > h1:first-of-type,
+.md-content__inner > h2:first-of-type {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+/* 헤더 로고 (정식 NHN BI 수령 시 자동 동작) */
+.md-header__button.md-logo img {
+  height: 22px;
+  width: auto;
+  vertical-align: middle;
+}

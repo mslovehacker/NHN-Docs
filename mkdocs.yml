@@ -143,15 +143,31 @@ nav:
   - 컴퓨팅:
       - 인스턴스: compute/instance.md
   - 컨테이너:
-      - NKS:
-          - 개요: container/nks/overview.md
-          - 사용 가이드: container/nks/user-guide.md
-          - API 가이드: container/nks/public-api.md
-          - 백업 가이드: container/nks/backup-guide.md
-          - Istio 가이드: container/nks/istio-guide.md
-          - 버전 가이드: container/nks/version-guide.md
-          - 문제 해결 가이드: container/nks/troubleshooting-guide.md
-          - 릴리스 노트: container/nks/release-notes.md
+    - NHN Kubernetes Service (NKS):
+        - 개요: container/nks/overview.md
+        - 사용 가이드: container/nks/user-guide.md
+        - API 가이드: container/nks/public-api.md
+        - 백업 가이드: container/nks/backup-guide.md
+        - Istio 가이드: container/nks/istio-guide.md
+        - 버전 가이드: container/nks/version-guide.md
+        - 문제 해결 가이드: container/nks/troubleshooting-guide.md
+        - 릴리스 노트: container/nks/release-notes.md
+    - NHN Container Registry (NCR):
+        - 개요: container/ncr/overview.md
+        - 사용 가이드: container/ncr/user-guide.md
+        - 릴리스 노트: container/ncr/release-notes.md
+    - NHN Container Registry v2:
+        - 개요: container/ncr-v2/overview.md
+        - 사용 가이드: container/ncr-v2/user-guide.md
+        - API 가이드: container/ncr-v2/public-api.md
+        - Gov Release Notes: container/ncr-v2/gov-release-notes.md
+        - Gov User Guide: container/ncr-v2/gov-user-guide.md
+        - 릴리스 노트: container/ncr-v2/release-notes.md
+    - NHN Container Service (NCS):
+        - 개요: container/ncs/overview.md
+        - 사용 가이드: container/ncs/user-guide.md
+        - API 가이드: container/ncs/public-api.md
+        - 릴리스 노트: container/ncs/release-notes.md
 
 extra:
   social:
