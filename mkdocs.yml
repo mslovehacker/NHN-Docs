@@ -1,0 +1,895 @@
+pages:
+    - NHN Cloud:
+          - "개요": nhncloud/ko/overview.md
+          - "사용 가이드": nhncloud/ko/user-guide.md
+          - "콘솔 정책 가이드": nhncloud/ko/console-guide.md
+          - "콘솔 사용 가이드": nhncloud/ko/console-user-guide.md
+          - "리소스 제공 정책": nhncloud/ko/resource-policy.md
+          - "보안 정책": nhncloud/ko/security-policy.md
+          - SDK 사용 가이드:
+                - "개요": nhncloud/ko/nhncloud-sdk/overview.md
+                - 시작하기:
+                      - "Android": nhncloud/ko/nhncloud-sdk/getting-started-android.md
+                      - "iOS": nhncloud/ko/nhncloud-sdk/getting-started-ios.md
+                      - "Windows C++": nhncloud/ko/nhncloud-sdk/getting-started-windows.md
+                - Log & Crash:
+                      - "Android": nhncloud/ko/nhncloud-sdk/log-collector-android.md
+                      - "Android (NDK)": nhncloud/ko/nhncloud-sdk/log-collector-ndk.md
+                      - "Android (Symbol Uploader)": nhncloud/ko/nhncloud-sdk/symbol-uploader-android.md
+                      - "iOS": nhncloud/ko/nhncloud-sdk/log-collector-ios.md
+                      - "Windows C++": nhncloud/ko/nhncloud-sdk/log-collector-windows.md
+                      - "Reserved Fields": nhncloud/ko/nhncloud-sdk/log-collector-reserved-fields.md
+                - IAP:
+                      - "Android": nhncloud/ko/nhncloud-sdk/iap-android.md
+                      - "iOS": nhncloud/ko/nhncloud-sdk/iap-ios.md
+                - Push:
+                      - "Android": nhncloud/ko/nhncloud-sdk/push-android.md
+                      - "iOS": nhncloud/ko/nhncloud-sdk/push-ios.md
+                - OCR:
+                      - "Credit Card (Android)": nhncloud/ko/nhncloud-sdk/creditcard-recognizer-android.md
+                      - "Credit Card (iOS)": nhncloud/ko/nhncloud-sdk/creditcard-recognizer-ios.md
+                      - "ID Card (Android)": nhncloud/ko/nhncloud-sdk/idcard-recognizer-android.md
+                      - "ID Card (iOS)": nhncloud/ko/nhncloud-sdk/idcard-recognizer-ios.md
+                - 릴리스 노트:
+                      - "Android": nhncloud/ko/nhncloud-sdk/release-notes-android.md
+                      - "iOS": nhncloud/ko/nhncloud-sdk/release-notes-ios.md
+                      - "Windows C++": nhncloud/ko/nhncloud-sdk/release-notes-windows.md
+          - 리전 가이드: nhncloud/ko/region-guide.md
+          - 아키텍처 아이콘: nhncloud/ko/architecture-icon.md
+    - Compute:
+          - Instance:
+                - "개요": Compute/Instance/ko/overview.md
+                - "콘솔 사용 가이드": Compute/Instance/ko/console-guide.md
+                - "설치 구성 요소 가이드": Compute/Instance/ko/component-guide.md
+                - "API 사용 준비": Compute/Compute/ko/identity-api.md
+                - "API 가이드": Compute/Instance/ko/public-api.md
+                - "Terraform 사용 가이드": Compute/Instance/ko/terraform-guide.md
+                - "문제 해결 가이드": Compute/Instance/ko/troubleshooting-guide.md
+          - GPU Instance:
+                - "개요": Compute/GPU Instance/ko/overview.md
+                - "콘솔 사용 가이드": Compute/GPU Instance/ko/console-guide.md
+          - Bare Metal Instance:
+                - "개요": Compute/Compute-Baremetal/ko/overview.md
+                - "콘솔 사용 가이드": Compute/Compute-Baremetal/ko/console-guide.md
+          - Instance Template:
+                - "개요": Compute/Instance Template/ko/overview.md
+                - "콘솔 사용 가이드": Compute/Instance Template/ko/console-guide.md
+          - Image:
+                - "개요": Compute/Image/ko/overview.md
+                - "콘솔 사용 가이드": Compute/Image/ko/console-guide.md
+                - "API 가이드": Compute/Image/ko/public-api.md
+          - Image Builder:
+                - "개요": Compute/Image Builder/ko/overview.md
+                - "콘솔 사용 가이드": Compute/Image Builder/ko/console-guide.md
+                - "설치 구성 요소 가이드": Compute/Image Builder/ko/component-guide.md
+          - Auto Scale:
+                - "개요": Compute/Auto Scale/ko/overview.md
+                - "콘솔 사용 가이드": Compute/Auto Scale/ko/console-guide.md
+          - "릴리스 노트": Compute/Compute/ko/release-notes.md
+          - Virtual Desktop:
+                - "개요": Compute/Virtual Desktop/ko/overview.md
+                - "콘솔 사용 가이드": Compute/Virtual Desktop/ko/console-guide.md
+                - "릴리스 노트": Compute/Virtual Desktop/ko/release-notes.md
+    - Container:
+          - NHN Kubernetes Service(NKS):
+                - "개요": Container/NKS/ko/overview.md
+                - "사용 가이드": Container/NKS/ko/user-guide.md
+                - "API 가이드": Container/NKS/ko/public-api.md
+                - "백업 가이드": Container/NKS/ko/backup-guide.md
+                - "문제 해결 가이드": Container/NKS/ko/troubleshooting-guide.md
+                - "릴리스 노트": Container/NKS/ko/release-notes.md
+                - 애플리케이션 가이드:
+                      - "Istio": Container/NKS/ko/istio-guide.md
+          - (Old) Container Registry:
+                - "개요": Container/Old Container Registry/ko/overview.md
+                - "사용 가이드": Container/Old Container Registry/ko/user-guide.md
+                - "릴리스 노트": Container/Old Container Registry/ko/release-notes.md
+          - NHN Container Registry(NCR):
+                - "개요": Container/NCR/ko/overview.md
+                - "사용 가이드": Container/NCR/ko/user-guide.md
+                - "릴리스 노트": Container/NCR/ko/release-notes.md
+          - NHN Container Service(NCS):
+                - "개요": Container/NCS/ko/overview.md
+                - "사용 가이드": Container/NCS/ko/user-guide.md
+                - "릴리스 노트": Container/NCS/ko/release-notes.md
+    - Network:
+          - VPC:
+                - "개요": Network/VPC/ko/overview.md
+                - "콘솔 사용 가이드": Network/VPC/ko/console-guide.md
+                - "VPC API 가이드": Network/VPC/ko/public-api.md
+                - "Openstack 호환 API 가이드": Network/VPC/ko/public-api-compat.md
+          - Network Interface:
+                - "개요": Network/Network Interface/ko/overview.md
+                - "콘솔 사용 가이드": Network/Network Interface/ko/console-guide.md
+          - Floating IP:
+                - "개요": Network/Floating IP/ko/overview.md
+                - "콘솔 사용 가이드": Network/Floating IP/ko/console-guide.md
+                - "API 가이드": Network/Floating IP/ko/public-api.md
+          - Network ACL:
+                - "개요": Network/Network ACL/ko/overview.md
+                - "콘솔 사용 가이드": Network/Network ACL/ko/console-guide.md
+                - "API 가이드": Network/Network ACL/ko/public-api.md
+          - Security Groups:
+                - "개요": Network/Security Groups/ko/overview.md
+                - "콘솔 사용 가이드": Network/Security Groups/ko/console-guide.md
+                - "API 가이드": Network/Security Groups/ko/public-api.md
+          - Load Balancer:
+                - "개요": Network/Load Balancer/ko/overview.md
+                - "콘솔 사용 가이드": Network/Load Balancer/ko/console-guide.md
+                - "API 가이드": Network/Load Balancer/ko/public-api.md
+          - Transit Hub:
+                - "개요": Network/Transit Hub/ko/overview.md
+                - "콘솔 사용 가이드": Network/Transit Hub/ko/console-guide.md
+                - "API 가이드": Network/Transit Hub/ko/public-api.md
+          - Internet Gateway:
+                - "개요": Network/Internet Gateway/ko/overview.md
+                - "콘솔 사용 가이드": Network/Internet Gateway/ko/console-guide.md
+          - Peering Gateway:
+                - "개요": Network/Peering Gateway/ko/overview.md
+                - "콘솔 사용 가이드": Network/Peering Gateway/ko/console-guide.md
+          - Colocation Gateway:
+                - "개요": Network/Colocation Gateway/ko/overview.md
+                - "콘솔 사용 가이드": Network/Colocation Gateway/ko/console-guide.md
+          - NAT Gateway:
+                - "개요": Network/NAT Gateway/ko/overview.md
+                - "콘솔 사용 가이드": Network/NAT Gateway/ko/console-guide.md
+          - VPN Gateway(Site-to-Site VPN):
+                - "개요": Network/VPN Gateway(Site-to-Site VPN)/ko/overview.md
+                - "콘솔 사용 가이드": Network/VPN Gateway(Site-to-Site VPN)/ko/console-guide.md
+          - Service Gateway:
+                - "개요": Network/Service Gateway/ko/overview.md
+                - "콘솔 사용 가이드": Network/Service Gateway/ko/console-guide.md
+                - "API 가이드": Network/Service Gateway/ko/public-api.md
+          - Traffic Mirroring:
+                - "개요": Network/Traffic Mirroring/ko/overview.md
+                - "콘솔 사용 가이드": Network/Traffic Mirroring/ko/console-guide.md
+          - Direct Connect:
+                - "개요": Network/Direct Connect/ko/overview.md
+                - "콘솔 사용 가이드": Network/Direct Connect/ko/console-guide.md
+                - "릴리스 노트": Network/Direct Connect/ko/release-notes.md
+          - Private DNS:
+                - "개요": Network/Private DNS/ko/overview.md
+                - "콘솔 사용 가이드": Network/Private DNS/ko/console-guide.md
+          - DNS Plus:
+                - "개요": Network/DNS Plus/ko/Overview.md
+                - "콘솔 사용 가이드": Network/DNS Plus/ko/console-guide.md
+                - "API 가이드": Network/DNS Plus/ko/api-guide.md
+          - "릴리스 노트": Network/Network/ko/release-notes.md
+    - Storage:
+          - Block Storage:
+                - "개요": Storage/Block Storage/ko/overview.md
+                - "콘솔 사용 가이드": Storage/Block Storage/ko/console-guide.md
+                - "API 가이드": Storage/Block Storage/ko/public-api.md
+                - "데이터 완전 삭제 가이드": Storage/Block Storage/ko/data-wiping-guide.md
+                - "릴리스 노트": Storage/Block Storage/ko/release-notes.md
+          - NAS:
+                - "개요": Storage/NAS/ko/overview.md
+                - "콘솔 사용 가이드": Storage/NAS/ko/console-guide.md
+                - "릴리스 노트": Storage/NAS/ko/release-notes.md
+          - NAS (offline):
+                - "개요": Storage/NAS (offline)/ko/overview.md
+                - "콘솔 사용 가이드": Storage/NAS (offline)/ko/console-guide.md
+                - "릴리스 노트": Storage/NAS (offline)/ko/release-notes.md
+          - Object Storage:
+                - "개요": Storage/Object Storage/ko/Overview.md
+                - "콘솔 사용 가이드": Storage/Object Storage/ko/console-guide.md
+                - "API 가이드": Storage/Object Storage/ko/api-guide.md
+                - "접근 정책 설정 가이드": Storage/Object Storage/ko/acl-guide.md
+                - "Amazon S3 호환 API 가이드": Storage/Object Storage/ko/s3-api-guide.md
+                - "서드 파티 도구 사용 가이드": Storage/Object Storage/ko/third-party-tools-guide.md
+                - "문제 해결 가이드": Storage/Object Storage/ko/trouble-shooting-guide.md
+                - "릴리스 노트": Storage/Object Storage/ko/release-notes.md
+          - Backup:
+                - "개요": Storage/Backup/ko/overview.md
+                - "콘솔 사용 가이드": Storage/Backup/ko/console-guide.md
+                - "릴리스 노트": Storage/Backup/ko/release-notes.md
+          - Data Transporter:
+                - "개요": Storage/Data Transporter/ko/overview.md
+                - "릴리스 노트": Storage/Data Transporter/ko/release-notes.md
+    - Database:
+          - RDS for MySQL:
+                - "개요": Database/RDS for MySQL/ko/overview.md
+                - "DB 인스턴스": Database/RDS for MySQL/ko/db-instance.md
+                - "DB 엔진": Database/RDS for MySQL/ko/db-engine.md
+                - "백업 및 복원": Database/RDS for MySQL/ko/backup-and-restore.md
+                - "DB 보안 그룹": Database/RDS for MySQL/ko/db-security-group.md
+                - "파라미터 그룹": Database/RDS for MySQL/ko/parameter-group.md
+                - "서버 대시보드": Database/RDS for MySQL/ko/server-dashboard.md
+                - "알림": Database/RDS for MySQL/ko/notification.md
+                - "분석": Database/RDS for MySQL/ko/analysis.md
+                - "API v3.0 가이드": Database/RDS for MySQL/ko/api-guide-v3.0.md
+                - "API v2.0 가이드": Database/RDS for MySQL/ko/api-guide-v2.0.md
+                - "릴리스 노트": Database/RDS for MySQL/ko/release-notes.md
+          - RDS for PostgreSQL:
+                - "개요": Database/RDS for PostgreSQL/ko/overview.md
+                - "DB 인스턴스": Database/RDS for PostgreSQL/ko/db-instance.md
+                - "DB 엔진": Database/RDS for PostgreSQL/ko/db-engine.md
+                - "백업 및 복원": Database/RDS for PostgreSQL/ko/backup-and-restore.md
+                - "DB 보안 그룹": Database/RDS for PostgreSQL/ko/db-security-group.md
+                - "파라미터 그룹": Database/RDS for PostgreSQL/ko/parameter-group.md
+                - "서버 대시보드": Database/RDS for PostgreSQL/ko/server-dashboard.md
+                - "이벤트": Database/RDS for PostgreSQL/ko/event.md
+                - "알림": Database/RDS for PostgreSQL/ko/notification.md
+                - "릴리스 노트": Database/RDS for PostgreSQL/ko/release-notes.md
+          - RDS for MariaDB:
+                - "개요": Database/RDS for MariaDB/ko/overview.md
+                - "DB 인스턴스": Database/RDS for MariaDB/ko/db-instance.md
+                - "백업 및 복원": Database/RDS for MariaDB/ko/backup-and-restore.md
+                - "DB 보안 그룹": Database/RDS for MariaDB/ko/db-security-group.md
+                - "파라미터 그룹": Database/RDS for MariaDB/ko/parameter-group.md
+                - "서버 대시보드": Database/RDS for MariaDB/ko/server-dashboard.md
+                - "알림": Database/RDS for MariaDB/ko/notification.md
+                - "분석": Database/RDS for MariaDB/ko/analysis.md
+                - "API v3.0 가이드": Database/RDS for MariaDB/ko/api-guide-v3.0.md
+                - "API v2.0 가이드": Database/RDS for MariaDB/ko/api-guide-v2.0.md
+                - "릴리스 노트": Database/RDS for MariaDB/ko/release-notes.md
+          - RDS for MS-SQL:
+                - "개요": Database/RDS for SQL Server/ko/overview.md
+                - "DB 인스턴스": Database/RDS for SQL Server/ko/db-instance.md
+                - "데이터베이스 접속": Database/RDS for SQL Server/ko/database-connection.md
+                - "데이터베이스 사용": Database/RDS for SQL Server/ko/database-usage.md
+                - "백업 및 복원": Database/RDS for SQL Server/ko/backup-restore.md
+                - "파라미터 그룹": Database/RDS for SQL Server/ko/parameter-group.md
+                - "예약 작업": Database/RDS for SQL Server/ko/reserved-process.md
+                - "모니터링": Database/RDS for SQL Server/ko/monitoring.md
+                - "콘솔 사용 가이드": Database/RDS for SQL Server/ko/console-guide.md
+                - "릴리스 노트": Database/RDS for SQL Server/ko/release-notes.md
+          - EasyCache:
+                - "개요": Database/EasyCache/ko/overview.md
+                - "콘솔 사용 가이드": Database/EasyCache/ko/console-guide.md
+                - "개발자 가이드": Database/EasyCache/ko/developer-guide.md
+                - "릴리스 노트": Database/EasyCache/ko/release-notes.md
+    - Monitoring:
+          - System Monitoring:
+                - "개요": Monitoring/System Monitoring/ko/overview.md
+                - "콘솔 사용 가이드": Monitoring/System Monitoring/ko/console-guide.md
+                - Advanced Monitoring:
+                      - "개요": Monitoring/System Monitoring/ko/open-metrics-overview.md
+                      - "콘솔 사용 가이드": Monitoring/System Monitoring/ko/open-metrics-console-guide.md
+                      - "API 가이드": Monitoring/System Monitoring/ko/open-metrics-api-guide.md
+                - "릴리스 노트": Monitoring/System Monitoring/ko/release-notes.md
+          - Service Monitoring:
+                - "개요": Monitoring/Service Monitoring/ko/overview.md
+                - "콘솔 사용 가이드": Monitoring/Service Monitoring/ko/console-guide.md
+                - "API 가이드": Monitoring/Service Monitoring/ko/api-guide.md
+                - "릴리스 노트": Monitoring/Service Monitoring/ko/release-notes.md
+          - Cloud Monitoring:
+                - "개요": Monitoring/Cloud Monitoring/ko/overview.md
+                - "지표 가이드": Monitoring/Cloud Monitoring/ko/metric-dictionary.md
+                - "콘솔 사용 가이드": Monitoring/Cloud Monitoring/ko/console-guide.md
+                - "사용 시나리오": Monitoring/Cloud Monitoring/ko/user-guide.md
+                - "릴리스 노트": Monitoring/Cloud Monitoring/ko/release-notes.md
+    - Game:
+          - Gamebase:
+                - "개요": Game/Gamebase/ko/Overview.md
+                - "Quick Guide": Game/Gamebase/ko/quick-guide.md
+                - 콘솔 사용 가이드:
+                      - "Analytics": Game/Gamebase/ko/oper-analytics.md
+                      - "앱": Game/Gamebase/ko/oper-app.md
+                      - "운영": Game/Gamebase/ko/oper-operation.md
+                      - "푸시": Game/Gamebase/ko/oper-push.md
+                      - "회원": Game/Gamebase/ko/oper-member.md
+                      - "이용 정지": Game/Gamebase/ko/oper-ban.md
+                      - "결제": Game/Gamebase/ko/oper-purchase.md
+                      - "쿠폰": Game/Gamebase/ko/oper-coupon.md
+                      - "고객센터": Game/Gamebase/ko/oper-customer-service.md
+                      - "관리": Game/Gamebase/ko/oper-management.md
+                - 스토어 콘솔 가이드:
+                      - "Google 콘솔 가이드": Game/Gamebase/ko/console-google-guide.md
+                      - "Apple 콘솔 가이드": Game/Gamebase/ko/console-apple-guide.md
+                      - "ONE Store 콘솔 가이드": Game/Gamebase/ko/console-onestore-guide.md
+                      - "Galaxy 콘솔 가이드": Game/Gamebase/ko/console-galaxy-guide.md
+                      - "MyCard 콘솔 가이드": Game/Gamebase/ko/console-mycard-guide.md
+                      - "Amazon 콘솔 가이드": Game/Gamebase/ko/console-amazon-guide.md
+                      - "Huawei 콘솔 가이드": Game/Gamebase/ko/console-huawei-guide.md
+                      - "Epic Games Store 콘솔 가이드": Game/Gamebase/ko/console-epicgames-guide.md
+                - Android SDK 사용 가이드:
+                      - "시작하기": Game/Gamebase/ko/aos-started.md
+                      - "초기화": Game/Gamebase/ko/aos-initialization.md
+                      - "인증": Game/Gamebase/ko/aos-authentication.md
+                      - "결제": Game/Gamebase/ko/aos-purchase.md
+                      - "푸시": Game/Gamebase/ko/aos-push.md
+                      - "Logger": Game/Gamebase/ko/aos-logger.md
+                      - "UI": Game/Gamebase/ko/aos-ui.md
+                      - "참고 사항": Game/Gamebase/ko/aos-etc.md
+                - iOS SDK 사용 가이드:
+                      - "시작하기": Game/Gamebase/ko/ios-started.md
+                      - "초기화": Game/Gamebase/ko/ios-initialization.md
+                      - "인증": Game/Gamebase/ko/ios-authentication.md
+                      - "결제": Game/Gamebase/ko/ios-purchase.md
+                      - "푸시": Game/Gamebase/ko/ios-push.md
+                      - "Logger": Game/Gamebase/ko/ios-logger.md
+                      - "UI": Game/Gamebase/ko/ios-ui.md
+                      - "참고 사항": Game/Gamebase/ko/ios-etc.md
+                - Unity SDK 사용 가이드:
+                      - "시작하기": Game/Gamebase/ko/unity-started.md
+                      - "초기화": Game/Gamebase/ko/unity-initialization.md
+                      - "인증": Game/Gamebase/ko/unity-authentication.md
+                      - "결제": Game/Gamebase/ko/unity-purchase.md
+                      - "푸시": Game/Gamebase/ko/unity-push.md
+                      - "Logger": Game/Gamebase/ko/unity-logger.md
+                      - "UI": Game/Gamebase/ko/unity-ui.md
+                      - "참고 사항": Game/Gamebase/ko/unity-etc.md
+                - Unreal SDK 사용 가이드:
+                      - "시작하기": Game/Gamebase/ko/unreal-started.md
+                      - "초기화": Game/Gamebase/ko/unreal-initialization.md
+                      - "인증": Game/Gamebase/ko/unreal-authentication.md
+                      - "결제": Game/Gamebase/ko/unreal-purchase.md
+                      - "푸시": Game/Gamebase/ko/unreal-push.md
+                      - "Logger": Game/Gamebase/ko/unreal-logger.md
+                      - "UI": Game/Gamebase/ko/unreal-ui.md
+                      - "참고 사항": Game/Gamebase/ko/unreal-etc.md
+                - API 가이드:
+                      - "API v1.3 가이드": Game/Gamebase/ko/api-guide.md
+                      - "API v1.2 가이드": Game/Gamebase/ko/api-guide-v1.2.md
+                      - "API v1.0 가이드": Game/Gamebase/ko/api-guide-v1.0.md
+                - "오류 코드": Game/Gamebase/ko/error-code.md
+                - "업그레이드 가이드": Game/Gamebase/ko/upgrade-guide.md
+                - 릴리스 노트: 
+                      - "Console": Game/Gamebase/ko/release-notes-console.md
+                      - "Android": Game/Gamebase/ko/release-notes-android.md
+                      - "iOS": Game/Gamebase/ko/release-notes-ios.md
+                      - "Unity": Game/Gamebase/ko/release-notes-unity.md
+                      - "Unreal": Game/Gamebase/ko/release-notes-unreal.md
+                      - "Server API": Game/Gamebase/ko/release-notes-server-api.md
+          - GameAnvil:
+                - "개요": Game/GameAnvil/ko/overview.md
+                - 튜토리얼:
+                      - "기초 튜토리얼": Game/GameAnvil/ko/tutorial/tutorial-01-basic.md
+                      - "심화 튜토리얼": Game/GameAnvil/ko/tutorial/tutorial-02-advanced.md
+                - 콘솔 사용 가이드: 
+                      - "시작하기": Game/GameAnvil/ko/console/console-01-getting-started.md
+                      - "서버 생성하기": Game/GameAnvil/ko/console/console-02-new-server.md
+                      - "오토스케일": Game/GameAnvil/ko/console/console-03-autoscale.md
+                      - "모니터링": Game/GameAnvil/ko/console/console-04-monitoring.md
+                      - "서비스와 채널": Game/GameAnvil/ko/console/console-05-service-channel.md
+                      - "상태": Game/GameAnvil/ko/console/console-06-state.md
+                      - "Safe Pause": Game/GameAnvil/ko/console/console-07-safe-pause.md
+                - 서버 개발 가이드:
+                      - "시작하기": Game/GameAnvil/ko/server-impl/server-impl-01-getting-started.md
+                      - "게이트웨이 노드 구현": Game/GameAnvil/ko/server-impl/server-impl-02-gateway-node.md
+                      - "게임 노드 구현": Game/GameAnvil/ko/server-impl/server-impl-03-game-node.md
+                      - "매치 노드 구현": Game/GameAnvil/ko/server-impl/server-impl-04-match-node.md
+                      - "서포트 노드 구현": Game/GameAnvil/ko/server-impl/server-impl-05-support-node.md
+                      - "프로토콜 정의": Game/GameAnvil/ko/server-impl/server-impl-06-protocol.md
+                      - "메시지 핸들링": Game/GameAnvil/ko/server-impl/server-impl-07-message-handling.md
+                      - "전송 가능 객체": Game/GameAnvil/ko/server-impl/server-impl-08-object-transfer.md
+                      - "채널": Game/GameAnvil/ko/server-impl/server-impl-09-channel.md
+                      - "비동기 지원": Game/GameAnvil/ko/server-impl/server-impl-10-async.md
+                      - "타이머 사용하기": Game/GameAnvil/ko/server-impl/server-impl-11-timer.md
+                      - "아이디": Game/GameAnvil/ko/server-impl/server-impl-12-id.md
+                      - "토픽 사용하기": Game/GameAnvil/ko/server-impl/server-impl-13-topic.md
+                      - "SSL 지원": Game/GameAnvil/ko/server-impl/server-impl-14-ssl.md
+                      - "Java 개발환경 설정": Game/GameAnvil/ko/server-impl/server-impl-15-java-env.md
+                      - "서버 구성과 구동": Game/GameAnvil/ko/server-impl/server-impl-16-config-vm.md
+                - 서버 기본 개념:
+                      - "노드": Game/GameAnvil/ko/server-basic/server-basic-01-node.md
+                      - "파이버": Game/GameAnvil/ko/server-basic/server-basic-02-fiber.md
+                      - "Suspendable": Game/GameAnvil/ko/server-basic/server-basic-03-suspendable.md
+                      - "분산 서버": Game/GameAnvil/ko/server-basic/server-basic-04-distributed-servers.md
+                      - "핵심 라이브러리": Game/GameAnvil/ko/server-basic/server-basic-05-core-libraries.md
+                      - "ByteCode Instrumentation": Game/GameAnvil/ko/server-basic/server-basic-06-bytecode-instrument.md
+                - Unity 기초 개발 가이드:
+                      - "GameAnvilConnector 설치": Game/GameAnvil/ko/unity-basic/unity-basic-01-install.md
+                      - "GameAnvilConnector": Game/GameAnvil/ko/unity-basic/unity-basic-02-connector.md
+                      - "ConnectionAgent": Game/GameAnvil/ko/unity-basic/unity-basic-03-connection-agent.md
+                      - "UserAgent": Game/GameAnvil/ko/unity-basic/unity-basic-04-user-agent.md
+                      - "동기화": Game/GameAnvil/ko/unity-basic/unity-basic-05-sync.md
+                      - "메시지 핸들링": Game/GameAnvil/ko/unity-basic/unity-basic-06-message-handling.md
+                      - "GameAnvilConnector 종료": Game/GameAnvil/ko/unity-basic/unity-basic-07-close.md
+                      - "백그라운드 접속 끊김 방지": Game/GameAnvil/ko/unity-basic/unity-basic-08-background-connection.md
+                      - "네트워크 연결 확인": Game/GameAnvil/ko/unity-basic/unity-basic-09-network-checker.md
+                - Unity 심화 개발 가이드:
+                      - "Connector": Game/GameAnvil/ko/unity-advanced/unity-advanced-01-connector.md
+                      - "ConnectionAgent": Game/GameAnvil/ko/unity-advanced/unity-advanced-02-connection-agent.md
+                      - "UserAgent": Game/GameAnvil/ko/unity-advanced/unity-advanced-03-user-agent.md
+                      - "메세지 핸들링": Game/GameAnvil/ko/unity-advanced/unity-advanced-04-message-handling.md
+                      - "패킷": Game/GameAnvil/ko/unity-advanced/unity-advanced-05-packet.md
+                      - "백그라운드 접속 끊김 방지": Game/GameAnvil/ko/unity-advanced/unity-advanced-06-background-connection.md
+                      - "재접속": Game/GameAnvil/ko/unity-advanced/unity-advanced-07-reconnect.md
+                - CocosCreator 개발 가이드:
+                      - "GameAnvil 커넥터 설치": Game/GameAnvil/ko/cocos/cocos-01-install.md
+                      - "Connector": Game/GameAnvil/ko/cocos/cocos-02-connector.md
+                      - "ConnectionAgent": Game/GameAnvil/ko/cocos/cocos-03-connection-agent.md
+                      - "UserAgent": Game/GameAnvil/ko/cocos/cocos-04-user-agent.md
+                      - "메시지 핸들링": Game/GameAnvil/ko/cocos/cocos-05-message.md
+                      - "패킷": Game/GameAnvil/ko/cocos/cocos-06-packet.md
+                      - "GameAnvil 커넥터 종료": Game/GameAnvil/ko/cocos/cocos-07-close.md
+                      - "재접속": Game/GameAnvil/ko/cocos/cocos-08-reconnect.md
+                - 테스트 개발 가이드:
+                      - "시작하기": Game/GameAnvil/ko/hammer/hammer-1-start.md
+                      - "기능 테스트 개발 방법": Game/GameAnvil/ko/hammer/hammer-2-functional-test-guide.md
+                      - "시나리오 테스트 개발 방법": Game/GameAnvil/ko/hammer/hammer-3-scenario-test-guide.md
+                - 레퍼런스 프로젝트:
+                      - "서버 샘플": Game/GameAnvil/ko/reference/reference-1-server.md
+                      - "Unity 샘플": Game/GameAnvil/ko/reference/reference-2-unity.md
+                - 릴리즈 노트:
+                      - "GameAnvil": Game/GameAnvil/ko/release-notes/release-notes-server.md
+                      - "Unity Connector": Game/GameAnvil/ko/release-notes/release-notes-unity.md
+                      - "CocosCreator Connector": Game/GameAnvil/ko/release-notes/release-notes-cocos.md
+                      - "GameHammer": Game/GameAnvil/ko/release-notes/release-notes-hammer.md
+                      - "Console": Game/GameAnvil/ko/release-notes/release-notes-console.md
+                - "오류 코드": Game/GameAnvil/ko/error-codes.md
+          - GameStarter:
+                - "개요": Game/GameStarter/ko/overview.md
+                - 콘솔 사용 가이드:
+                      - "시작하기": Game/GameStarter/ko/console-01-getting-started.md
+                      - "인스톨러": Game/GameStarter/ko/console-02-installer.md
+                      - "게임": Game/GameStarter/ko/console-03-game.md
+                      - "런처": Game/GameStarter/ko/console-04-launcher.md
+                - "릴리스 노트": Game/GameStarter/ko/release-notes.md
+          - Leaderboard:
+                - "개요": Game/Leaderboard/ko/Overview.md
+                - "콘솔 사용 가이드": Game/Leaderboard/ko/console-guide.md
+                - "API 가이드": Game/Leaderboard/ko/api-guide.md
+                - "오류 코드": Game/Leaderboard/ko/error-code.md
+                - "릴리스 노트": Game/Leaderboard/ko/release-notes.md
+          - Launching:
+                - "개요": Game/Launching/ko/Overview.md
+                - "콘솔 사용 가이드": Game/Launching/ko/console-guide.md
+                - "API 가이드": Game/Launching/ko/api-guide.md
+                - "오류 코드": Game/Launching/ko/error-code.md
+                - "릴리스 노트": Game/Launching/ko/release-notes.md
+          - Smart Downloader:
+                - "개요": Game/Smart Downloader/ko/Overview.md
+                - "콘솔 사용 가이드": Game/Smart Downloader/ko/console-guide.md
+                - "SDK 사용 가이드": Game/Smart Downloader/ko/sdk-guide.md
+                - "플러그인 사용 가이드": Game/Smart Downloader/ko/plugin-guide.md
+                - "Unity Tool 사용 가이드": Game/Smart Downloader/ko/sut-guide.md
+                - "오류 코드": Game/Smart Downloader/ko/error-code.md
+                - "릴리스 노트": 
+                      - "Console": Game/Smart Downloader/ko/release-notes-console.md
+                      - "Unity": Game/Smart Downloader/ko/release-notes-unity.md
+                      - "Unity Tool": Game/Smart Downloader/ko/release-notes-unity-tool.md
+                      - "Jenkins Plugin": Game/Smart Downloader/ko/release-notes-jenkins-plugin.md
+                      - "Server": Game/Smart Downloader/ko/release-notes-server.md
+    - Security:
+          - NHN AppGuard:
+                - "개요": Security/NHN AppGuard/ko/Overview.md
+                - "콘솔 사용 가이드": Security/NHN AppGuard/ko/console-guide.md
+                - "플러그인 가이드": Security/NHN AppGuard/ko/appguard-plugin-guide.md
+                - "API 가이드": Security/NHN AppGuard/ko/api-guide.md
+                - "릴리스 노트": Security/NHN AppGuard/ko/release-notes.md
+          - Server Security Check:
+                - "개요": Security/Server Security Check/ko/Overview.md
+                - "콘솔 사용 가이드": Security/Server Security Check/ko/console-guide.md
+                - "릴리스 노트": Security/Server Security Check/ko/release-notes.md
+          - Webshell Threat Detector:
+                - "개요": Security/Webshell Threat Detector/ko/Overview.md
+                - "콘솔 사용 가이드": Security/Webshell Threat Detector/ko/console-guide.md
+                - "릴리스 노트": Security/Webshell Threat Detector/ko/release-notes.md
+          - Security Monitoring:
+                - "개요": Security/Security Monitoring/ko/Overview.md
+                - "콘솔 사용 가이드": Security/Security Monitoring/ko/console-guide.md
+                - "API 가이드": Security/Security Monitoring/ko/api-guide-v1.1.md
+                - "릴리스 노트": Security/Security Monitoring/ko/release-notes.md
+          - CAPTCHA:
+                - "개요": Security/CAPTCHA/ko/Overview.md
+                - "API 가이드": Security/CAPTCHA/ko/api-guide.md
+                - "오류 코드": Security/CAPTCHA/ko/error-code.md
+                - "릴리스 노트": Security/CAPTCHA/ko/release-notes.md
+          - WEB Firewall:
+                - "개요": Security/Web Firewall/ko/Overview.md
+                - "제품 소개": 
+                      - "펜타시큐리티(WAPPLES SA)": Security/Web Firewall/ko/products-penta.md
+                      - "파이오링크(WEBFRONT-KS)": Security/Web Firewall/ko/products-piolink.md
+                - 콘솔 사용 가이드:
+                      - "Self": 
+                            - "펜타시큐리티(WAPPLES SA)": Security/Web Firewall/ko/console-guide-self-penta.md
+                            - "파이오링크(WEBFRONT-KS)": Security/Web Firewall/ko/console-guide-self-piolink.md
+                      - "Managed": Security/Web Firewall/ko/console-guide-managed.md
+                - "릴리스 노트": Security/Web Firewall/ko/release-notes.md
+          - Vaccine:
+                - "개요": Security/Vaccine/ko/Overview.md
+                - "콘솔 사용 가이드": Security/Vaccine/ko/console-guide.md
+                - "릴리스 노트": Security/Vaccine/ko/release-notes.md
+          - Secure Key Manager:
+                - "개요": Security/Secure Key Manager/ko/overview.md
+                - 콘솔 사용 가이드:
+                      - "시작하기": Security/Secure Key Manager/ko/getting-started.md
+                      - "승인 기능": Security/Secure Key Manager/ko/approval-feature.md
+                - "API v1.0 가이드": Security/Secure Key Manager/ko/api-guide-v1.0.md
+                - "API v1.2 가이드": Security/Secure Key Manager/ko/api-guide-v1.2.md
+                - "문제 해결 가이드": Security/Secure Key Manager/ko/troubleshooting-guide.md
+                - "릴리스 노트": Security/Secure Key Manager/ko/release-notes.md
+          - Security Compliance:
+                - "개요": Security/Security Compliance/ko/Overview.md
+                - "콘솔 사용 가이드": Security/Security Compliance/ko/console-guide.md
+                - "릴리스 노트": Security/Security Compliance/ko/release-notes.md
+          - Security Advisor:
+                - "개요": Security/Security Advisor/ko/overview.md
+                - "콘솔 사용 가이드": Security/Security Advisor/ko/console-guide.md
+                - "릴리스 노트": Security/Security Advisor/ko/release-notes.md
+          - Network Firewall:
+                - "개요": Security/Network-Firewall/ko/overview.md
+                - "콘솔 사용 가이드": Security/Network-Firewall/ko/console-guide.md
+                - "릴리스 노트": Security/Network-Firewall/ko/release-notes.md
+          - NHN Bastion:
+                - "개요": Security/NHN Bastion/ko/overview.md
+                - "콘솔 사용 가이드": Security/NHN Bastion/ko/console-guide.md
+                - "릴리스 노트": Security/NHN Bastion/ko/release-notes.md
+    - Content Delivery:
+          - CDN:
+                - "개요": Contents Delivery/CDN/ko/Overview.md
+                - "콘솔 사용 가이드": Contents Delivery/CDN/ko/console-guide.md
+                - "API v1.5 가이드": Contents Delivery/CDN/ko/api-guide-v1.5.md
+                - "API v2.0 가이드": Contents Delivery/CDN/ko/api-guide-v2.0.md
+                - "오류 코드": Contents Delivery/CDN/ko/error-code.md
+                - "릴리스 노트": Contents Delivery/CDN/ko/release-notes.md
+          - Image Manager:
+                - "개요": Contents Delivery/Image Manager/ko/Overview.md
+                - "콘솔 사용 가이드": Contents Delivery/Image Manager/ko/console-guide.md
+                - "API 가이드": Contents Delivery/Image Manager/ko/api-guide.md
+                - "오류 코드": Contents Delivery/Image Manager/ko/error-code.md
+                - "릴리스 노트": Contents Delivery/Image Manager/ko/release-notes.md
+    - Notification:
+          - Push:
+                - "개요": Notification/Push/ko/Overview.md
+                - "콘솔 사용 가이드": Notification/Push/ko/console-guide.md
+                - "SDK 사용 가이드": Notification/Push/ko/sdk-guide-toast-push.md
+                - "API v2.4 가이드": Notification/Push/ko/api-guide.md
+                - "API v2.3 가이드": Notification/Push/ko/api-guide-v2.3.md
+                - "API v2.2 가이드": Notification/Push/ko/api-guide-v2.2.md
+                - "API v2.1 가이드": Notification/Push/ko/api-guide-v2.1.md
+                - "API v2.0 가이드": Notification/Push/ko/api-guide-v2.0.md
+                - "API v1.3 가이드": Notification/Push/ko/api-guide-v1.3.md
+                - "오류 코드": Notification/Push/ko/error-code.md
+                - "릴리스 노트": Notification/Push/ko/release-notes.md
+          - SMS:
+                - "개요": Notification/SMS/ko/Overview.md
+                - "서비스 정책": 
+                      - "발송 정책": Notification/SMS/ko/sending-policy.md
+                      - "국제 SMS 발송 정책": Notification/SMS/ko/international-sending-policy.md
+                - "콘솔 사용 가이드": Notification/SMS/ko/console-guide.md
+                - "API v3.0 가이드": Notification/SMS/ko/api-guide.md
+                - "API v2.4 가이드": Notification/SMS/ko/api-guide-v2.4.md
+                - "API v2.3 가이드": Notification/SMS/ko/api-guide-v2.3.md
+                - "API v2.2 가이드": Notification/SMS/ko/api-guide-v2.2.md
+                - "웹훅 가이드": Notification/SMS/ko/webhook.md
+                - "오류 코드": Notification/SMS/ko/error-code.md
+                - "릴리스 노트": Notification/SMS/ko/release-notes.md
+          - RCS Bizmessage:
+                - "개요": Notification/RCS Bizmessage/ko/overview.md
+                - "서비스 정책": Notification/RCS Bizmessage/ko/service-policy.md
+                - "발송 전 준비사항": Notification/RCS Bizmessage/ko/pre-send-guide.md
+                - "콘솔 사용 가이드": Notification/RCS Bizmessage/ko/console-guide.md
+                - "API v1.0 가이드": Notification/RCS Bizmessage/ko/api-guide.md
+                - "결과 코드": Notification/RCS Bizmessage/ko/result-code.md
+                - "릴리스 노트": Notification/RCS Bizmessage/ko/release-notes.md
+          - Email:
+                - "개요": Notification/Email/ko/Overview.md
+                - "서비스 정책": Notification/Email/ko/service-policy.md
+                - "콘솔 사용 가이드": Notification/Email/ko/console-guide.md
+                - "API v2.1 가이드": Notification/Email/ko/api-guide.md
+                - "API v2.0 가이드": Notification/Email/ko/api-guide-v2.0.md
+                - "API v1.7 가이드": Notification/Email/ko/api-guide-v1.7.md
+                - "API v1.6 가이드": Notification/Email/ko/api-guide-v1.6.md
+                - "API v1.5 가이드": Notification/Email/ko/api-guide-v1.5.md
+                - "SMTP 가이드": Notification/Email/ko/smtp-guide.md
+                - "도메인 관리 가이드":
+                      - "도메인 인증 및 보호": Notification/Email/ko/domain-verification.md
+                      - "SPF": Notification/Email/ko/spf-record.md
+                      - "DKIM": Notification/Email/ko/dkim-record.md
+                      - "DMARC": Notification/Email/ko/dmarc-record.md
+                - "웹훅 가이드": Notification/Email/ko/webhook.md
+                - "문제 해결 가이드": Notification/Email/ko/troubleshooting-guide.md
+                - "오류 코드": Notification/Email/ko/error-code.md
+                - "릴리스 노트": Notification/Email/ko/release-notes.md
+          - KakaoTalk Bizmessage:
+                - "개요": Notification/KakaoTalk Bizmessage/ko/Overview.md
+                - "콘솔 사용 가이드": Notification/KakaoTalk Bizmessage/ko/common-console-guide.md
+                - "발신 프로필":
+                      - "개요": Notification/KakaoTalk Bizmessage/ko/sender-overview.md
+                      - "API v2.3 가이드": Notification/KakaoTalk Bizmessage/ko/sender-api-guide-v2.3.md
+                      - "API v2.1 가이드": Notification/KakaoTalk Bizmessage/ko/sender-api-guide-v2.1.md
+                      - "API v2.0 가이드": Notification/KakaoTalk Bizmessage/ko/sender-api-guide-v2.0.md
+                - "알림톡":
+                      - "개요": Notification/KakaoTalk Bizmessage/ko/alimtalk-overview.md
+                      - "콘솔 사용 가이드": Notification/KakaoTalk Bizmessage/ko/alimtalk-console-guide.md
+                      - "API v2.3 가이드": Notification/KakaoTalk Bizmessage/ko/alimtalk-api-guide.md
+                      - "API v2.2 가이드": Notification/KakaoTalk Bizmessage/ko/alimtalk-api-guide-v2.2.md
+                      - "API v2.1 가이드": Notification/KakaoTalk Bizmessage/ko/alimtalk-api-guide-v2.1.md
+                      - "API v2.0 가이드": Notification/KakaoTalk Bizmessage/ko/alimtalk-api-guide-v2.0.md
+                      - "API v1.5 가이드": Notification/KakaoTalk Bizmessage/ko/alimtalk-api-guide-v1.5.md
+                      - "API v1.4 가이드": Notification/KakaoTalk Bizmessage/ko/alimtalk-api-guide-v1.4.md
+                - "친구톡":
+                      - "개요": Notification/KakaoTalk Bizmessage/ko/friendtalk-overview.md
+                      - "콘솔 사용 가이드": Notification/KakaoTalk Bizmessage/ko/friendtalk-console-guide.md
+                      - "API v2.3 가이드": Notification/KakaoTalk Bizmessage/ko/friendtalk-api-guide.md
+                      - "API v2.2 가이드": Notification/KakaoTalk Bizmessage/ko/friendtalk-api-guide-v2.2.md
+                      - "API v2.0 가이드": Notification/KakaoTalk Bizmessage/ko/friendtalk-api-guide-v2.0.md
+                      - "API v1.5 가이드": Notification/KakaoTalk Bizmessage/ko/friendtalk-api-guide-v1.5.md
+                      - "API v1.4 가이드": Notification/KakaoTalk Bizmessage/ko/friendtalk-api-guide-v1.4.md
+            #     - "브랜드톡":
+            #           - "개요": Notification/KakaoTalk Bizmessage/ko/brandtalk-overview.md
+            #           - "콘솔 사용 가이드": Notification/KakaoTalk Bizmessage/ko/brandtalk-console-guide.md
+            #           - "API v2.2 가이드": Notification/KakaoTalk Bizmessage/ko/brandtalk-api-guide.md
+                - "공통":
+                      - "API v2.2 가이드": Notification/KakaoTalk Bizmessage/ko/common-api-guide.md
+                - "웹훅 가이드": Notification/KakaoTalk Bizmessage/ko/webhook-api-guide.md
+                - "문제 해결 가이드": Notification/KakaoTalk Bizmessage/ko/troubleshooting-guide.md
+                - "오류 코드": Notification/KakaoTalk Bizmessage/ko/error-code.md
+                - "릴리스 노트": Notification/KakaoTalk Bizmessage/ko/release-notes.md
+    - AI Service:
+          - Face Recognition:
+                - "개요": AI Service/Face Recognition/ko/overview.md
+                - "콘솔 사용 가이드": AI Service/Face Recognition/ko/console-guide.md
+                - "API v1.0 가이드": AI Service/Face Recognition/ko/api-guide-v1.0.md
+                - "API v2.0 가이드": AI Service/Face Recognition/ko/api-guide-v2.0.md
+                - "릴리스 노트": AI Service/Face Recognition/ko/release-notes.md
+          - AI Fashion:
+                - "개요": AI Service/AI Fashion/ko/overview.md
+                - "콘솔 사용자 가이드": AI Service/AI Fashion/ko/console-guide.md
+                - "API v1.0 가이드": AI Service/AI Fashion/ko/api-guide-v1.0.md
+                - "API v2.0 가이드": AI Service/AI Fashion/ko/api-guide-v2.0.md
+                - "릴리스 노트": AI Service/AI Fashion/ko/release-notes.md
+          - OCR:
+                - "개요": AI Service/OCR/ko/overview.md
+                - General OCR:
+                      - "콘솔 사용 가이드": AI Service/OCR/ko/general-ocr-console-guide.md
+                      - "API 가이드": AI Service/OCR/ko/general-ocr-api-guide.md
+                      - "오류 코드": AI Service/OCR/ko/general-ocr-error-code.md
+                      - "릴리스 노트": AI Service/OCR/ko/general-ocr-release-notes.md
+                - Document OCR:
+                      - "콘솔 사용 가이드": AI Service/OCR/ko/document-ocr-console-guide.md
+                      - "API v2.0 가이드": AI Service/OCR/ko/document-ocr-api-guide-v2.0.md
+                      - "API v1.0 가이드": AI Service/OCR/ko/document-ocr-api-guide-v1.0.md
+                      - "오류 코드": AI Service/OCR/ko/document-ocr-error-code.md
+                      - "릴리스 노트": AI Service/OCR/ko/document-ocr-release-notes.md
+                - Vehicle Plate OCR:
+                      - "콘솔 사용 가이드": AI Service/OCR/ko/vehicle-plate-ocr-console-guide.md
+                      - "API 가이드": AI Service/OCR/ko/vehicle-plate-ocr-api-guide.md
+                      - "오류 코드": AI Service/OCR/ko/vehicle-plate-ocr-error-code.md
+                      - "릴리스 노트": AI Service/OCR/ko/vehicle-plate-ocr-release-notes.md
+          - Text to Speech:
+                - "개요": AI Service/Text to Speech/ko/overview.md
+                - "콘솔 사용 가이드": AI Service/Text to Speech/ko/console-guide.md
+                - "API 가이드": AI Service/Text to Speech/ko/api-guide.md
+                - "오류 코드": AI Service/Text to Speech/ko/error-code.md
+                - "릴리즈 노트": AI Service/Text to Speech/ko/release-notes.md
+          - Speech to Text:
+                - "개요": AI Service/Speech to Text/ko/overview.md
+                - "콘솔 사용 가이드": AI Service/Speech to Text/ko/console-guide.md
+                - "API 가이드": AI Service/Speech to Text/ko/api-guide.md
+                - "오류 코드": AI Service/Speech to Text/ko/error-code.md
+                - "릴리즈 노트": AI Service/Speech to Text/ko/release-notes.md
+          - Pose Estimation:
+                - "개요": AI Service/Pose Estimation/ko/overview.md
+                - "콘솔 사용 가이드": AI Service/Pose Estimation/ko/console-guide.md
+                - "API 가이드": AI Service/Pose Estimation/ko/api-guide.md
+                - "오류 코드": AI Service/Pose Estimation/ko/error-code.md
+                - "릴리즈 노트": AI Service/Pose Estimation/ko/release-notes.md
+    - Machine Learning:
+          - Deep Learning Instance:
+                - "개요": Machine Learning/Deep Learning Instance/ko/overview.md
+                - "사용 가이드": Machine Learning/Deep Learning Instance/ko/user-guide.md
+          - AI EasyMaker:
+                - "개요": Machine Learning/AI EasyMaker/ko/overview.md
+                - "콘솔 사용 가이드": Machine Learning/AI EasyMaker/ko/console-guide.md
+                - "NHN Cloud 제공 알고리즘 가이드": Machine Learning/AI EasyMaker/ko/algorithm-guide.md
+                - "SDK 사용 가이드": Machine Learning/AI EasyMaker/ko/sdk-guide.md
+                - "릴리스 노트": Machine Learning/AI EasyMaker/ko/release-notes.md
+    - Application Service:
+          - Maps:
+                - "개요": Application Service/Maps/ko/Overview.md
+                - "콘솔 사용 가이드": Application Service/Maps/ko/console-guide.md
+                - "웹 지도":
+                      - "웹 지도 가이드": Application Service/Maps/ko/web-maps-guide-v3.0.md
+                      #- "Map Studio 가이드": Application Service/Maps/ko/map-studio-v1.0.md
+                - "Android SDK 가이드": Application Service/Maps/ko/android-sdk-guide.md
+                - "iOS SDK 가이드": Application Service/Maps/ko/ios-sdk-guide.md
+                - "API 가이드": Application Service/Maps/ko/api-guide-v3.0.md
+                - "(구)지도 가이드":
+                      - "웹 지도 v2.0 가이드": Application Service/Maps/ko/web-maps-guide-v2.0.md
+                      - "웹 지도 v1.0 가이드": Application Service/Maps/ko/web-maps-guide-v1.0.md
+                      - "API 가이드": Application Service/Maps/ko/api-guide.md
+                - "오류 코드": Application Service/Maps/ko/error-code.md
+                - "릴리스 노트": Application Service/Maps/ko/release-notes.md
+          - ROLE:
+                - "개요": Application Service/ROLE/ko/overview.md
+                - "콘솔 사용 가이드": Application Service/ROLE/ko/console-guide.md
+                - "SDK v1.0 사용 가이드": Application Service/ROLE/ko/sdk-guide.md
+                - "SDK v2.0 사용 가이드": Application Service/ROLE/ko/sdk-v2-guide.md
+                - "API v1.0 가이드": Application Service/ROLE/ko/api-guide.md
+                - "API v3.0 가이드": Application Service/ROLE/ko/api-v3-guide.md
+                - "오류 코드": Application Service/ROLE/ko/error-code.md
+                - "릴리스 노트": Application Service/ROLE/ko/release-notes.md
+          - API Gateway:
+                - "개요": Application Service/API Gateway/ko/overview.md
+                - "콘솔 사용 가이드": Application Service/API Gateway/ko/console-guide.md
+                - "API Gateway 클라이언트 방화벽 정책 설정": Application Service/API Gateway/ko/api-gateway-vip.md
+                - "Gateway 오류 코드": Application Service/API Gateway/ko/error-code.md
+                - "API v1.0 가이드": Application Service/API Gateway/ko/api-guide-v1.0.md
+                - "API Enum 코드": Application Service/API Gateway/ko/enum-code.md
+                - "API 오류 코드": Application Service/API Gateway/ko/api-error-code.md
+                - "릴리스 노트": Application Service/API Gateway/ko/release-notes.md
+          - RTCS:
+                - "개요": Application Service/RTCS/ko/overview.md
+                - "콘솔 사용 가이드": Application Service/RTCS/ko/console-guide.md
+                - "API 가이드": Application Service/RTCS/ko/api-guide.md
+                - "오류 코드": Application Service/RTCS/ko/error-code.md
+                - "릴리스 노트": Application Service/RTCS/ko/release-notes.md
+          - ShortURL:
+                - "개요": Application Service/ShortURL/ko/overview.md
+                - "API 가이드": Application Service/ShortURL/ko/api-guide.md
+                - "콘솔 사용 가이드": Application Service/ShortURL/ko/console-guide.md
+                - "릴리스 노트": Application Service/ShortURL/ko/release-notes.md
+          - File Crafter:
+                - "개요": Application Service/File Crafter/ko/overview.md
+                - "콘솔 사용 가이드": Application Service/File Crafter/ko/console-guide.md
+                - "API 가이드": Application Service/File Crafter/ko/api-guide.md
+                - "콜백 API 가이드": Application Service/File Crafter/ko/callback-api-guide.md
+            #     - "오류 코드": Application Service/File Crafter/ko/error-code.md
+                - "릴리스 노트": Application Service/File Crafter/ko/release-notes.md
+    - Mobile Service:
+          - IAP:
+                - "개요": Mobile Service/IAP/ko/Overview.md
+                - "콘솔 사용 가이드": Mobile Service/IAP/ko/console-guide.md
+                - 스토어 콘솔 가이드:
+                      - "Google 콘솔 가이드": Mobile Service/IAP/ko/console-google-guide.md
+                      - "Apple 콘솔 가이드": Mobile Service/IAP/ko/console-apple-guide.md
+                      - "ONE Store 콘솔 가이드": Mobile Service/IAP/ko/console-onestore-guide.md
+                      - "Galaxy Store 콘솔 가이드": Mobile Service/IAP/ko/console-galaxystore-guide.md
+                      - "Mycard 가이드": Mobile Service/IAP/ko/mycard-guide.md
+                      - "Amazon 콘솔 가이드": Mobile Service/IAP/ko/console-amazon-guide.md
+                      - "Huawei 콘솔 가이드": Mobile Service/IAP/ko/console-huawei-guide.md
+                - "SDK 사용 가이드": Mobile Service/IAP/ko/sdk-guide-toast-iap.md
+                - "API 가이드": Mobile Service/IAP/ko/api-guide-for-toast-sdk.md
+                - "오류 코드": Mobile Service/IAP/ko/error-code.md
+                - "릴리스 노트": Mobile Service/IAP/ko/release-notes.md
+    - Search:
+          - Cloud Search:
+                - "개요": Search/Cloud Search/ko/overview.md
+                - "콘솔 사용 가이드": Search/Cloud Search/ko/console-guide.md
+                - "릴리스 노트": Search/Cloud Search/ko/release-notes.md
+                - API 가이드:
+                      - "API 2.0 가이드": Search/Cloud Search/ko/api-guide/api-v2.0-guide.md
+          - Autocomplete:
+                - "개요": Search/Autocomplete/ko/overview.md
+                - "콘솔 사용 가이드": Search/Autocomplete/ko/console-guide.md
+                - "릴리스 노트": Search/Autocomplete/ko/release-notes.md
+                - API 가이드:
+                      - "API 2.0 가이드": Search/Autocomplete/ko/api-guide/api-v2.0-guide.md
+          - Corporation Search:
+                - "개요": Search/Corporation Search/ko/overview.md
+                - "API 가이드": Search/Corporation Search/ko/api-guide.md
+                - "오류 코드": Search/Corporation Search/ko/error-code.md
+                - "릴리스 노트": Search/Corporation Search/ko/release-notes.md
+          - Word Suggestion:
+                - "개요": Search/Word Suggestion/ko/overview.md
+                - "콘솔 사용 가이드": Search/Word Suggestion/ko/console-guide.md
+                - "API 가이드": Search/Word Suggestion/ko/api-guide.md
+                - "오류 코드": Search/Word Suggestion/ko/error-code.md
+                - "릴리스 노트": Search/Word Suggestion/ko/release-notes.md
+    - Data & Analytics:
+          - Log & Crash Search:
+                - "개요": Data & Analytics/Log & Crash Search/ko/Overview.md
+                - "콘솔 사용 가이드": Data & Analytics/Log & Crash Search/ko/console-guide.md
+                - "SDK 사용 가이드": Data & Analytics/Log & Crash Search/ko/sdk-guide-toast-L&C.md
+                - "Logstash SDK 사용 가이드": Data & Analytics/Log & Crash Search/ko/logstash-sdk-guide.md
+                - "Logback SDK 사용 가이드": Data & Analytics/Log & Crash Search/ko/logback-sdk-guide.md
+                - "루씬 쿼리 가이드": Data & Analytics/Log & Crash Search/ko/lucene-query-guide.md
+                - "API 가이드": Data & Analytics/Log & Crash Search/ko/api-guide.md
+                - "릴리스 노트": Data & Analytics/Log & Crash Search/ko/release-notes.md
+          - DataFlow:
+                - "개요": Data & Analytics/DataFlow/ko/overview.md
+                - "콘솔 사용 가이드": Data & Analytics/DataFlow/ko/console-user-guide.md
+                - "노드 설정 가이드": Data & Analytics/DataFlow/ko/node-config-guide.md
+                - "오류 코드 가이드": Data & Analytics/DataFlow/ko/error-code.md
+                - "튜토리얼": Data & Analytics/DataFlow/ko/tutorial.md
+                - "릴리스 노트": Data & Analytics/DataFlow/ko/release-notes.md
+          - DataQuery:
+                - "개요": Data & Analytics/DataQuery/ko/overview.md
+                - "콘솔 사용 가이드": Data & Analytics/DataQuery/ko/console-user-guide.md
+                - "릴리스 노트": Data & Analytics/DataQuery/ko/release-notes.md
+    - Dev Tools:
+          - Pipeline:
+                - "개요": Dev Tools/Pipeline/ko/overview.md
+                - 콘솔 사용 가이드:
+                      - "파이프라인 관리": Dev Tools/Pipeline/ko/pipeline-management.md
+                      - "환경 설정": Dev Tools/Pipeline/ko/environment-config.md
+                      - "배포 대상 관리": Dev Tools/Pipeline/ko/deploy-target-monitoring.md
+                      - "배포 이력 관리": Dev Tools/Pipeline/ko/deploy-history-management.md
+                      - "템플릿 가이드": Dev Tools/Pipeline/ko/template-guide.md
+                - "스테이지 가이드": Dev Tools/Pipeline/ko/stage-guide.md
+                - "API 가이드": Dev Tools/Pipeline/ko/api-guide.md
+                - "배포 전략 가이드": Dev Tools/Pipeline/ko/deploy-strategy-guide.md
+                - "릴리즈 노트": Dev Tools/Pipeline/ko/release-notes.md
+          - Deploy:
+                - "개요": Dev Tools/Deploy/ko/Overview.md
+                - "사용 전 설정 가이드": Dev Tools/Deploy/ko/setup-guide.md
+                - "콘솔 사용 가이드": Dev Tools/Deploy/ko/console-guide.md
+                - "기능 상세 가이드": Dev Tools/Deploy/ko/reference.md
+                - "API 가이드": Dev Tools/Deploy/ko/api-guide.md
+                - "플러그인 사용 가이드": Dev Tools/Deploy/ko/plugin-guide.md
+                - "오류 코드": Dev Tools/Deploy/ko/error-code.md
+                - "릴리스 노트": Dev Tools/Deploy/ko/release-notes.md
+    - Management:
+          - Managed:
+                - "개요": Management/Managed/ko/overview.md
+                - "콘솔 사용 가이드": Management/Managed/ko/console-guide.md
+                - "릴리스 노트": Management/Managed/ko/release-notes.md
+          - Certificate Manager:
+                - "개요": Management/Certificate Manager/ko/overview.md
+                - "콘솔 사용 가이드": Management/Certificate Manager/ko/console-guide.md
+                - "API v1.0 가이드": Management/Certificate Manager/ko/api-guide-v1.0.md
+                - "API v1.1 가이드": Management/Certificate Manager/ko/api-guide-v1.1.md
+                - "문제 해결 가이드": Management/Certificate Manager/ko/troubleshooting-guide.md
+                - "릴리스 노트": Management/Certificate Manager/ko/release-notes.md
+    - Bill:
+          - eTax:
+                - "개요": Bill/eTax/ko/overview.md
+                - "서비스 가이드": Bill/eTax/ko/service-guide.md
+                - "릴리스 노트": Bill/eTax/ko/release-notes.md
+    - "Dooray!":
+          - "개요": Dooray/Common/ko/overview.md
+    - Contact Center:
+          - Online Contact:
+                - "개요": Contact Center/ko/online-contact-overview.md
+                - "서비스 가입 및 기본 설정": Contact Center/ko/online-contact-guide-primary-setting.md
+                - 서비스 가이드 (상담관리):
+                      - "전체 관리": Contact Center/ko/online-contact-guide-global-management.md
+                      - "서비스 관리": Contact Center/ko/online-contact-guide-service-management.md
+                      - "헬프센터": Contact Center/ko/online-contact-guide-help-center.md
+                      - "티켓 관리": Contact Center/ko/online-contact-guide-ticket-management.md
+                      - "티켓 관리 (전화)": Contact Center/ko/online-contact-guide-cti-widget.md
+                      - "채팅": Contact Center/ko/online-contact-guide-chat.md
+                      - "고객정보관리": Contact Center/ko/online-contact-guide-customer-management.md
+                      - "부가업무": Contact Center/ko/online-contact-guide-additional-management.md
+                      - "통계": Contact Center/ko/online-contact-guide-report.md
+                      - "가이드": Contact Center/ko/online-contact-guide-guide.md
+                - 서비스 가이드 (이슈관리):
+                      - "이슈관리 개요": Contact Center/ko/online-contact-guide-issue-flow.md
+                      - "전체 관리": Contact Center/ko/online-contact-guide-issue-global-management.md
+                      - "서비스 관리": Contact Center/ko/online-contact-guide-issue-service-management.md
+                      - "티켓 관리": Contact Center/ko/online-contact-guide-issue-ticket-management.md
+                      - "부가업무": Contact Center/ko/online-contact-guide-issue-additional-management.md
+                      - "통계": Contact Center/ko/online-contact-guide-issue-report.md
+                      - "가이드": Contact Center/ko/online-contact-guide-issue-guide.md
+                - API 가이드:
+                      - "Open API 개요": Contact Center/ko/online-contact-api-guide-openapi-overview.md
+                      - "서비스": Contact Center/ko/online-contact-api-guide-openapi-service.md
+                      - "공지사항": Contact Center/ko/online-contact-api-guide-openapi-notice.md
+                      - "FAQ": Contact Center/ko/online-contact-api-guide-openapi-faq.md
+                      - "문의 접수": Contact Center/ko/online-contact-api-guide-openapi-category.md
+                      - "문의 내역": Contact Center/ko/online-contact-api-guide-openapi-ticket.md
+                      - "회원 연동 (POST)": Contact Center/ko/online-contact-api-guide-openapi-sso.md
+                      - "회원 연동 (GET)": Contact Center/ko/online-contact-api-guide-openapi-member-get.md
+                      - "고객정보 연동": Contact Center/ko/online-contact-api-guide-openapi-customer-data.md
+                - "릴리스 노트": Contact Center/ko/online-contact-release-notes.md
+          - Mobile Contact:
+                - "개요": Contact Center/ko/mobile-contact-overview.md
+                - 서비스 가이드: 
+                      - "가입 및 고객센터 구성": Contact Center/ko/mobile-contact-application-guide.md
+                      - "App": Contact Center/ko/mobile-contact-app-guide.md
+                      - "Admin": Contact Center/ko/mobile-contact-admin-guide.md
+                - "릴리스 노트": Contact Center/ko/mobile-contact-release-notes.md
+    - Governance & Audit:
+          - CloudTrail:
+                - "개요": Governance & Audit/CloudTrail/ko/overview.md
+                - "이벤트 목록": Governance & Audit/CloudTrail/ko/event-list.md
+                - "콘솔 사용 가이드": Governance & Audit/CloudTrail/ko/console-guide.md
+                - "API 가이드": Governance & Audit/CloudTrail/ko/api-guide.md
+                - "릴리스 노트": Governance & Audit/CloudTrail/ko/release-notes.md
+          - Resource Watcher:
+                - "개요": Governance & Audit/Resource Watcher/ko/overview.md
+                - "콘솔 사용 가이드": Governance & Audit/Resource Watcher/ko/console-guide.md
+                - "API 가이드": Governance & Audit/Resource Watcher/ko/api-guide.md
+                - "API v2.0 가이드": Governance & Audit/Resource Watcher/ko/api-v2-guide.md
+                - "릴리스 노트": Governance & Audit/Resource Watcher/ko/release-notes.md
+    - "Downloads": Download.md
+    #- "Glossary": glossary.md
+    - Open Source:
+          - NHN Cloud Haste:
+                - "개요": Open Source/Toast Haste/ko/overview.md
+                - "오픈 소스 사용 가이드": Open Source/Toast Haste/ko/opensource-guide.md
+
+site_name: NHN Cloud 사용자 가이드
+theme_dir: ./toast
+extra_javascript:
+    - readthedocs-data.js
+extra:
+    language: ko
+    i18n:
+        rnb:
+            contents: "목차"

@@ -1,0 +1,4 @@
+triggerBuildDeploy([availableServerGroups: ["public_alpha_new", "public_beta_new"],
+			doorayNotifyUrl: "https://hook.dooray.com/services/3038343050984607626/3849547884080747457/5GyXSst4Trebsc0rmh0_Tg",
+            buildNode: "docker",
+			skipConfirm: false])

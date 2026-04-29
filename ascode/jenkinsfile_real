@@ -1,0 +1,6 @@
+buildDeploy([availableServerGroups: ["public_real_new"],
+			buildSpec: "ascode/build.spec",
+			deploySpec: "ascode/deploy.spec",
+			doorayNotifyUrl: "https://hook.dooray.com/services/3038343050984607626/3849547884080747457/5GyXSst4Trebsc0rmh0_Tg",
+            buildNode: "docker",
+			skipConfirm: false])
