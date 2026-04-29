@@ -1645,3 +1645,97 @@
   background-color: var(--md-default-bg-color);
   color: var(--md-default-fg-color);
 }
+
+/* ============================================================
+ * 17. 검색창 가독성 - 최종 강제 보정 (높은 우선순위)
+ * ============================================================
+ * 모든 상태에서 검색창 내부 콘텐츠가 보이도록 강제
+ */
+
+/* 1. 검색 form 자체 - 항상 흰 배경 + 검정 텍스트 (heading 영역) */
+.md-header .md-search,
+.md-header .md-search__form,
+.md-header .md-search__inner {
+  background-color: #FFFFFF;
+}
+
+/* 2. 검색 input - 항상 검정 텍스트 강제 */
+.md-header .md-search__input,
+.md-header input.md-search__input,
+.md-header input[type="text"].md-search__input {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+/* 3. placeholder - 회색으로 강제 */
+.md-header .md-search__input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+}
+
+.md-header .md-search__input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.md-header .md-search__input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+}
+
+.md-header .md-search__input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* 4. 검색 돋보기 아이콘 - 흰 배경에 검정 */
+.md-header .md-search__icon,
+.md-header .md-search__icon[for],
+.md-header .md-search__icon svg,
+.md-header label.md-search__icon {
+  color: #000000;
+  fill: #000000;
+}
+
+.md-header .md-search__icon svg path,
+.md-header .md-search__icon svg use {
+  fill: #000000;
+  stroke: #000000;
+}
+
+/* 5. 검색창 닫기/clear 버튼 (있다면) */
+.md-header .md-search__icon[type="reset"],
+.md-header button.md-search__icon {
+  color: #000000;
+  fill: #000000;
+}
+
+/* 6. focus / hover 상태에서도 동일 (이미 흰 배경이므로) */
+.md-header .md-search__input:focus,
+.md-header .md-search__input:hover,
+.md-header .md-search__input:active {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+/* 7. 다크모드에서는 다크 배경 유지 */
+[data-md-color-scheme="slate"] .md-header .md-search,
+[data-md-color-scheme="slate"] .md-header .md-search__form {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-md-color-scheme="slate"] .md-header .md-search__input {
+  background-color: transparent;
+  color: #FFFFFF;
+}
+
+[data-md-color-scheme="slate"] .md-header .md-search__input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+[data-md-color-scheme="slate"] .md-header .md-search__icon {
+  color: rgba(255, 255, 255, 0.85);
+  fill: rgba(255, 255, 255, 0.85);
+}
+
+[data-md-color-scheme="slate"] .md-header .md-search__icon svg {
+  fill: rgba(255, 255, 255, 0.85);
+}
