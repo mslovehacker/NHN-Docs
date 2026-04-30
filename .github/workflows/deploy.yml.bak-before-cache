@@ -1,0 +1,255 @@
+name: Build and Deploy NHN Cloud Docs
+
+on:
+  push:
+    branches:
+      - poc-mkdocs-material
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-docs-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    name: Build with mkdocs and deploy via SSH
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      # ---------------------------------------------------------------
+      # 빌드 단계 (NHN Cloud API 호출 전에 먼저 빌드, 빌드 실패 시
+      # SG 규칙을 추가하지 않아도 되어 안전)
+      # ---------------------------------------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          submodules: false
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build static site
+        run: mkdocs build --verbose
+
+      - name: Verify build output
+        run: |
+          if [ ! -f ./site/index.html ] || [ ! -d ./site/en ] || [ ! -d ./site/ja ]; then
+            echo "Build output incomplete"
+            exit 1
+          fi
+          FILE_COUNT=$(find ./site -type f | wc -l)
+          echo "Build verified: $FILE_COUNT files generated"
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-${{ github.sha }}
+          path: ./site
+          retention-days: 14
+
+      # ---------------------------------------------------------------
+      # NHN Cloud API: runner IP 임시 등록
+      # ---------------------------------------------------------------
+      - name: Get runner public IP
+        id: runner_ip
+        run: |
+          RUNNER_IP=$(curl -s --max-time 10 https://api.ipify.org)
+          if [ -z "$RUNNER_IP" ] || ! echo "$RUNNER_IP" | grep -qE '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "Failed to get valid runner IP: '$RUNNER_IP'"
+            exit 1
+          fi
+          echo "Runner IP: $RUNNER_IP"
+          echo "RUNNER_IP=$RUNNER_IP" >> $GITHUB_ENV
+
+      - name: Get NHN Cloud token
+        env:
+          NHN_TENANT_ID: ${{ secrets.NHN_TENANT_ID }}
+          NHN_USER_ID: ${{ secrets.NHN_USER_ID }}
+          NHN_API_PASSWORD: ${{ secrets.NHN_API_PASSWORD }}
+        run: |
+          set -e
+          RESPONSE=$(curl -s -X POST \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"auth\": {
+                \"tenantId\": \"$NHN_TENANT_ID\",
+                \"passwordCredentials\": {
+                  \"username\": \"$NHN_USER_ID\",
+                  \"password\": \"$NHN_API_PASSWORD\"
+                }
+              }
+            }" \
+            https://api-identity-infrastructure.nhncloudservice.com/v2.0/tokens)
+
+          TOKEN=$(echo "$RESPONSE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['access']['token']['id']) if 'access' in d else sys.exit(1)" 2>/dev/null)
+          NETWORK_URL=$(echo "$RESPONSE" | python3 -c "
+          import sys, json
+          d = json.load(sys.stdin)
+          for svc in d['access']['serviceCatalog']:
+              if svc['type'] == 'network':
+                  print(svc['endpoints'][0]['publicURL'])
+                  break
+          " 2>/dev/null)
+
+          if [ -z "$TOKEN" ] || [ -z "$NETWORK_URL" ]; then
+            echo "Failed to obtain token or network endpoint"
+            exit 1
+          fi
+
+          echo "Token length: ${#TOKEN}"
+          echo "Network URL: $NETWORK_URL"
+          echo "::add-mask::$TOKEN"
+          echo "NHN_TOKEN=$TOKEN" >> $GITHUB_ENV
+          echo "NHN_NETWORK_URL=$NETWORK_URL" >> $GITHUB_ENV
+
+      - name: Add temporary SG rule for runner IP
+        id: add_rule
+        env:
+          NHN_SG_ID: ${{ secrets.NHN_SG_ID }}
+        run: |
+          set -e
+          RULE_DESC="github-actions-temp-${{ github.run_id }}"
+
+          RESPONSE=$(curl -s -X POST \
+            -H "X-Auth-Token: $NHN_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"security_group_rule\": {
+                \"direction\": \"ingress\",
+                \"ethertype\": \"IPv4\",
+                \"protocol\": \"tcp\",
+                \"port_range_min\": 22,
+                \"port_range_max\": 22,
+                \"remote_ip_prefix\": \"${RUNNER_IP}/32\",
+                \"security_group_id\": \"$NHN_SG_ID\",
+                \"description\": \"$RULE_DESC\"
+              }
+            }" \
+            "$NHN_NETWORK_URL/v2.0/security-group-rules")
+
+          RULE_ID=$(echo "$RESPONSE" | python3 -c "
+          import sys, json
+          d = json.load(sys.stdin)
+          if 'security_group_rule' in d:
+              print(d['security_group_rule']['id'])
+          else:
+              print('PARSE_ERROR', file=sys.stderr)
+              print(json.dumps(d, indent=2), file=sys.stderr)
+              sys.exit(1)
+          ")
+
+          if [ -z "$RULE_ID" ] || [ "$RULE_ID" = "PARSE_ERROR" ]; then
+            echo "Failed to add SG rule"
+            echo "Response: $RESPONSE"
+            exit 1
+          fi
+
+          echo "Rule added: $RULE_ID for ${RUNNER_IP}/32"
+          echo "ADDED_RULE_ID=$RULE_ID" >> $GITHUB_ENV
+
+          # SG 규칙 적용 대기 (NHN Cloud 측 propagation 시간 확보)
+          sleep 5
+
+      # ---------------------------------------------------------------
+      # SSH 작업 (이제 22 포트 도달 가능)
+      # ---------------------------------------------------------------
+      - name: Setup SSH key
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+          SERVER_PORT: ${{ secrets.SERVER_PORT }}
+        run: |
+          set -e
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+
+          ssh-keygen -y -f ~/.ssh/id_ed25519 > /dev/null && echo "Private key valid"
+
+          for i in 1 2 3; do
+            if ssh-keyscan -p "$SERVER_PORT" -T 10 "$SERVER_HOST" >> ~/.ssh/known_hosts 2>&1; then
+              echo "ssh-keyscan succeeded on attempt $i"
+              break
+            fi
+            sleep 3
+          done
+
+          ssh -i ~/.ssh/id_ed25519 \
+              -p "$SERVER_PORT" \
+              -o BatchMode=yes \
+              -o ConnectTimeout=15 \
+              -o StrictHostKeyChecking=accept-new \
+              "${{ secrets.SERVER_USER }}@$SERVER_HOST" \
+              "echo SSH-OK; whoami; hostname"
+
+      - name: Backup current site on server
+        run: |
+          ssh -i ~/.ssh/id_ed25519 -p ${{ secrets.SERVER_PORT }} \
+              ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} \
+              "sudo rsync -a --delete /var/www/docs/ /var/www/docs.backup/ 2>/dev/null || true"
+
+      - name: Deploy via rsync
+        run: |
+          rsync -avz --delete \
+            --rsync-path="sudo rsync" \
+            -e "ssh -i ~/.ssh/id_ed25519 -p ${{ secrets.SERVER_PORT }}" \
+            ./site/ \
+            ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/docs/
+
+      - name: Reload nginx
+        run: |
+          ssh -i ~/.ssh/id_ed25519 -p ${{ secrets.SERVER_PORT }} \
+              ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} \
+              "sudo systemctl reload nginx"
+
+      - name: Verify deployment
+        run: |
+          sleep 3
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            https://${{ secrets.SERVER_HOST }}/ || echo "000")
+          if [ "$HTTP_STATUS" != "200" ]; then
+            echo "Deployment verification failed: HTTP $HTTP_STATUS"
+            exit 1
+          fi
+          echo "Deployment verified: HTTP $HTTP_STATUS"
+
+      # ---------------------------------------------------------------
+      # Cleanup: 임시 SG 규칙 삭제 (always 보장)
+      # 이 step 은 위의 어느 step 이 실패하더라도 반드시 실행됩니다
+      # ---------------------------------------------------------------
+      - name: Cleanup - Remove temporary SG rule
+        if: always()
+        run: |
+          if [ -z "$ADDED_RULE_ID" ]; then
+            echo "No rule_id to clean up (rule may not have been added)"
+            exit 0
+          fi
+
+          echo "Removing temporary rule: $ADDED_RULE_ID"
+
+          HTTP_STATUS=$(curl -s -o /tmp/delete_response.txt -w "%{http_code}" -X DELETE \
+            -H "X-Auth-Token: $NHN_TOKEN" \
+            "$NHN_NETWORK_URL/v2.0/security-group-rules/$ADDED_RULE_ID")
+
+          if [ "$HTTP_STATUS" = "204" ]; then
+            echo "✅ SG rule removed successfully"
+          elif [ "$HTTP_STATUS" = "404" ]; then
+            echo "⚠️ Rule already gone (404), assuming cleaned"
+          else
+            echo "❌ Cleanup failed: HTTP $HTTP_STATUS"
+            cat /tmp/delete_response.txt
+            # 실패해도 워크플로 자체는 실패시키지 않음 (이미 본 작업은 완료)
+            # 단, 명확한 경고 메시지를 로그에 남김
+            echo "::warning title=SG cleanup failed::Manual cleanup may be required for rule $ADDED_RULE_ID"
+          fi

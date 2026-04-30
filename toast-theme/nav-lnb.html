@@ -1,0 +1,45 @@
+<nav class="gnb_wrap">
+	<div class="gnb_inner">
+		<ul class="gnb" id="gnb">
+			{% for nav_item in nav %}
+			<li class="gnb_menu">
+				{% if nav_item.children %}
+				{% set ns = namespace(suffix=[loop.index|string], temp='') %}
+				<a class="gnb_link category_menu" data-toggle="collapse" href="#gnb_{{ loop.index }}"
+					{% if nav_item.active %}aria-expanded="true" {% endif %}>
+					<i class="ico_category ico_{{ nav_item.title|lower|replace(" ", "-") }}"></i>{{ nav_item.title }}
+				</a>
+				<ul class="lst_sub_menu collapse {% if nav_item.active %}current show{% endif %}"
+					id="gnb_{{ loop.index }}" data-parent="#gnb">
+					{% for child_nav_item in nav_item.children recursive %}
+					{% if child_nav_item.children %}
+					<li class="sub_menu_item">
+						<a class="gnb_link link_txt" data-toggle="collapse"
+							href="#gnb_{{ ns.suffix[-1] ~ '_' ~ loop.index }}"
+							{% if child_nav_item.active %}aria-expanded="true"
+							{% endif %}>{{ child_nav_item.title }}</a>
+						<ul class="lst_sub_menu depth{{loop.depth+1}} collapse {% if child_nav_item.active %}current show{% endif %}"
+							id="gnb_{{ ns.suffix[-1] ~ '_' ~ loop.index }}" data-parent="#gnb_{{ ns.suffix[-1] }}">
+							{% set x=ns.suffix.append(ns.suffix[-1] ~ '_' ~ loop.index) %}
+							{{ loop(child_nav_item.children) }}
+							{% set x=ns.suffix.pop() %}
+						</ul>
+					</li>
+					{% else %}
+					<li class="sub_menu_item">
+						<a href="{{ child_nav_item.url }}"
+							class="gnb_link link_txt {% if child_nav_item.active %}current{% endif %}">{{ child_nav_item.title }}</a>
+					</li>
+					{% endif %}
+					{% endfor %}
+				</ul>
+				{% else %}
+				<a class="gnb_link category_menu {% if nav_item.active %}current{% endif %}" href="{{ nav_item.url }}">
+					<i class="ico_category ico_{{ nav_item.title|lower|replace(" ", "-") }}"></i>{{ nav_item.title }}
+				</a>
+				{% endif %}
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+</nav>

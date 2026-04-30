@@ -1,0 +1,125 @@
+{#-
+  NHN Cloud Footer Override for mkdocs-material
+  toast-theme/css/footer.css 의 디자인 토큰 기반
+  
+  구조:
+    1. mkdocs-material 페이지 네비게이션 (Previous/Next)
+    2. NHN Cloud 사이트맵 (서비스/요금/사용자 가이드/고객 센터)
+    3. NHN Cloud 회사 정보
+    4. Copyright
+-#}
+<footer class="md-footer">
+
+  {# ============================================================
+     1. mkdocs-material 페이지 네비게이션 (Previous/Next)
+     ============================================================ #}
+  {% if page.previous_page or page.next_page %}
+    {% if page.meta and page.meta.hide %}
+      {% set hidden = "hidden" if "footer" in page.meta.hide %}
+    {% endif %}
+    <nav class="md-footer__inner md-grid" aria-label="{{ lang.t('footer.title') }}" {{ hidden }}>
+      {% if page.previous_page %}
+        <a href="{{ page.previous_page.url | url }}"
+           class="md-footer__link md-footer__link--prev"
+           aria-label="이전: {{ page.previous_page.title | e }}"
+           rel="prev">
+          <div class="md-footer__button md-icon">
+            {% include ".icons/material/arrow-left.svg" %}
+          </div>
+          <div class="md-footer__title">
+            <span class="md-footer__direction">이전</span>
+            <div class="md-ellipsis">{{ page.previous_page.title }}</div>
+          </div>
+        </a>
+      {% endif %}
+      {% if page.next_page %}
+        <a href="{{ page.next_page.url | url }}"
+           class="md-footer__link md-footer__link--next"
+           aria-label="다음: {{ page.next_page.title | e }}"
+           rel="next">
+          <div class="md-footer__title">
+            <span class="md-footer__direction">다음</span>
+            <div class="md-ellipsis">{{ page.next_page.title }}</div>
+          </div>
+          <div class="md-footer__button md-icon">
+            {% include ".icons/material/arrow-right.svg" %}
+          </div>
+        </a>
+      {% endif %}
+    </nav>
+  {% endif %}
+
+  {# ============================================================
+     2. NHN Cloud 사이트맵 + 회사 정보 (toast-theme 스타일)
+     ============================================================ #}
+  <div class="nhn-footer">
+    <div class="nhn-footer__inner">
+
+      {# 사이트맵 4 컬럼 #}
+      <div class="nhn-footer__sitemap">
+        <div class="nhn-footer__column">
+          <h4 class="nhn-footer__title">서비스</h4>
+          <ul>
+            <li><a href="https://www.nhncloud.com/kr/service/all" target="_blank" rel="noopener">전체 서비스</a></li>
+            <li><a href="https://www.nhncloud.com/kr/service/compute" target="_blank" rel="noopener">컴퓨팅</a></li>
+            <li><a href="https://www.nhncloud.com/kr/service/container" target="_blank" rel="noopener">컨테이너</a></li>
+            <li><a href="https://www.nhncloud.com/kr/service/network" target="_blank" rel="noopener">네트워크</a></li>
+          </ul>
+        </div>
+
+        <div class="nhn-footer__column">
+          <h4 class="nhn-footer__title">요금</h4>
+          <ul>
+            <li><a href="https://www.nhncloud.com/kr/pricing" target="_blank" rel="noopener">서비스 요금</a></li>
+            <li><a href="https://www.nhncloud.com/kr/pricing/calculator" target="_blank" rel="noopener">요금 계산기</a></li>
+          </ul>
+        </div>
+
+        <div class="nhn-footer__column">
+          <h4 class="nhn-footer__title">사용자 가이드</h4>
+          <ul>
+            <li><a href="https://docs.nhncloud.com/" target="_blank" rel="noopener">전체 가이드</a></li>
+            <li><a href="https://docs.nhncloud.com/ko/nhncloud/ko/quickstarts/" target="_blank" rel="noopener">빠른 시작</a></li>
+            <li><a href="https://docs.nhncloud.com/api/" target="_blank" rel="noopener">API 가이드</a></li>
+          </ul>
+        </div>
+
+        <div class="nhn-footer__column">
+          <h4 class="nhn-footer__title">고객 센터</h4>
+          <ul>
+            <li><a href="https://www.nhncloud.com/kr/support/notice" target="_blank" rel="noopener">공지사항</a></li>
+            <li><a href="https://www.nhncloud.com/kr/support/faq" target="_blank" rel="noopener">FAQ</a></li>
+            <li><a href="https://www.nhncloud.com/kr/support/inquiry" target="_blank" rel="noopener">문의하기</a></li>
+          </ul>
+        </div>
+      </div>
+
+      {# 구분선 #}
+      <div class="nhn-footer__divider"></div>
+
+      {# 회사 정보 #}
+      <div class="nhn-footer__info">
+        <div class="nhn-footer__company">
+          <p class="nhn-footer__company-name">NHN Cloud Corp.</p>
+          <p>(13487) 경기도 성남시 분당구 대왕판교로 645번길 16, NHN 판교빌딩</p>
+          <p>대표번호: 1588-7967 | 이메일: <a href="mailto:support@nhncloud.com">support@nhncloud.com</a></p>
+        </div>
+
+        <div class="nhn-footer__legal">
+          <a href="https://www.nhncloud.com/kr/policy/terms" target="_blank" rel="noopener">이용약관</a>
+          <span class="nhn-footer__legal-sep">|</span>
+          <a href="https://www.nhncloud.com/kr/policy/privacy" target="_blank" rel="noopener"><strong>개인정보처리방침</strong></a>
+          <span class="nhn-footer__legal-sep">|</span>
+          <a href="https://www.nhncloud.com/kr/policy/sla" target="_blank" rel="noopener">SLA</a>
+        </div>
+      </div>
+
+      {# Copyright #}
+      <div class="nhn-footer__copyright">
+        <p>Copyright © NHN Cloud Corp. All rights reserved.</p>
+      </div>
+
+    </div>
+  </div>
+
+</footer>

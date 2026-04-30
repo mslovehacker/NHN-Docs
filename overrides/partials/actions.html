@@ -1,0 +1,28 @@
+{# Material 표준 actions partial 을 확장 - 편집/소스 + 공유 + PDF 인쇄 추가 #}
+{% if "content.action.edit" in features and page.edit_url %}
+  <a href="{{ page.edit_url }}" title="{{ lang.t('action.edit') }}" class="md-content__button md-icon" rel="edit" aria-label="페이지 편집">
+    {% set icon = config.theme.icon.edit or "material/file-edit-outline" %}
+    {% include ".icons/" ~ icon ~ ".svg" %}
+  </a>
+{% endif %}
+
+{% if "content.action.view" in features and page.file.src_uri %}
+  {% set view_url = "https://github.com/" ~ config.repo_name ~ "/raw/poc-mkdocs-material/docs/" ~ page.file.src_uri %}
+  <a href="{{ view_url }}" title="페이지 원본 보기" class="md-content__button md-icon" aria-label="페이지 원본">
+    {% set icon = config.theme.icon.view or "material/file-eye-outline" %}
+    {% include ".icons/" ~ icon ~ ".svg" %}
+  </a>
+{% endif %}
+
+{# 공유 버튼 - URL 복사 + Web Share API #}
+<button type="button" class="md-content__button md-icon nhn-action-share" title="페이지 공유" aria-label="페이지 공유" onclick="nhnSharePage(this)">
+  {% include ".icons/material/share-variant.svg" %}
+</button>
+
+{# PDF 인쇄 버튼 - window.print() 호출 #}
+<button type="button" class="md-content__button md-icon nhn-action-print" title="PDF 인쇄" aria-label="PDF 인쇄" onclick="nhnPrintPage()">
+  {% include ".icons/material/printer.svg" %}
+</button>
+
+{# 토스트 알림 영역 (한 번만 삽입) #}
+<div id="nhn-toast" class="nhn-toast" role="status" aria-live="polite"></div>

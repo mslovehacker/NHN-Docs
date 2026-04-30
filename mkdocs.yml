@@ -1,0 +1,240 @@
+site_name: NHN Cloud 사용자 가이드
+site_description: NHN Cloud 서비스 공식 사용자 가이드
+site_url: https://nhncloud.duckdns.org/
+site_author: NHN Cloud Technical Training
+
+repo_url: https://github.com/mslovehacker/NHN-Docs
+repo_name: mslovehacker/NHN-Docs
+edit_uri: edit/poc-mkdocs-material/docs/
+
+copyright: Copyright &copy; NHN Cloud Corp. All rights reserved.
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: ko
+  font: false
+  favicon: assets/images/favicon-32x32.png
+
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.action.edit
+    - content.action.view
+    - content.tabs.link
+    - toc.follow
+
+  palette:
+    # Light 모드 (기본)
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: 다크 모드로 전환
+    # Dark 모드
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: 라이트 모드로 전환
+
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+
+plugins:
+  - search:
+      lang:
+        - ko
+        - en
+        - ja
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: ko
+          name: 한국어
+          default: true
+          build: true
+        - locale: en
+          name: English
+          build: true
+          nav_translations:
+            홈: Home
+            빠른 시작: Quickstart
+            개요: Overview
+            컴퓨팅: Compute
+            인스턴스: Instance
+            컨테이너: Container
+            NKS: NKS
+            사용 가이드: User Guide
+            API 가이드: API Guide
+            백업 가이드: Backup Guide
+            Istio 가이드: Istio Guide
+            버전 가이드: Version Guide
+            문제 해결 가이드: Troubleshooting Guide
+            릴리스 노트: Release Notes
+        - locale: ja
+          name: 日本語
+          build: true
+          nav_translations:
+            홈: ホーム
+            빠른 시작: クイックスタート
+            개요: 概要
+            컴퓨팅: コンピュート
+            인스턴스: インスタンス
+            컨테이너: コンテナ
+            NKS: NKS
+            사용 가이드: ユーザーガイド
+            API 가이드: APIガイド
+            백업 가이드: バックアップガイド
+            Istio 가이드: Istioガイド
+            버전 가이드: バージョンガイド
+            문제 해결 가이드: トラブルシューティングガイド
+            릴리스 노트: リリースノート
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      permalink_title: 이 섹션으로 직접 이동
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+nav:
+  - 홈: index.md
+  - 빠른 시작: quickstarts/overview.md
+  - 컨테이너:
+    - NHN Kubernetes Service (NKS):
+        - 개요: container/nks/overview.md
+        - 사용 가이드: container/nks/user-guide.md
+        - API 가이드: container/nks/public-api.md
+        - Backup Guide: container/nks/backup-guide.md
+        - Istio Guide: container/nks/istio-guide.md
+        - Version Guide: container/nks/version-guide.md
+        - 문제 해결 가이드: container/nks/troubleshooting-guide.md
+        - 릴리스 노트: container/nks/release-notes.md
+    - NHN Container Registry (NCR):
+        - 개요: container/ncr/overview.md
+        - 사용 가이드: container/ncr/user-guide.md
+        - 릴리스 노트: container/ncr/release-notes.md
+  - 컴퓨팅:
+    - Instance:
+        - 개요: compute/instance/overview.md
+        - 콘솔 가이드: compute/instance/console-guide.md
+        - API 가이드: compute/instance/public-api.md
+        - 커널 가이드: compute/instance/kernel-guide.md
+        - Terraform 가이드: compute/instance/terraform-guide.md
+        - Component 가이드: compute/instance/component-guide.md
+        - 문제 해결 가이드: compute/instance/troubleshooting-guide.md
+    - Auto Scale:
+        - 개요: compute/auto-scale/overview.md
+        - 콘솔 가이드: compute/auto-scale/console-guide.md
+        - API 가이드: compute/auto-scale/api-guide.md
+        - 오류 코드: compute/auto-scale/error-code.md
+  - 네트워크:
+    - VPC:
+        - 개요: network/vpc/overview.md
+        - 콘솔 가이드: network/vpc/console-guide.md
+        - API 가이드: network/vpc/api-guide.md
+        - API 가이드: network/vpc/public-api.md
+        - API 가이드: network/vpc/public-api-compat.md
+    - Load Balancer:
+        - 개요: network/load-balancer/overview.md
+        - 콘솔 가이드: network/load-balancer/console-guide.md
+        - API 가이드: network/load-balancer/public-api.md
+  - 스토리지:
+    - Object Storage:
+        - 개요: storage/object-storage/Overview.md
+        - 콘솔 가이드: storage/object-storage/console-guide.md
+        - API 가이드: storage/object-storage/api-guide.md
+        - Acl Guide: storage/object-storage/acl-guide.md
+        - S3 Api Guide: storage/object-storage/s3-api-guide.md
+        - Third Party Tools Guide: storage/object-storage/third-party-tools-guide.md
+        - Trouble Shooting Guide: storage/object-storage/trouble-shooting-guide.md
+        - 릴리스 노트: storage/object-storage/release-notes.md
+    - Block Storage:
+        - 개요: storage/block-storage/overview.md
+        - 콘솔 가이드: storage/block-storage/console-guide.md
+        - API 가이드: storage/block-storage/api-guide.md
+        - API 가이드: storage/block-storage/public-api.md
+        - Data Wiping Guide: storage/block-storage/data-wiping-guide.md
+        - 오류 코드: storage/block-storage/error-code.md
+        - 릴리스 노트: storage/block-storage/release-notes.md
+  - 데이터베이스:
+    - RDS for MySQL:
+        - 개요: database/mysql/overview.md
+        - Mysql Instance Guide: database/mysql/mysql-instance-guide.md
+    - RDS:
+        - 개요: database/rds/overview.md
+        - Analysis: database/rds/analysis.md
+        - API 가이드: database/rds/api-guide-v2.0.md
+        - API 가이드: database/rds/api-guide-v3.0.md
+        - API 가이드: database/rds/api-guide-v4.0.md
+        - Backup And Restore: database/rds/backup-and-restore.md
+        - Db Engine: database/rds/db-engine.md
+        - Db Instance: database/rds/db-instance.md
+        - Db Security Group: database/rds/db-security-group.md
+        - Notification: database/rds/notification.md
+        - Parameter Group: database/rds/parameter-group.md
+        - Server Dashboard: database/rds/server-dashboard.md
+        - 릴리스 노트: database/rds/release-notes.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/mslovehacker/NHN-Docs
+      name: NHN Cloud Docs GitHub
+  alternate:
+    - name: 한국어
+      link: /
+      lang: ko
+    - name: English
+      link: /en/
+      lang: en
+    - name: 日本語
+      link: /ja/
+      lang: ja
+  homepage: https://nhncloud.duckdns.org/
+
+extra_css:
+  # - stylesheets/toast-icon/ti-icon-style.css  # 폰트 아이콘 (정식 NHN BI 수령 후 활성화)
+  - stylesheets/nhncloud-theme.css
+
+extra_javascript:
+  - javascripts/nhn-actions.js

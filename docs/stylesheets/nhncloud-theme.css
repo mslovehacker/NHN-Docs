@@ -1,0 +1,2067 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
+/*
+ * NHN Cloud Theme for mkdocs-material (minimal)
+ * Material for MkDocs 9.7.6 표준 디자인 100% 유지
+ * NHN Cloud 색상 토큰 (검은 헤더 + 파란 액센트) 만 적용
+ */
+
+/* ============================================================
+ * 1. NHN Cloud 색상 토큰 (CSS 변수만)
+ * ============================================================ */
+:root {
+  /* NHN Cloud 정식 색상 (docs.nhncloud.com 추출) */
+  --nhn-primary: #125de6;
+  --nhn-primary-dark: #004ec6;
+  --nhn-primary-light: #e9f1ff;
+  --nhn-header-bg: #000000;
+  --nhn-text-primary: #313338;
+  --nhn-border: #CED0DA;
+
+  /* mkdocs-material 변수 override */
+  --md-primary-fg-color: var(--nhn-primary);
+  --md-primary-fg-color--light: var(--nhn-primary-light);
+  --md-primary-fg-color--dark: var(--nhn-primary-dark);
+  --md-accent-fg-color: var(--nhn-primary);
+  --md-primary-bg-color: var(--nhn-header-bg);
+
+  /* 폰트 */
+  --md-text-font: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --md-code-font: "JetBrains Mono", "SF Mono", Monaco, Consolas, monospace;
+}
+
+/* 일본어 페이지 폰트 */
+[lang="ja"] body, [lang="ja"] input {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+/* ============================================================
+ * 2. 헤더 영역 NHN 검은색 적용
+ * ============================================================ */
+
+.md-header {
+  background-color: var(--nhn-header-bg);
+  color: #FFFFFF;
+}
+
+.md-tabs {
+  background-color: var(--nhn-header-bg);
+}
+
+/* 헤더 로고 영역 (정식 NHN BI 수령 시 자동 동작) */
+.md-header__button.md-logo img {
+  height: 22px;
+  width: auto;
+  vertical-align: middle;
+}
+
+/* ============================================================
+ * 3. 상단 탭 폰트 색상 (검은 배경에 흰 글씨) — 긴급 보정
+ * ============================================================ */
+
+/* 상단 탭 영역 (검은 배경) */
+.md-tabs {
+  background-color: var(--nhn-header-bg);
+  color: #FFFFFF;
+}
+
+/* 탭 링크 - 흰색 글씨 강제 */
+.md-tabs__link {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.85rem;
+  font-weight: 500;
+  opacity: 1;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  color: #FFFFFF;
+  opacity: 1;
+}
+
+/* ============================================================
+ * 4. 다크모드 (slate) 에서 NHN 색상 유지
+ * ============================================================ */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: var(--nhn-primary);
+  --md-accent-fg-color: var(--nhn-primary);
+  --md-primary-bg-color: var(--nhn-header-bg);
+}
+
+[data-md-color-scheme="slate"] .md-header,
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: var(--nhn-header-bg);
+}
+
+[data-md-color-scheme="slate"] .md-tabs__link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-md-color-scheme="slate"] .md-tabs__link:hover,
+[data-md-color-scheme="slate"] .md-tabs__link--active {
+  color: #FFFFFF;
+}
+
+/* ============================================================
+ * 5. 본문 폭 확장 (docs.nhncloud.com 처럼 넓게)
+ * ============================================================ */
+
+/* 와이드 화면에서 본문 + 사이드바 폭 모두 확장 */
+@media screen and (min-width: 76.25em) {
+  .md-grid {
+    max-width: 80rem; /* 기본 61rem → 80rem */
+  }
+}
+
+@media screen and (min-width: 100em) {
+  .md-grid {
+    max-width: 90rem; /* 매우 와이드 화면에서 더 넓게 */
+  }
+}
+
+/* 좌측 사이드바 폭 약간 확장 */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    width: 14rem; /* 기본 12.1rem → 14rem */
+  }
+}
+
+
+/* ============================================================
+ * 6. 사이드바 구분 (좌측 세로선 + 우측 RNB 카드 박스)
+ * ============================================================ */
+
+/* ============================
+ * 좌측 사이드바 ↔ 본문 세로선 (전체 높이)
+ * ============================ */
+@media screen and (min-width: 76.25em) {
+  .md-container {
+    position: relative;
+  }
+  
+  .md-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 12.1rem;
+    width: 1px;
+    background-color: var(--nhn-border);
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .md-sidebar--primary {
+    background-color: transparent;
+  }
+}
+
+/* ============================
+ * 우측 RNB - docs.nhncloud.com 스타일 카드 박스
+ * ============================ */
+@media screen and (min-width: 76.25em) {
+  /* 우측 사이드바 자체는 패딩만 */
+  .md-sidebar--secondary {
+    background-color: transparent;
+    padding: 1rem 0.75rem;
+  }
+  
+  /* 카드 박스 스타일 */
+  .md-sidebar--secondary .md-sidebar__scrollwrap {
+    background-color: #FFFFFF;
+    border: 1px solid var(--nhn-border);
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  }
+  
+  /* '목차' 제목 - 작고 회색으로 (튀지 않게) */
+  .md-sidebar--secondary .md-nav__title {
+    color: var(--nhn-text-primary);
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 0 0 0.6rem 0;
+    margin: 0 0 0.4rem 0;
+    border-bottom: 1px solid var(--nhn-border);
+    letter-spacing: 0.02em;
+  }
+  
+  /* RNB 전체 폰트 크기 통일 (본문보다 작게) */
+  .md-sidebar--secondary .md-nav__list {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .md-sidebar--secondary .md-nav__item {
+    padding: 0;
+  }
+  
+  /* RNB 1 단계 항목 (상위 그룹) - 굵게 표시 */
+  .md-sidebar--secondary > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link {
+    font-weight: 600;
+    font-size: 0.78rem;
+    color: var(--nhn-text-primary);
+    margin: 0.4rem 0;
+    padding: 0;
+  }
+  
+  /* RNB 2 단계 이하 항목 (하위 목록) - 일반 굵기 + 작게 */
+  .md-sidebar--secondary .md-nav .md-nav .md-nav__link {
+    font-weight: 400;
+    font-size: 0.74rem;
+    color: var(--nhn-text-primary);
+    margin: 0.3rem 0;
+    padding-left: 0.75rem;
+  }
+  
+  /* RNB 3 단계 이하 - 더 작은 들여쓰기 */
+  .md-sidebar--secondary .md-nav .md-nav .md-nav .md-nav__link {
+    padding-left: 1.5rem;
+    font-size: 0.72rem;
+  }
+  
+  /* hover / active 상태 */
+  .md-sidebar--secondary .md-nav__link:hover {
+    color: var(--nhn-primary);
+  }
+  
+  .md-sidebar--secondary .md-nav__link--active {
+    color: var(--nhn-primary);
+    font-weight: 600;
+  }
+}
+
+/* ============================
+ * 다크모드 대응
+ * ============================ */
+[data-md-color-scheme="slate"] .md-container::before {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--secondary .md-sidebar__scrollwrap {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__title {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__link {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__link:hover,
+[data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__link--active {
+  color: var(--nhn-primary-light);
+}
+
+/* ============================
+ * 푸터 위 가로 구분선
+ * ============================ */
+.md-footer {
+  border-top: 1px solid var(--nhn-border);
+}
+
+[data-md-color-scheme="slate"] .md-footer {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================================
+ * 7. 좌측 LNB 계층 디자인 (docs.nhncloud.com 스타일)
+ * ============================================================
+ *
+ * 계층 구조:
+ *   1 단계 (서비스): 굵게 + 펼침 표시
+ *   2 단계 (가이드 분류): 일반 + 들여쓰기
+ *   3 단계 (서브 그룹): NHN 파란색 + 굵게
+ *   4 단계 (실제 페이지): 일반 + 더 들여쓰기
+ */
+
+@media screen and (min-width: 76.25em) {
+  /* 좌측 LNB 영역 패딩 정리 */
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    padding: 1rem 0.5rem;
+  }
+  
+  /* LNB 전체 폰트 통일 */
+  .md-sidebar--primary .md-nav__list {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .md-sidebar--primary .md-nav__item {
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* ============================
+   * 1 단계 - 서비스명 (예: 컨테이너, 컴퓨팅) - 굵게 + 큰 글씨
+   * ============================ */
+  .md-sidebar--primary > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--nhn-text-primary);
+    padding: 0.5rem 0.75rem;
+    margin: 0.3rem 0;
+  }
+  
+  /* 1 단계 활성 (현재 카테고리) */
+  .md-sidebar--primary > .md-nav > .md-nav__list > .md-nav__item--active > .md-nav__link {
+    color: var(--nhn-primary);
+    font-weight: 700;
+  }
+  
+  /* ============================
+   * 2 단계 - 가이드 분류 (예: 개요, 사용 가이드) - 일반 + 들여쓰기
+   * ============================ */
+  .md-sidebar--primary .md-nav .md-nav .md-nav__link {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--nhn-text-primary);
+    padding: 0.35rem 0.75rem 0.35rem 1.25rem;
+    margin: 0;
+  }
+  
+  /* ============================
+   * 3 단계 - 서브 그룹 (있을 경우) - 굵게 + 들여쓰기 더
+   * ============================ */
+  .md-sidebar--primary .md-nav .md-nav .md-nav .md-nav__item > .md-nav__link {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--nhn-text-primary);
+    padding-left: 1.75rem;
+  }
+  
+  /* ============================
+   * 4 단계 이하 - 실제 페이지 항목 - 일반 + 더 들여쓰기
+   * ============================ */
+  .md-sidebar--primary .md-nav .md-nav .md-nav .md-nav .md-nav__link {
+    font-size: 0.76rem;
+    font-weight: 400;
+    color: var(--nhn-text-primary);
+    padding-left: 2.5rem;
+  }
+  
+  /* ============================
+   * hover / active 공통
+   * ============================ */
+  .md-sidebar--primary .md-nav__link:hover {
+    color: var(--nhn-primary);
+    background-color: rgba(18, 93, 230, 0.04);
+    border-radius: 3px;
+  }
+  
+  .md-sidebar--primary .md-nav__link--active {
+    color: var(--nhn-primary);
+    font-weight: 600;
+  }
+  
+  /* ============================
+   * 펼침 표시 ([+] / [-] 형태) 회전 애니메이션
+   * ============================ */
+  .md-sidebar--primary .md-nav__icon {
+    color: var(--nhn-text-primary);
+    opacity: 0.7;
+  }
+  
+  .md-sidebar--primary .md-nav__icon:hover {
+    opacity: 1;
+  }
+}
+
+/* ============================
+ * 다크모드 대응
+ * ============================ */
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__link:hover {
+  color: var(--nhn-primary-light);
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__link--active {
+  color: var(--nhn-primary-light);
+}
+
+/* ============================================================
+ * 8. 좌측 LNB 펼침 화살표 강화 (Material for MkDocs 표준)
+ * ============================================================
+ * 하위 메뉴가 있는 항목에는 우측에 ∨ 화살표 표시
+ * 클릭 시 회전 (펼침/접힘 시각 피드백)
+ */
+
+@media screen and (min-width: 76.25em) {
+  /* 하위 메뉴가 있는 항목 - 화살표 영역 확보 */
+  
+  /* 펼침 화살표 (∨) - 우측 표시 */
+  
+  /* 펼쳐진 상태 - 화살표 회전 (∨ → ∧) */
+  
+  /* 펼친 항목의 화살표는 NHN 파란색 */
+  
+  /* 하위 메뉴의 시각적 들여쓰기 강화 (왼쪽 세로선) */
+  .md-sidebar--primary .md-nav .md-nav {
+    border-left: 1px solid var(--nhn-border);
+    margin-left: 0.75rem;
+    padding-left: 0;
+  }
+}
+
+/* 다크모드 화살표 */
+[data-md-color-scheme="slate"]
+
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav .md-nav {
+  border-left-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================================
+ * 9. 본문 헤딩 NHN Cloud 스타일 (docs.nhncloud.com 패턴)
+ * ============================================================
+ * docs.nhncloud.com 의 .page__content-wrapper h2 패턴 적용
+ * - H2: NHN 파란색 + 하단 회색 선
+ * - H1: 일반 검정 + 하단 굵은 선 (페이지 타이틀)
+ */
+
+/* H1 - 페이지 메인 타이틀 (예: "개요", "사용 가이드") */
+.md-content__inner h1 {
+  color: var(--nhn-text-primary);
+  font-weight: 600;
+  font-size: 2rem;
+  border-bottom: 2px solid var(--nhn-primary);
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* H2 - 섹션 헤더 (예: "Kubernetes", "클러스터") */
+.md-content__inner h2 {
+  color: var(--nhn-primary);
+  font-weight: 600;
+  font-size: 1.4rem;
+  border-bottom: 1px solid var(--nhn-border);
+  padding-bottom: 0.4rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* H3 - 서브 섹션 (예: "구성", "컨트롤 플레인") */
+.md-content__inner h3 {
+  color: var(--nhn-text-primary);
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* H4, H5, H6 - 더 깊은 계층 */
+.md-content__inner h4 {
+  color: var(--nhn-text-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.md-content__inner h5,
+.md-content__inner h6 {
+  color: var(--nhn-text-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+/* anchor link 의 paragraph 표시 (¶) - 호버 시만 보이도록 */
+.md-content__inner h1 .headerlink,
+.md-content__inner h2 .headerlink,
+.md-content__inner h3 .headerlink,
+.md-content__inner h4 .headerlink,
+.md-content__inner h5 .headerlink,
+.md-content__inner h6 .headerlink {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  margin-left: 0.5rem;
+  font-size: 0.7em;
+}
+
+.md-content__inner h1:hover .headerlink,
+.md-content__inner h2:hover .headerlink,
+.md-content__inner h3:hover .headerlink,
+.md-content__inner h4:hover .headerlink,
+.md-content__inner h5:hover .headerlink,
+.md-content__inner h6:hover .headerlink {
+  opacity: 0.5;
+}
+
+/* 다크모드 - H 들의 색상 보정 */
+[data-md-color-scheme="slate"] .md-content__inner h1 {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+[data-md-color-scheme="slate"] .md-content__inner h2 {
+  color: var(--nhn-primary-light);
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-md-color-scheme="slate"] .md-content__inner h3,
+[data-md-color-scheme="slate"] .md-content__inner h4,
+[data-md-color-scheme="slate"] .md-content__inner h5,
+[data-md-color-scheme="slate"] .md-content__inner h6 {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ============================================================
+ * 9. 본문 헤딩 NHN Cloud 스타일 (docs.nhncloud.com 패턴)
+ * ============================================================
+ * docs.nhncloud.com 의 .page__content-wrapper h2 패턴 적용
+ * - H2: NHN 파란색 + 하단 회색 선
+ * - H1: 일반 검정 + 하단 굵은 선 (페이지 타이틀)
+ */
+
+/* H1 - 페이지 메인 타이틀 (예: "개요", "사용 가이드") */
+.md-content__inner h1 {
+  color: var(--nhn-text-primary);
+  font-weight: 600;
+  font-size: 2rem;
+  border-bottom: 2px solid var(--nhn-primary);
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* H2 - 섹션 헤더 (예: "Kubernetes", "클러스터") */
+.md-content__inner h2 {
+  color: var(--nhn-primary);
+  font-weight: 600;
+  font-size: 1.4rem;
+  border-bottom: 1px solid var(--nhn-border);
+  padding-bottom: 0.4rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* H3 - 서브 섹션 (예: "구성", "컨트롤 플레인") */
+.md-content__inner h3 {
+  color: var(--nhn-text-primary);
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* H4, H5, H6 - 더 깊은 계층 */
+.md-content__inner h4 {
+  color: var(--nhn-text-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.md-content__inner h5,
+.md-content__inner h6 {
+  color: var(--nhn-text-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+/* anchor link 의 paragraph 표시 (¶) - 호버 시만 보이도록 */
+.md-content__inner h1 .headerlink,
+.md-content__inner h2 .headerlink,
+.md-content__inner h3 .headerlink,
+.md-content__inner h4 .headerlink,
+.md-content__inner h5 .headerlink,
+.md-content__inner h6 .headerlink {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  margin-left: 0.5rem;
+  font-size: 0.7em;
+}
+
+.md-content__inner h1:hover .headerlink,
+.md-content__inner h2:hover .headerlink,
+.md-content__inner h3:hover .headerlink,
+.md-content__inner h4:hover .headerlink,
+.md-content__inner h5:hover .headerlink,
+.md-content__inner h6:hover .headerlink {
+  opacity: 0.5;
+}
+
+/* 다크모드 - H 들의 색상 보정 */
+[data-md-color-scheme="slate"] .md-content__inner h1 {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+[data-md-color-scheme="slate"] .md-content__inner h2 {
+  color: var(--nhn-primary-light);
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-md-color-scheme="slate"] .md-content__inner h3,
+[data-md-color-scheme="slate"] .md-content__inner h4,
+[data-md-color-scheme="slate"] .md-content__inner h5,
+[data-md-color-scheme="slate"] .md-content__inner h6 {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ============================================================
+ * 10. 좌측 세로선 제거 + 다크모드 가독성 + 우측 RNB 폰트 축소
+ * ============================================================ */
+
+/* ============================
+ * 1. 좌측 LNB 들여쓰기 세로선 제거 (요청)
+ * ============================ */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary .md-nav .md-nav {
+    border-left: none !important;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  
+  /* 들여쓰기는 padding 으로만 표현 */
+  .md-sidebar--primary .md-nav .md-nav__link {
+    padding-left: 1.5rem;
+  }
+  
+  .md-sidebar--primary .md-nav .md-nav .md-nav__link {
+    padding-left: 2.25rem;
+  }
+  
+  .md-sidebar--primary .md-nav .md-nav .md-nav .md-nav__link {
+    padding-left: 3rem;
+  }
+}
+
+/* ============================
+ * 2. 다크모드 사이드바 폰트 가독성 강화
+ * ============================ */
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__link {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link {
+  color: #FFFFFF !important;
+  font-weight: 700;
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__link:hover {
+  color: var(--nhn-primary-light) !important;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__link--active {
+  color: var(--nhn-primary-light) !important;
+  font-weight: 600;
+}
+
+/* 다크모드 우측 RNB 도 동일 강화 */
+[data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__link {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__title {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--secondary > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link {
+  color: #FFFFFF !important;
+}
+
+/* 다크모드 화살표 색상 강화 */
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__icon {
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 1;
+}
+
+/* ============================
+ * 3. 우측 RNB 폰트 축소 (개행 방지)
+ * ============================ */
+@media screen and (min-width: 76.25em) {
+  /* RNB 카드 패딩 살짝 축소 */
+  .md-sidebar--secondary .md-sidebar__scrollwrap {
+    padding: 0.6rem 0.75rem;
+  }
+  
+  /* '목차' 제목 축소 */
+  .md-sidebar--secondary .md-nav__title {
+    font-size: 0.7rem;
+    padding: 0 0 0.5rem 0;
+    margin: 0 0 0.4rem 0;
+  }
+  
+  /* RNB 1 단계 - 더 작게 */
+  .md-sidebar--secondary > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link {
+    font-size: 0.7rem;
+    line-height: 1.4;
+    margin: 0.25rem 0;
+    padding: 0.15rem 0;
+    word-break: keep-all; /* 한글 단어 단위 줄바꿈 */
+  }
+  
+  /* RNB 2 단계 이하 - 더 작게 */
+  .md-sidebar--secondary .md-nav .md-nav .md-nav__link {
+    font-size: 0.66rem;
+    line-height: 1.4;
+    margin: 0.2rem 0;
+    padding: 0.1rem 0 0.1rem 0.6rem;
+    word-break: keep-all;
+  }
+  
+  /* RNB 3 단계 - 가장 작게 */
+  .md-sidebar--secondary .md-nav .md-nav .md-nav .md-nav__link {
+    font-size: 0.64rem;
+    padding-left: 1.2rem;
+  }
+}
+
+/* ============================================================
+ * 11. 세로선 노출 해결 + 활성 항목 표시
+ * ============================================================ */
+
+/* ============================
+ * 1. 세로선 노출 문제 해결
+ * ============================ */
+
+/* 컨테이너의 ::before (세로선) z-index 를 낮게 */
+.md-container::before {
+  z-index: 0; /* 가장 아래 */
+}
+
+/* 본문 영역에 흰 배경 추가 (세로선 위에 본문이 올라가도록) */
+.md-main {
+  position: relative;
+  z-index: 1;
+  background-color: var(--md-default-bg-color);
+}
+
+/* 푸터를 세로선 위로 올려 자연스럽게 가림 */
+.md-footer {
+  position: relative;
+  z-index: 2;
+}
+
+/* 푸터 위 작은 빈 공간 처리 */
+.md-main + .md-footer {
+  margin-top: -1px; /* 1px 간격 제거 */
+}
+
+/* ============================
+ * 2. 좌측 LNB 활성 항목 표시 (현재 페이지)
+ * ============================ */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary .md-nav__link--active {
+    color: var(--nhn-primary);
+    font-weight: 600;
+    background-color: rgba(18, 93, 230, 0.06);
+    border-radius: 3px;
+    position: relative;
+  }
+  
+  /* 활성 항목 좌측 NHN 색상 세로 막대 표시 */
+  .md-sidebar--primary .md-nav__link--active::before {
+    content: "";
+    position: absolute;
+    left: -0.25rem;
+    top: 0.2rem;
+    bottom: 0.2rem;
+    width: 3px;
+    background-color: var(--nhn-primary);
+    border-radius: 2px;
+  }
+  
+  /* aria-current 속성으로도 활성 표시 (mkdocs-material 9.x) */
+  .md-sidebar--primary [aria-current="page"] {
+    color: var(--nhn-primary) !important;
+    font-weight: 600;
+    background-color: rgba(18, 93, 230, 0.06);
+  }
+  
+  /* 활성 항목의 부모 (펼친 카테고리) 도 약간 강조 */
+  .md-sidebar--primary .md-nav__item--active > .md-nav__link {
+    color: var(--nhn-primary);
+    font-weight: 600;
+  }
+}
+
+/* ============================
+ * 3. 우측 RNB 활성 항목 표시 (현재 보고 있는 섹션)
+ * ============================ */
+@media screen and (min-width: 76.25em) {
+  /* 현재 활성 섹션 */
+  .md-sidebar--secondary .md-nav__link--active {
+    color: var(--nhn-primary) !important;
+    font-weight: 600;
+    background-color: rgba(18, 93, 230, 0.06);
+    border-radius: 3px;
+    padding-left: 0.5rem;
+    margin-left: -0.5rem;
+  }
+  
+  /* 이미 지나간 섹션 (--passed) - 약간 흐리게 */
+  .md-sidebar--secondary .md-nav__link--passed {
+    color: var(--nhn-text-primary);
+    opacity: 0.7;
+  }
+  
+  /* 아직 안 지나간 섹션 - 기본 색상 유지 */
+  .md-sidebar--secondary .md-nav__link {
+    transition: color 0.2s ease, background-color 0.2s ease;
+  }
+}
+
+/* ============================
+ * 4. 다크모드 활성 항목 표시
+ * ============================ */
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__link--active {
+  color: var(--nhn-primary-light) !important;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__link--active::before {
+  background-color: var(--nhn-primary-light);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary [aria-current="page"] {
+  color: var(--nhn-primary-light) !important;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__link--active {
+  color: var(--nhn-primary-light) !important;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__link--passed {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ============================================================
+ * 12. NHN Cloud 정식 푸터 스타일 (toast-theme 기반)
+ * ============================================================ */
+
+.nhn-footer {
+  background-color: #262626;
+  color: #C0C0C0;
+  padding: 50px 0 57px 0;
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 300;
+  font-size: 0.85rem;
+  line-height: 1.714286;
+  z-index: 2;
+  position: relative;
+}
+
+.nhn-footer__inner {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* 사이트맵 4 컬럼 그리드 */
+.nhn-footer__sitemap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.nhn-footer__column h4.nhn-footer__title {
+  color: #FFFFFF;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+  padding: 0;
+  border: none;
+}
+
+.nhn-footer__column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nhn-footer__column ul li {
+  margin: 0.5rem 0;
+}
+
+.nhn-footer__column ul li a {
+  color: #C0C0C0;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 300;
+  transition: color 0.2s ease;
+}
+
+.nhn-footer__column ul li a:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+/* 구분선 */
+.nhn-footer__divider {
+  border-top: 1px solid #3C3C3C;
+  margin: 2rem 0;
+}
+
+/* 회사 정보 + 약관 영역 */
+.nhn-footer__info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.nhn-footer__company p {
+  margin: 0.3rem 0;
+  font-size: 0.78rem;
+  color: #999;
+}
+
+.nhn-footer__company-name {
+  font-weight: 500 !important;
+  color: #FFFFFF !important;
+  font-size: 0.85rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.nhn-footer__company a {
+  color: #C0C0C0;
+  text-decoration: none;
+}
+
+.nhn-footer__company a:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+/* 약관 / 정책 링크 */
+.nhn-footer__legal {
+  font-size: 0.8rem;
+}
+
+.nhn-footer__legal a {
+  color: #C0C0C0;
+  text-decoration: none;
+  margin: 0 0.4rem;
+}
+
+.nhn-footer__legal a:first-child {
+  margin-left: 0;
+}
+
+.nhn-footer__legal a:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.nhn-footer__legal-sep {
+  color: #555;
+  margin: 0;
+}
+
+/* Copyright */
+.nhn-footer__copyright {
+  border-top: 1px solid #3C3C3C;
+  padding-top: 1.5rem;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: #888;
+  text-align: left;
+}
+
+.nhn-footer__copyright p {
+  margin: 0;
+}
+
+/* 모바일 반응형 */
+@media screen and (max-width: 60em) {
+  .nhn-footer__sitemap {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .nhn-footer__info {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 30em) {
+  .nhn-footer__sitemap {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+ * 13. 본문↔푸터 사이 세로선 노출 영구 해결
+ * ============================================================
+ * 방법: .md-container::before 의 bottom 위치를 푸터 위로 끌어올림
+ * + .md-footer 에 큰 그림자(box-shadow)로 위쪽 영역 자연스럽게 가림
+ */
+
+@media screen and (min-width: 76.25em) {
+  /* 컨테이너의 ::before 세로선 - 본문 끝까지만 (푸터 영역 진입 안 함) */
+  .md-container::before {
+    bottom: auto;
+    height: auto;
+    /* 본문 영역 (.md-main) 의 높이만큼만 */
+  }
+  
+  /* 본문 자체에 세로선 그리기 (정확한 영역만) */
+  .md-main {
+    position: relative;
+    background-color: #FFFFFF;
+  }
+  
+  /* 본문에 좌측 세로선 (본문 시작 ~ 끝) */
+  .md-main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 12.1rem;
+    width: 1px;
+    background-color: var(--nhn-border);
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* 본문에 우측 세로선 */
+  .md-main::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 12.1rem;
+    width: 1px;
+    background-color: var(--nhn-border);
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* 기존 .md-container::before 비활성화 (중복 방지) */
+  .md-container::before {
+    display: none !important;
+  }
+}
+
+/* 푸터를 본문 위로 끌어올려 세로선 가림 */
+.md-footer {
+  position: relative;
+  z-index: 5;
+  margin-top: 0;
+}
+
+/* nhn-footer 도 동일 처리 */
+.nhn-footer {
+  position: relative;
+  z-index: 5;
+}
+
+/* 다크모드에서도 동일 */
+[data-md-color-scheme="slate"] .md-main::before,
+[data-md-color-scheme="slate"] .md-main::after {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-md-color-scheme="slate"] .md-main {
+  background-color: var(--md-default-bg-color);
+}
+
+/* ============================================================
+ * 14. 폰트 계층 + 토글 + 아이콘 + 여백 + breadcrumb
+ * ============================================================ */
+
+/* ============================
+ * P1-1: 폰트 계층 (1단계 크게, 하위 작게)
+ * ============================ */
+@media screen and (min-width: 76.25em) {
+  /* 1 단계 (컨테이너, 컴퓨팅) - 가장 크게 + 굵게 */
+  .md-sidebar--primary > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link {
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    padding: 0.6rem 0.5rem 0.6rem 1.75rem !important;
+    margin: 0.2rem 0;
+    color: var(--nhn-text-primary);
+  }
+  
+  /* 2 단계 (NKS) - 중간 */
+  .md-sidebar--primary .md-nav .md-nav__item > .md-nav__link {
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    padding: 0.4rem 0.5rem 0.4rem 1.5rem !important;
+  }
+  
+  /* 3 단계 (개요/사용 가이드) - 작게 */
+  .md-sidebar--primary .md-nav .md-nav .md-nav__item > .md-nav__link {
+    font-size: 0.78rem !important;
+    font-weight: 400 !important;
+    padding: 0.3rem 0.5rem 0.3rem 2.25rem !important;
+  }
+  
+  /* 4 단계 - 더 작게 */
+  .md-sidebar--primary .md-nav .md-nav .md-nav .md-nav__item > .md-nav__link {
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.5rem 0.25rem 3rem !important;
+  }
+}
+
+/* ============================
+ * P1-2: 1단계 카테고리 아이콘 (sprite 활용)
+ * ============================ */
+@media screen and (min-width: 76.25em) {
+  /* 1단계 항목의 라벨에 아이콘 표시 */
+  .md-sidebar--primary > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link {
+    position: relative;
+  }
+  
+  .md-sidebar--primary > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link::before {
+    content: "";
+    position: absolute;
+    left: 0.3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.1rem;
+    height: 1.1rem;
+    background-image: url("../assets/images/sp_document.png");
+    background-repeat: no-repeat;
+    background-size: 500px 500px;
+    background-position: -1000px -1000px;
+    opacity: 0.75;
+    flex-shrink: 0;
+  }
+  
+  /* href 패턴 매칭으로 카테고리별 아이콘 */
+  .md-sidebar--primary .md-nav__item:has(a.md-nav__link[href*="quickstarts"]) > .md-nav__link::before,
+  .md-sidebar--primary .md-nav__item:has(.md-nav__link[for*="quickstarts" i]) > .md-nav__link::before {
+    background-position: -220px -64px;
+  }
+  
+  .md-sidebar--primary .md-nav__item:has(a.md-nav__link[href*="compute"]) > .md-nav__link::before,
+  .md-sidebar--primary .md-nav__item:has(.md-nav__list a[href*="compute"]) > .md-nav__link::before {
+    background-position: 0 -20px;
+  }
+  
+  .md-sidebar--primary .md-nav__item:has(a.md-nav__link[href*="container"]) > .md-nav__link::before,
+  .md-sidebar--primary .md-nav__item:has(.md-nav__list a[href*="container"]) > .md-nav__link::before {
+    background-position: -44px -64px;
+  }
+}
+
+/* ============================
+ * P1-3: 상단 탭/헤더 양옆 여백
+ * ============================ */
+.md-tabs__inner,
+.md-header__inner {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-tabs__inner,
+  .md-header__inner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 100em) {
+  .md-tabs__inner,
+  .md-header__inner {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* ============================
+ * P2: navigation.path breadcrumb 스타일
+ * ============================ */
+.md-content__inner .md-nav__path {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--nhn-primary);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--nhn-border);
+}
+
+.md-content__inner .md-nav__path-item {
+  display: inline;
+  color: var(--nhn-text-primary);
+}
+
+.md-content__inner .md-nav__path-item--current {
+  color: var(--nhn-primary);
+  font-weight: 600;
+}
+
+/* breadcrumb 의 ' > ' 구분자 */
+.md-content__inner .md-nav__path-item:not(:last-child)::after {
+  content: " > ";
+  margin: 0 0.4rem;
+  color: var(--nhn-text-primary);
+  opacity: 0.5;
+}
+
+/* ============================
+ * 다크모드 대응
+ * ============================ */
+[data-md-color-scheme="slate"] .md-content__inner .md-nav__path {
+  color: var(--nhn-primary-light);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-md-color-scheme="slate"] .md-content__inner .md-nav__path-item {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link::before {
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+}
+
+/* ============================================================
+ * 14. 폰트 계층 + 토글 + 아이콘 + 여백 + breadcrumb
+ * ============================================================ */
+
+/* ============================
+ * P1-1: 폰트 계층 (1단계 크게, 하위 작게)
+ * ============================ */
+@media screen and (min-width: 76.25em) {
+  /* 1 단계 (컨테이너, 컴퓨팅) - 가장 크게 + 굵게 */
+  .md-sidebar--primary > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link {
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    padding: 0.6rem 0.5rem 0.6rem 1.75rem !important;
+    margin: 0.2rem 0;
+    color: var(--nhn-text-primary);
+  }
+  
+  /* 2 단계 (NKS) - 중간 */
+  .md-sidebar--primary .md-nav .md-nav__item > .md-nav__link {
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    padding: 0.4rem 0.5rem 0.4rem 1.5rem !important;
+  }
+  
+  /* 3 단계 (개요/사용 가이드) - 작게 */
+  .md-sidebar--primary .md-nav .md-nav .md-nav__item > .md-nav__link {
+    font-size: 0.78rem !important;
+    font-weight: 400 !important;
+    padding: 0.3rem 0.5rem 0.3rem 2.25rem !important;
+  }
+  
+  /* 4 단계 - 더 작게 */
+  .md-sidebar--primary .md-nav .md-nav .md-nav .md-nav__item > .md-nav__link {
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.5rem 0.25rem 3rem !important;
+  }
+}
+
+/* ============================
+ * P1-2: 1단계 카테고리 아이콘 (sprite 활용)
+ * ============================ */
+@media screen and (min-width: 76.25em) {
+  /* 1단계 항목의 라벨에 아이콘 표시 */
+  .md-sidebar--primary > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link {
+    position: relative;
+  }
+  
+  .md-sidebar--primary > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link::before {
+    content: "";
+    position: absolute;
+    left: 0.3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.1rem;
+    height: 1.1rem;
+    background-image: url("../assets/images/sp_document.png");
+    background-repeat: no-repeat;
+    background-size: 500px 500px;
+    background-position: -1000px -1000px;
+    opacity: 0.75;
+    flex-shrink: 0;
+  }
+  
+  /* href 패턴 매칭으로 카테고리별 아이콘 */
+  .md-sidebar--primary .md-nav__item:has(a.md-nav__link[href*="quickstarts"]) > .md-nav__link::before,
+  .md-sidebar--primary .md-nav__item:has(.md-nav__link[for*="quickstarts" i]) > .md-nav__link::before {
+    background-position: -220px -64px;
+  }
+  
+  .md-sidebar--primary .md-nav__item:has(a.md-nav__link[href*="compute"]) > .md-nav__link::before,
+  .md-sidebar--primary .md-nav__item:has(.md-nav__list a[href*="compute"]) > .md-nav__link::before {
+    background-position: 0 -20px;
+  }
+  
+  .md-sidebar--primary .md-nav__item:has(a.md-nav__link[href*="container"]) > .md-nav__link::before,
+  .md-sidebar--primary .md-nav__item:has(.md-nav__list a[href*="container"]) > .md-nav__link::before {
+    background-position: -44px -64px;
+  }
+}
+
+/* ============================
+ * P1-3: 상단 탭/헤더 양옆 여백
+ * ============================ */
+.md-tabs__inner,
+.md-header__inner {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-tabs__inner,
+  .md-header__inner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 100em) {
+  .md-tabs__inner,
+  .md-header__inner {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* ============================
+ * P2: navigation.path breadcrumb 스타일
+ * ============================ */
+.md-content__inner .md-nav__path {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--nhn-primary);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--nhn-border);
+}
+
+.md-content__inner .md-nav__path-item {
+  display: inline;
+  color: var(--nhn-text-primary);
+}
+
+.md-content__inner .md-nav__path-item--current {
+  color: var(--nhn-primary);
+  font-weight: 600;
+}
+
+/* breadcrumb 의 ' > ' 구분자 */
+.md-content__inner .md-nav__path-item:not(:last-child)::after {
+  content: " > ";
+  margin: 0 0.4rem;
+  color: var(--nhn-text-primary);
+  opacity: 0.5;
+}
+
+/* ============================
+ * 다크모드 대응
+ * ============================ */
+[data-md-color-scheme="slate"] .md-content__inner .md-nav__path {
+  color: var(--nhn-primary-light);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-md-color-scheme="slate"] .md-content__inner .md-nav__path-item {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link::before {
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+}
+
+/* ============================================================
+ * 14-B. 중복 화살표 제거 (8번 섹션의 ::after 화살표 비활성화)
+ * ============================================================
+ * mkdocs-material 의 기본 .md-nav__icon 만 사용
+ * 우리가 추가했던 ::after SVG 화살표는 명시적으로 비활성화
+ */
+
+@media screen and (min-width: 76.25em) {
+  /* 기존 8번 섹션의 ::after 화살표 모두 비활성화 */
+  .md-sidebar--primary .md-nav__item--nested > .md-nav__link::after,
+  .md-sidebar--primary .md-nav__link::after {
+    content: none !important;
+    display: none !important;
+  }
+  
+  /* mkdocs-material 의 기본 화살표 (.md-nav__icon) 만 사용 */
+  .md-sidebar--primary .md-nav__icon {
+    display: inline-block !important;
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    margin-left: auto;
+    color: var(--nhn-text-primary);
+    opacity: 0.6;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+  
+  .md-sidebar--primary .md-nav__link:hover .md-nav__icon {
+    opacity: 1;
+    color: var(--nhn-primary);
+  }
+  
+  /* 펼친 상태 - 화살표 회전 */
+  .md-sidebar--primary .md-nav__toggle:checked ~ .md-nav__link .md-nav__icon {
+    transform: rotate(90deg);
+  }
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__icon {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__link:hover .md-nav__icon {
+  color: var(--nhn-primary-light);
+}
+
+/* ============================================================
+ * 15. 헤더 가독성 강화 (검색/아이콘) + 정밀 여백
+ * ============================================================ */
+
+/* ============================
+ * 1. 헤더 우측 영역 아이콘 모두 흰색 강제
+ * ============================ */
+
+/* 헤더의 모든 아이콘 (검색, 언어, 다크모드 토글, GitHub) - 흰색 */
+.md-header .md-icon,
+.md-header svg,
+.md-header__button {
+  color: rgba(255, 255, 255, 0.85) !important;
+  fill: rgba(255, 255, 255, 0.85);
+}
+
+.md-header .md-icon:hover,
+.md-header__button:hover {
+  color: #FFFFFF !important;
+  fill: #FFFFFF;
+}
+
+/* 검색 돋보기 아이콘 */
+.md-search__icon[for="__search"],
+.md-search__icon svg {
+  color: rgba(255, 255, 255, 0.85) !important;
+  fill: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* 검색 input - 활성화 전에는 검은 배경에 흰 텍스트 */
+.md-search__input {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #FFFFFF !important;
+  border-radius: 4px;
+  padding-left: 2.5rem !important;
+}
+
+/* 검색 placeholder ("검색") - 회색이지만 명확히 보이게 */
+.md-search__input::placeholder {
+  color: rgba(255, 255, 255, 0.65) !important;
+  opacity: 1;
+}
+
+.md-search__input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+/* 검색창 활성화 시 (포커스) - 흰 배경으로 전환 */
+.md-search__input:focus,
+.md-search__input:hover {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  color: var(--nhn-text-primary) !important;
+}
+
+.md-search__input:focus::placeholder {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 검색창 활성화 시 돋보기 아이콘 검정으로 */
+.md-search__input:focus ~ .md-search__icon,
+.md-search__input:hover ~ .md-search__icon {
+  color: var(--nhn-text-primary) !important;
+  fill: var(--nhn-text-primary) !important;
+}
+
+/* 언어 선택 아이콘 (文A) */
+.md-header__option label,
+.md-header__option .md-icon {
+  color: rgba(255, 255, 255, 0.85) !important;
+  fill: rgba(255, 255, 255, 0.85);
+}
+
+.md-header__option label:hover {
+  color: #FFFFFF !important;
+}
+
+/* 다크모드 / 라이트모드 토글 아이콘 */
+.md-header__button[data-md-component="palette"] {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.md-header__button[data-md-component="palette"] svg {
+  fill: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* GitHub 아이콘 / 텍스트 */
+.md-header__source,
+.md-source,
+.md-source__icon,
+.md-source__repository,
+.md-source__facts {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.md-source__icon svg {
+  fill: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* ============================
+ * 2. 상단 헤더 / 탭 정밀 여백 (본문 max-width 와 일치)
+ * ============================ */
+
+/* 모바일 (기본) */
+.md-header__inner,
+.md-tabs__inner {
+  padding: 0 1rem !important;
+  max-width: none !important;
+}
+
+/* 태블릿 (60em+) */
+@media screen and (min-width: 60em) {
+  .md-header__inner,
+  .md-tabs__inner {
+    padding: 0 2rem !important;
+  }
+}
+
+/* 데스크탑 (76.25em+) - 본문 max-width 80rem 과 동일 */
+@media screen and (min-width: 76.25em) {
+  .md-header__inner,
+  .md-tabs__inner {
+    padding: 0 calc((100% - 80rem) / 2 + 1.5rem) !important;
+    max-width: 100% !important;
+  }
+}
+
+/* 와이드 (100em+) - 본문 max-width 90rem 과 동일 */
+@media screen and (min-width: 100em) {
+  .md-header__inner,
+  .md-tabs__inner {
+    padding: 0 calc((100% - 90rem) / 2 + 2rem) !important;
+  }
+}
+
+/* ============================
+ * 3. 상단 탭 텍스트 가독성 재확인
+ * ============================ */
+.md-tabs__link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500;
+  opacity: 1 !important;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  color: #FFFFFF !important;
+}
+
+/* ============================================================
+ * 16. 검색창 hover/focus 시 텍스트 가독성 보정
+ * ============================================================
+ * 직전 15번 섹션에서 hover 시 배경만 흰색으로 전환되었으나
+ * 텍스트 색상이 함께 전환 안 되어 흰 배경에 흰 글씨로 안 보이는 문제 해결
+ */
+
+/* hover / focus 시 검색창 - 텍스트도 검정으로 강제 전환 */
+.md-search__input:hover,
+.md-search__input:focus,
+.md-search__input:active {
+  background-color: #FFFFFF;
+  color: var(--nhn-text-primary);
+}
+
+/* hover / focus 상태의 placeholder - 회색 (가독성 유지) */
+.md-search__input:hover::placeholder,
+.md-search__input:focus::placeholder,
+.md-search__input:active::placeholder {
+  color: rgba(0, 0, 0, 0.55);
+  opacity: 1;
+}
+
+.md-search__input:hover::-webkit-input-placeholder,
+.md-search__input:focus::-webkit-input-placeholder,
+.md-search__input:active::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+/* hover / focus 시 돋보기 아이콘도 검정으로 */
+.md-search__input:hover ~ .md-search__icon,
+.md-search__input:focus ~ .md-search__icon,
+.md-search__input:active ~ .md-search__icon,
+.md-search__form:hover .md-search__icon,
+.md-search__form:focus-within .md-search__icon {
+  color: var(--nhn-text-primary);
+  fill: var(--nhn-text-primary);
+}
+
+.md-search__input:hover ~ .md-search__icon svg,
+.md-search__input:focus ~ .md-search__icon svg,
+.md-search__form:hover .md-search__icon svg,
+.md-search__form:focus-within .md-search__icon svg {
+  fill: var(--nhn-text-primary);
+}
+
+/* 검색 form 영역 전체 hover 시 (mkdocs-material 9.x 구조 대응) */
+.md-search__form:hover,
+.md-search__form:focus-within {
+  background-color: #FFFFFF;
+}
+
+.md-search__form:hover .md-search__input,
+.md-search__form:focus-within .md-search__input {
+  background-color: #FFFFFF;
+  color: var(--nhn-text-primary);
+}
+
+/* 검색 결과 드롭다운 (입력 시 나타나는 영역) - 가독성 확보 */
+.md-search__output {
+  background-color: #FFFFFF;
+  color: var(--nhn-text-primary);
+}
+
+[data-md-color-scheme="slate"] .md-search__output {
+  background-color: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+}
+
+/* ============================================================
+ * 17. 검색창 가독성 - 최종 강제 보정 (높은 우선순위)
+ * ============================================================
+ * 모든 상태에서 검색창 내부 콘텐츠가 보이도록 강제
+ */
+
+/* 1. 검색 form 자체 - 항상 흰 배경 + 검정 텍스트 (heading 영역) */
+.md-header .md-search,
+.md-header .md-search__form,
+.md-header .md-search__inner {
+  background-color: #FFFFFF;
+}
+
+/* 2. 검색 input - 항상 검정 텍스트 강제 */
+.md-header .md-search__input,
+.md-header input.md-search__input,
+.md-header input[type="text"].md-search__input {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+/* 3. placeholder - 회색으로 강제 */
+.md-header .md-search__input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+}
+
+.md-header .md-search__input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.md-header .md-search__input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+}
+
+.md-header .md-search__input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* 4. 검색 돋보기 아이콘 - 흰 배경에 검정 */
+.md-header .md-search__icon,
+.md-header .md-search__icon[for],
+.md-header .md-search__icon svg,
+.md-header label.md-search__icon {
+  color: #000000;
+  fill: #000000;
+}
+
+.md-header .md-search__icon svg path,
+.md-header .md-search__icon svg use {
+  fill: #000000;
+  stroke: #000000;
+}
+
+/* 5. 검색창 닫기/clear 버튼 (있다면) */
+.md-header .md-search__icon[type="reset"],
+.md-header button.md-search__icon {
+  color: #000000;
+  fill: #000000;
+}
+
+/* 6. focus / hover 상태에서도 동일 (이미 흰 배경이므로) */
+.md-header .md-search__input:focus,
+.md-header .md-search__input:hover,
+.md-header .md-search__input:active {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+/* 7. 다크모드에서는 다크 배경 유지 */
+[data-md-color-scheme="slate"] .md-header .md-search,
+[data-md-color-scheme="slate"] .md-header .md-search__form {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-md-color-scheme="slate"] .md-header .md-search__input {
+  background-color: transparent;
+  color: #FFFFFF;
+}
+
+[data-md-color-scheme="slate"] .md-header .md-search__input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+[data-md-color-scheme="slate"] .md-header .md-search__icon {
+  color: rgba(255, 255, 255, 0.85);
+  fill: rgba(255, 255, 255, 0.85);
+}
+
+[data-md-color-scheme="slate"] .md-header .md-search__icon svg {
+  fill: rgba(255, 255, 255, 0.85);
+}
+
+/* ============================================================
+ * 19. 좌측 LNB 화살표 회전 - 펼침/접힘 명확화
+ * 접힘 (>) -> 펼침 (∨) 자동 회전
+ * ============================================================ */
+
+/* 기본 nav__icon (>)에 부드러운 회전 transition */
+.md-nav__icon.md-icon {
+    transition: transform 0.25s ease;
+    transform-origin: center center;
+}
+
+/* 펼친 상태(체크됨)일 때 화살표 90 도 회전 -> 아래 (∨) */
+.md-nav__item--nested .md-nav__toggle:checked ~ .md-nav__link .md-nav__icon,
+.md-nav__item--nested .md-nav__toggle:checked + .md-nav__link .md-nav__icon {
+    transform: rotate(90deg);
+}
+
+/* mobile drawer 의 경우에도 동일 적용 */
+[data-md-color-scheme] .md-sidebar--primary .md-nav__item--nested > .md-nav__toggle:checked ~ .md-nav__link .md-nav__icon {
+    transform: rotate(90deg);
+}
+
+/* ============================================================
+ * 20. 좌측 LNB 최상위 카테고리 sticky
+ * 스크롤 시 카테고리 라벨(네트워크/컴퓨팅 등)이 상단 고정
+ * ============================================================ */
+
+@media screen and (min-width: 76.25em) {
+    /* 좌측 LNB 의 최상위 nav__title (카테고리 라벨) sticky */
+    .md-sidebar--primary .md-nav--primary .md-nav__title[for^="__nav_"] {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background: var(--md-default-bg-color);
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+        margin-top: -0.6rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+        border-bottom: 1px solid var(--nhn-border, #e7e7e7);
+    }
+    
+    /* 다크 모드 sticky 배경 */
+    [data-md-color-scheme="slate"] .md-sidebar--primary .md-nav--primary .md-nav__title[for^="__nav_"] {
+        background: var(--md-default-bg-color);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* ============================================================
+ * 21. 검색창 라이트/다크 모드 일관성 강화
+ * 두 모드에서 동일한 padding, border-radius, 높이
+ * ============================================================ */
+
+/* 검색창 wrapper 통일 */
+html body .md-search__form {
+    border-radius: 4px;
+    height: 2.0rem;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 라이트 모드 - 흰 배경 + 검정 텍스트 */
+html body[data-md-color-scheme="default"] .md-search__form,
+html body:not([data-md-color-scheme]) .md-search__form {
+    background-color: #ffffff !important;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+html body[data-md-color-scheme="default"] .md-search__form:hover,
+html body:not([data-md-color-scheme]) .md-search__form:hover {
+    background-color: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.24);
+}
+
+html body[data-md-color-scheme="default"] .md-search__input,
+html body:not([data-md-color-scheme]) .md-search__input {
+    color: #1a1a1a !important;
+    background-color: transparent !important;
+}
+
+html body[data-md-color-scheme="default"] .md-search__input::placeholder,
+html body:not([data-md-color-scheme]) .md-search__input::placeholder {
+    color: rgba(0, 0, 0, 0.5) !important;
+}
+
+html body[data-md-color-scheme="default"] .md-search__icon,
+html body:not([data-md-color-scheme]) .md-search__icon {
+    color: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* 다크 모드 - 동일 padding/border-radius/높이, 색상만 어두움 */
+html body[data-md-color-scheme="slate"] .md-search__form {
+    background-color: rgba(255, 255, 255, 0.07) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+html body[data-md-color-scheme="slate"] .md-search__form:hover {
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    border-color: rgba(255, 255, 255, 0.24);
+}
+
+html body[data-md-color-scheme="slate"] .md-search__input {
+    color: #ffffff !important;
+    background-color: transparent !important;
+}
+
+html body[data-md-color-scheme="slate"] .md-search__input::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+html body[data-md-color-scheme="slate"] .md-search__icon {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* 검색창 input 자체 padding 통일 */
+html body .md-search__input {
+    padding-left: 2.4rem;
+    padding-right: 0.8rem;
+    font-size: 0.78rem;
+    height: 100%;
+}
+
+/* 검색 아이콘 위치 통일 */
+html body .md-search__icon[for="__search"] {
+    top: 50%;
+    left: 0.6rem;
+    transform: translateY(-50%);
+    width: 1.0rem;
+    height: 1.0rem;
+}
+
+/* ============================================================
+ * 22. breadcrumb (md-path) 가독성 개선 (이미 정상 표시되나 강화)
+ * ============================================================ */
+
+.md-path {
+    padding-top: 0.6rem;
+    padding-bottom: 0.4rem;
+    font-size: 0.72rem;
+}
+
+.md-path__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.md-path__item {
+    display: inline-flex;
+    align-items: center;
+}
+
+.md-path__item:not(:last-child)::after {
+    content: '›';
+    margin: 0 0.3rem;
+    color: var(--md-default-fg-color--lighter, rgba(0, 0, 0, 0.35));
+    font-weight: 400;
+}
+
+.md-path__link {
+    color: var(--md-default-fg-color--light, rgba(0, 0, 0, 0.7));
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.md-path__link:hover {
+    color: var(--md-accent-fg-color, #1B64DA);
+}
+
+[data-md-color-scheme="slate"] .md-path__link {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+[data-md-color-scheme="slate"] .md-path__item:not(:last-child)::after {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* ============================================================
+ * 23. 본문 액션 버튼 - 공유 + PDF 인쇄
+ * ============================================================ */
+
+/* 공유/인쇄 버튼 hover 효과 강화 */
+.md-content__button.nhn-action-share,
+.md-content__button.nhn-action-print {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0.4rem;
+    margin: 0;
+    color: var(--md-default-fg-color--light);
+    transition: color 0.2s ease, background-color 0.2s ease;
+    border-radius: 4px;
+}
+
+.md-content__button.nhn-action-share:hover,
+.md-content__button.nhn-action-print:hover {
+    color: var(--nhn-blue, #1B64DA);
+    background-color: rgba(27, 100, 218, 0.08);
+}
+
+[data-md-color-scheme="slate"] .md-content__button.nhn-action-share:hover,
+[data-md-color-scheme="slate"] .md-content__button.nhn-action-print:hover {
+    color: #4A90F0;
+    background-color: rgba(74, 144, 240, 0.15);
+}
+
+/* ============================================================
+ * 24. 토스트 알림 (공유 완료/링크 복사)
+ * ============================================================ */
+
+.nhn-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: rgba(33, 33, 33, 0.95);
+    color: #ffffff;
+    padding: 0.7rem 1.4rem;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    max-width: 90%;
+    text-align: center;
+}
+
+.nhn-toast--show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nhn-toast--success {
+    background: rgba(33, 33, 33, 0.95);
+    border-left: 3px solid #4caf50;
+}
+
+.nhn-toast--error {
+    background: rgba(33, 33, 33, 0.95);
+    border-left: 3px solid #f44336;
+}
+
+/* ============================================================
+ * 25. 인쇄용 스타일 - PDF 인쇄 시 사이드바/헤더/푸터 숨김
+ * ============================================================ */
+
+@media print {
+    /* 헤더/사이드바/푸터/검색/액션 버튼 숨김 */
+    .md-header,
+    .md-tabs,
+    .md-sidebar,
+    .md-footer,
+    .nhn-footer,
+    .md-content__button,
+    .md-search,
+    .md-source,
+    .nhn-toast {
+        display: none !important;
+    }
+    
+    /* 본문 영역만 전체 폭으로 확장 */
+    .md-main,
+    .md-main__inner,
+    .md-content,
+    .md-content__inner,
+    article {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 1rem !important;
+        width: 100% !important;
+    }
+    
+    /* 본문 색상 초기화 (인쇄용) */
+    body,
+    .md-typeset,
+    .md-content__inner {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 10pt !important;
+    }
+    
+    /* 헤딩 폰트 크기 인쇄용 */
+    .md-typeset h1 { font-size: 18pt !important; }
+    .md-typeset h2 { font-size: 14pt !important; }
+    .md-typeset h3 { font-size: 12pt !important; }
+    
+    /* 링크 URL 인쇄 시 표시 */
+    .md-typeset a[href]:not(.md-source-file)::after {
+        content: " (" attr(href) ")";
+        font-size: 8pt;
+        color: #666;
+        word-break: break-all;
+    }
+    
+    /* 내부 anchor 링크는 URL 표시 안 함 */
+    .md-typeset a[href^="#"]::after,
+    .md-typeset a[href^="javascript:"]::after {
+        content: "" !important;
+    }
+    
+    /* 코드 블록 줄바꿈 */
+    .md-typeset pre,
+    .md-typeset code {
+        white-space: pre-wrap !important;
+        word-wrap: break-word !important;
+        page-break-inside: avoid;
+    }
+    
+    /* 표 페이지 분할 방지 */
+    .md-typeset table {
+        page-break-inside: avoid;
+    }
+    
+    /* 페이지 여백 */
+    @page {
+        margin: 1.5cm;
+    }
+}
